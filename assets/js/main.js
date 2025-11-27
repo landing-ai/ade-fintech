@@ -105,20 +105,98 @@
     // Gallery
     // ================================
 
+    // YouTube Playlist ID - LandingAI Financial Services Hackathon
+    const YOUTUBE_PLAYLIST_ID = 'PLrKGAzovU85fQ9XGETV2b-qL6P92RlrhX';
+
     function setupGallery() {
         const galleryGrid = document.getElementById('gallery-grid');
         if (!galleryGrid) return;
 
-        // Placeholder for now - will be populated with actual media
-        galleryGrid.innerHTML = `
-            <div class="gallery-placeholder">
-                <p>Gallery will be populated with photos and videos from the hackathon event.</p>
-                <p>Media files are currently being downloaded...</p>
-            </div>
-        `;
+        // Load photos and videos
+        loadGalleryItems();
 
         // Setup filter functionality
         setupGalleryFilters();
+    }
+
+    async function loadGalleryItems() {
+        const galleryGrid = document.getElementById('gallery-grid');
+
+        // Check if we have photos in the gallery folder
+        const photos = await loadPhotos();
+
+        if (photos.length === 0 && YOUTUBE_PLAYLIST_ID === 'YOUR_PLAYLIST_ID_HERE') {
+            // Show placeholder if no content yet
+            galleryGrid.innerHTML = `
+                <div class="gallery-placeholder">
+                    <h3>Gallery Coming Soon!</h3>
+                    <p>Photos and videos from the hackathon will be added here.</p>
+                    <p>Check back soon to see all the amazing moments!</p>
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+
+        // Add YouTube videos section if playlist is available
+        if (YOUTUBE_PLAYLIST_ID !== 'YOUR_PLAYLIST_ID_HERE') {
+            html += createYouTubeSection();
+        }
+
+        // Add photos
+        photos.forEach(photo => {
+            html += createPhotoItem(photo);
+        });
+
+        galleryGrid.innerHTML = html || `
+            <div class="gallery-placeholder">
+                <p>Loading gallery...</p>
+            </div>
+        `;
+    }
+
+    function createYouTubeSection() {
+        return `
+            <div class="youtube-section" data-category="videos">
+                <div class="youtube-embed">
+                    <h3>Hackathon Highlights</h3>
+                    <iframe
+                        width="100%"
+                        height="400"
+                        src="https://www.youtube.com/embed/videoseries?list=${YOUTUBE_PLAYLIST_ID}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <p class="youtube-link">
+                        <a href="https://www.youtube.com/playlist?list=${YOUTUBE_PLAYLIST_ID}" target="_blank" rel="noopener noreferrer">
+                            View Full Playlist on YouTube →
+                        </a>
+                    </p>
+                </div>
+            </div>
+        `;
+    }
+
+    async function loadPhotos() {
+        // This would normally fetch a list of photos from a JSON file or directory
+        // For now, return an empty array - photos will be added manually
+        // When you add photos to assets/images/gallery/, update this array
+        const photoFiles = [
+            // Example: 'event-001.jpg', 'event-002.jpg', etc.
+            // Add photo filenames here as you upload them
+        ];
+
+        return photoFiles;
+    }
+
+    function createPhotoItem(filename) {
+        return `
+            <div class="gallery-item" data-category="photos">
+                <img src="assets/images/gallery/${filename}" alt="Hackathon Event" loading="lazy">
+            </div>
+        `;
     }
 
     function setupGalleryFilters() {
