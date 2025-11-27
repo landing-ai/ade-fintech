@@ -3,7 +3,7 @@
     "team_name": "Loanlens AI (1st)",
     "github": "https://github.com/rrahul1011/loanlens_ai/tree/ds_integration_v2",
     "youtube": "https://www.youtube.com/watch?v=iKqOY-Nobv8",
-    "team_members": "Abhisek Banerjee,abhisek.b@sigmoidanalytics.com,Sigmoid Analytics,Senior Lead Data Scientist\nTanika Gupta,tanikag@sigmoidanalytics.com,Sigmoid Analytics,Director Data Science\nAnand Kumar,anandkumar@sigmoidanalytics.com,Sigmoid Analytics,Lead Data Scientist\nMohd Zain,zainmohd@sigmoidanalytics.com,Sigmoid Analytics,Data Science Trainee\nRitesh Kumar,ritesh@sigmoidanalytics.com,Sigmoid Analytics,Principal Data Scientist\nRahul kushwaha,rkushwaha@sigmoidanalytics.com,Sigmoid Analytics,Senior Data Scientist\nAbhishek Thombre,abhishekt@sigmoidanalytics.com,Sigmoid Analytics,Lead Data Scientist\nNilanjan Sahu,nilanjan.s@sigmoidanalytics.com,Sigmoid Analytics,Lead Data Scientist",
+    "team_members": "Abhisek Banerjee,Sigmoid Analytics,Senior Lead Data Scientist Tanika Gupta,Sigmoid Analytics,Director Data Science Anand Kumar,Sigmoid Analytics,Lead Data Scientist Mohd Zain,Sigmoid Analytics,Data Science Trainee Ritesh Kumar,Sigmoid Analytics,Principal Data Scientist Rahul kushwaha,Sigmoid Analytics,Senior Data Scientist Abhishek Thombre,Sigmoid Analytics,Lead Data Scientist Nilanjan Sahu,Sigmoid Analytics,Lead Data Scientist",
     "team_size": 2,
     "abstract": "Loan Underwriting & Fraud Detection",
     "summary": "LoanLens AI addresses critical challenges where 52% of loan processing time is spent manually collecting documents and 1 in 4 applications contain discrepancies. The platform combines Landing AI ADE for document extraction with AWS Bedrock for fraud detection and credit evaluation using a multi-agent architecture. Key metrics show 30% of creditworthy applicants are rejected due to poor data interpretation in traditional systems. LoanLens delivers faster, more accurate, and auditable underwriting decisions by automating document extraction, identifying first-party fraud patterns (salary inflation, risky revenue practices), and providing transparent AI-powered credit recommendations with full traceability."
@@ -12,7 +12,7 @@
     "team_name": "Skywalkers77 (2nd)",
     "github": "https://github.com/orgs/aws-financial-ai-hack-skywalkers77/repositories",
     "youtube": "https://youtu.be/VeF_WH0lBcg",
-    "team_members": "Yatharth Mogra - ym3470@nyu.edu, NYU, Student\nHemanth Marupudi - hm3684@nyu.edu, NYU, Student\nKrish Jani - kj2743@nyu.edu, NYU, Student\nRiddhi Raina Prasad - rrp4822@nyu.edu, NYU, Student",
+    "team_members": "Yatharth Mogra - , NYU, Student Hemanth Marupudi - , NYU, Student Krish Jani - , NYU, Student Riddhi Raina Prasad - , NYU, Student",
     "team_size": 4,
     "abstract": "Invoice & Contract Compliance Automation",
     "summary": "DocuFlow is a production-ready platform featuring hybrid compliance automation that combines RAG with deterministic rule engines. The system processes invoices and contracts through complete ADE SDK integration, performs vendor-aware matching, extracts bounding boxes for PDF highlighting, and includes scheduled bulk processing for compliance monitoring. Built with FastAPI backend (3,408 LOC) and React frontend (4,591 LOC), it achieves perfect implementation scores with multi-model AI failover, PostgreSQL with pgvector storage, and role-based dashboards for auditors, compliance officers, and finance teams."
@@ -21,7 +21,7 @@
     "team_name": "Beemnet Haile",
     "github": "https://github.com/bhaile-code/Counterparty-Margin-Collateral-Agent-v2",
     "youtube": "https://youtu.be/82M2igQHz0M",
-    "team_members": "Beemnet Haile, Beemnethaile@gmail.com, Deloitte, Product Manager",
+    "team_members": "Beemnet Haile, Deloitte, Product Manager",
     "team_size": 0,
     "abstract": "OTC Derivatives Collateral Management",
     "summary": "Automates margin calculations for OTC derivatives by reading CSA contracts, extracting terms, normalizing collateral data, and calculating margin requirements with AI explainability. The system integrates LandingAI ADE for contract parsing, Claude Haiku for collateral normalization, and Claude Sonnet 4.5 for explanations. Features complete audit trails, deterministic calculation engine with 24 passing tests, and 21 API endpoints for document management, normalization, CSA terms mapping, and margin calculations with AI-generated explanations for compliance."
@@ -30,7 +30,7 @@
     "team_name": "Serimag (top 4)",
     "github": "https://github.com/serimag/landinghack-fakepay/tree/main",
     "youtube": "https://www.youtube.com/watch?v=-vNP2rP7Kvs",
-    "team_members": "Sergio Santamaria - Senior AI Dev at Serimag (sergio_santamaria@serimag.com)\nHugo Cortada - New Business Director at Serimag  (hugo_cortada@serimag.com)",
+    "team_members": "Sergio Santamaria - Senior AI Dev at Serimag () Hugo Cortada - New Business Director at Serimag ()",
     "team_size": 2,
     "abstract": "Pay Stub Fraud Detection",
     "summary": "FakePay tackles the rising threat of GenAI-driven document forgery in financial services. Built by Serimag, Spain's leading Intelligent Document Processing company (processing 1M+ pages daily for banking), the system provides an easy-to-deploy API for IDP workflows. Features include document classification using LandingAI Parse API, AI-generated document detection via AIorNOT, key information extraction with Extract API, and automatic validation of dates, NIF/CIF formats, and internal earnings calculations. Focused initially on Spanish pay stubs with plans to expand. Built during a weekend hackathon by Serimag's Barcelona-based team with strong NLP and Computer Vision expertise."
@@ -39,7 +39,7 @@
     "team_name": "ArthaNethra",
     "github": "https://github.com/devieswar/ArthaNethra",
     "youtube": "https://youtu.be/QdXCNYUUAPg",
-    "team_members": "Devi Eswar Kumar Damerla, devieswar79@gmail.com, University of Cincinnati/AI OWL, SDE Intern\nMohan Priya Mulagapu, mohanpriyamulagapu@gmail.com, University of Cincinnati/AI OWL, SDE Intern",
+    "team_members": "Devi Eswar Kumar Damerla, University of Cincinnati/AI OWL, SDE Intern Mohan Priya Mulagapu, University of Cincinnati/AI OWL, SDE Intern",
     "team_size": 2,
     "abstract": "Financial Investigation Knowledge Graph",
     "summary": "ArthaNethra (Sanskrit: wealth + eye) is the first knowledge graph-native financial investigation platform. Unlike traditional tools that extract data in isolation, it automatically maps entities and relationships across multiple documents into an interactive Neo4j graph database. The multi-agent architecture combines LandingAI ADE for document extraction with AWS Bedrock for analysis, revealing connections that analysts miss in manual review. Saves 200+ hours per M&A deal by providing unified cross-document views, identifying hidden risks in covenants and conflicts, and explaining AI insights through traceable graph relationships. Built with Angular 19 frontend featuring Sigma.js graph visualization and ECharts data visualization."
@@ -48,7 +48,7 @@
     "team_name": "ExemptFlow (renamed to Luma) (Top 4)",
     "github": "https://github.com/ajac-zero/luma",
     "youtube": "https://youtu.be/212R-EbyTjY",
-    "team_members": "Anibal Angulo, ajcardoza2000@gmail.com, Banorte, Senior AI Engineer\nSebastian Garza, gsebasm8@gmail.com, Banorte, AI Engineer",
+    "team_members": "Anibal Angulo, Banorte, Senior AI Engineer Sebastian Garza, Banorte, AI Engineer",
     "team_size": 2,
     "abstract": "Nonprofit Tax Filing Intelligence",
     "summary": "Luma addresses the challenge of extracting meaningful insights from over 1.5 million annual nonprofit Form 990 filings. The platform combines intelligent document processing with vector search using Qdrant database and Azure OpenAI embeddings. Features a multi-agent system with specialized Form Auditor for compliance checking, Analyst Agent for insights generation, and Web Search Agent powered by Tavily API. Built with comprehensive full-stack architecture: 9,222 LOC FastAPI backend with 85 TypeScript frontend files, generative UI for dynamic React components, and flexible schema management for nonprofit intelligence across the sector."
@@ -57,7 +57,7 @@
     "team_name": "ai_banking_geek",
     "github": "https://github.com/sdarive/credit-memo",
     "youtube": "https://youtu.be/61tVbVRygc0",
-    "team_members": "Siva Darivemula, darivemula@gmail.com, Huntington Bank, VP, Innovation Architect",
+    "team_members": "Siva Darivemula, Huntington Bank, VP, Innovation Architect",
     "team_size": 1,
     "abstract": "Credit Memo Generation",
     "summary": "Ernie eliminates manual credit memo generation bottlenecks by automating document extraction with LandingAI ADE and generating narrative analysis with AWS Bedrock Claude 4.5 Haiku. The system achieves 92% time savings by auto-generating memos tailored to bank-approved templates, calculating 9 financial ratios automatically, and providing full traceability of data sources for regulatory compliance. Features include template-adaptive AI generation, automated reconciliation across sources, and bias reduction through AI-powered analysis. Winner of Best Documentation Award with 562-line comprehensive README."
@@ -66,7 +66,7 @@
     "team_name": "Boring",
     "github": "https://github.com/forceplatforms/boring",
     "youtube": "https://youtu.be/HfxkLZbDoIA",
-    "team_members": "Tilak Sharma\ntilaksharma1114@gmail.com\n\nHrishikesh D Kakkad\nhrishidkakkad@gmail.com",
+    "team_members": "Tilak Sharma Hrishikesh D Kakkad",
     "team_size": 0,
     "abstract": "Document Search with Vision AI",
     "summary": "ComplianceGuard represents cutting-edge technology using ColPali embeddings (2024 SOTA) for multi-vector document analysis. The system features unified DocumentIndex API for indexing and search, automatic PDF to image conversion, hosted Modal service integration for embeddings (no local model required), Milvus vector database for fast retrieval, and MaxSim (Maximum Similarity) scoring for accurate document ranking. Architecture includes support for multiple independent indexes, duplicate prevention with automatic tracking, persistent index logs, efficient batch operations, and built-in result formatting. Winner of Most Advanced Embeddings award. Built with FastAPI, Docker Compose for service orchestration, S3 for file storage, PostgreSQL for metadata, and comprehensive batch processing capabilities."
@@ -75,7 +75,7 @@
     "team_name": "pAIsa-pAIsa",
     "github": "https://github.com/dharaneesh71/Financeflow_ai",
     "youtube": "https://youtu.be/rbdXRPEVgTU",
-    "team_members": "Dharaneesh CKV, dharaneesh7001@gmail.com, Virginia Tech, Student\nSudip Manchare, sudip.manchare@gmail.com, Virginia Tech, Student",
+    "team_members": "Dharaneesh CKV, Virginia Tech, Student Sudip Manchare, Virginia Tech, Student",
     "team_size": 2,
     "abstract": "Financial Data Warehouse Automation",
     "summary": "SnowFlow AI automates the complete pipeline from financial document upload to Snowflake data warehouse deployment. Uses Google Gemini AI and LandingAI ADE for intelligent extraction from PDFs, images, and financial statements. The LangGraph-based architecture orchestrates four key agents: Document Extractor (OCR and AI-powered markdown conversion), Financial Analyzer (document type identification and relationship mapping), Schema Designer (optimized database schema generation), and Snowflake Deployer (automated data loading). Built with FastAPI backend and React/Tailwind frontend, featuring user-driven metric discovery, automated schema design based on extracted data, and comprehensive workflow management with conditional processing."
@@ -84,7 +84,7 @@
     "team_name": "ReLeap",
     "github": "https://github.com/vineetsarpal/re-ink",
     "youtube": "https://youtu.be/ylZ9jSDByLQ",
-    "team_members": "Vineet Sarpal, vineet.sarpal@sapiens.com, Sapiens, Senior Business Analyst",
+    "team_members": "Vineet Sarpal, Sapiens, Senior Business Analyst",
     "team_size": 1,
     "abstract": "Reinsurance Contract Management",
     "summary": "re-ink streamlines reinsurance contract management by automating extraction of contract details and party information from uploaded PDF/DOCX documents. Features complete document upload with drag-and-drop interface, AI extraction monitoring with real-time status updates, review interface for editing extracted data, comprehensive contract and party dashboards, and sample extraction mode for workflow testing. The system integrates LandingAI's Agentic Document Extraction API with LangChain/LangGraph agents for intake insights and automated contract reviews. Built with FastAPI backend, PostgreSQL database with SQLAlchemy ORM, React 18 frontend, and full CRUD operations for managing reinsurance contracts and parties (cedents, reinsurers, brokers)."
@@ -93,7 +93,7 @@
     "team_name": "Daemon Craft",
     "github": "https://github.com/Daemon-Craft/openomi",
     "youtube": "https://youtu.be/SMZ7s7AgB-w",
-    "team_members": "First name: Tresor\nLast Name: Habib Nahouta\nParfait Ben-oni TEDOM TEDOM, ptedomtedom@daemon-craft.com, Daemon Craft, Lead and Engineer",
+    "team_members": "First name: Tresor Last Name: Habib Nahouta Parfait Ben-oni TEDOM TEDOM, Daemon Craft, Lead and Engineer",
     "team_size": 1,
     "abstract": "Immigration Compliance Fraud Detection",
     "summary": "Openomi automates compliance audits for government immigration applications, specifically targeting Canadian IRCC processes that handle 400,000+ applications annually. Immigration officers manually review 6 months of bank statements per applicant at a cost of $200M+ annually with 15-20% fraud rates. The system uses AWS Bedrock Agent architecture with Lambda functions integrating LandingAI ADE for document extraction, RAG knowledge base for IRCC rules verification, and automated fraud pattern detection invisible to human reviewers. Reduces processing time by 95% while verifying program-specific compliance requirements. Built with Streamlit UI, S3 storage, and comprehensive use case coverage for multiple immigration programs with program-specific compliance rules."
@@ -102,7 +102,7 @@
     "team_name": "Eagle",
     "github": "https://github.com/sivasundharam/PortfoliMosaic",
     "youtube": "https://youtu.be/vH5-Af0NfU4",
-    "team_members": "Sivasundharam, sivasundharam123@gmail.com, Stratus Meridian LLC, AWS Python Developer",
+    "team_members": "Sivasundharam, Stratus Meridian LLC, AWS Python Developer",
     "team_size": 1,
     "abstract": "Multi-Brokerage Portfolio Analysis",
     "summary": "PortfoliMosaic addresses the complexity of managing portfolios across multiple brokerages, countries, and asset classes. Modern investors maintain accounts globally for diversification, tax efficiency, and specialized access, requiring dynamic tools to synthesize structured holdings, unstructured documents, and real-time market data. The platform unifies fragmented financial information into coherent, actionable insights across borders and asset types. Key features include multi-brokerage portfolio aggregation, international investment tracking, cross-border compliance and reporting, natural language conversations about investments, and integration of tax documents and financial statements. Built to handle the reality that most global investors hold 15-30 securities across multiple platforms with trillions in international assets."
@@ -120,7 +120,7 @@
     "team_name": "Hosni Belfeki",
     "github": "github.com/HosniBelfeki/VORTEX-AML",
     "youtube": "https://youtu.be/X7H5b9ooqLo?feature=shared",
-    "team_members": "Hosni Belfeki | belfkihosni@gmail.com | Final Year Computer Science Student | AI/ML & Full-Stack Developer",
+    "team_members": "Hosni Belfeki | | Final Year Computer Science Student | AI/ML & Full-Stack Developer",
     "team_size": 0,
     "abstract": "Anti-Money Laundering Intelligence Platform",
     "summary": "VORTEX-AML provides enterprise-grade AML compliance automation that processes documents in under 5 seconds with 98% accuracy, reducing compliance costs by 80% ($6.4M annual savings). The platform combines LandingAI ADE for document extraction with Amazon Bedrock Claude Sonnet 4.5 for multi-layer risk screening against sanctions lists, PEP databases, and adverse media. Features include weighted risk calculation (Sanctions 40%, PEP 25%, Adverse Media 25%, Behavioral 10%), automated SAR generation for FinCEN filing, production-ready architecture with Docker/Kubernetes deployment, and support for 20+ document types including passports, wire transfers, and bank statements."
@@ -129,7 +129,7 @@
     "team_name": "Sabirul",
     "github": "https://github.com/marjan-ahmed/docsamajh-ai",
     "youtube": "https://youtu.be/vRoXVQ5HMYo",
-    "team_members": "Muhammad Marjan Ahmed (solo)\nmarjan.ahmed08@yahoo.com\nNasra School \nStudent",
+    "team_members": "Muhammad Marjan Ahmed (solo) Nasra School Student",
     "team_size": 0,
     "abstract": "Invoice-PO Reconciliation Platform",
     "summary": "DocSamajh AI automates invoice-to-PO reconciliation using multi-agent architecture (Document Processor, Reconciliation Specialist, Compliance Auditor) powered by OpenAI Agents SDK Framework, LandingAI ADE, and Google Gemini. The platform achieves 96% faster processing (30 seconds vs 30 minutes manual), reducing AP costs by $45K/year for mid-size companies processing 500 invoices monthly. Features include risk-based recommendations (LOW/MEDIUM/HIGH), batch processing with CSV export, audit trail for compliance, and production-ready error handling with complex nested schemas for line items."
@@ -138,7 +138,7 @@
     "team_name": "The Innovators",
     "github": "https://github.com/Srivathsav-max/fintrid",
     "youtube": "https://youtu.be/5HzJYRIXMAk",
-    "team_members": "Jaya Raj Srivathsav Adari, jayaraj@eboxchain.com, eboxchain, Founding Engineer\nAbhishek Mamidipally, abhishek.mamidipally@cotiviti.com, cotiviti, Data Scientist",
+    "team_members": "Jaya Raj Srivathsav Adari, eboxchain, Founding Engineer Abhishek Mamidipally, cotiviti, Data Scientist",
     "team_size": 2,
     "abstract": "TRID Mortgage Compliance Automation",
     "summary": "Fintrid automates U.S. mortgage TRID compliance by analyzing Loan Estimates and Closing Disclosures for tolerance violations, performing fee-level document diffing, and producing compliance-ready audit reports. The system uses LandingAI ADE for PDF parsing and Google Gemini 2.5 Pro for structured extraction, automatically detecting document types, AI-matching borrower-paid fees, detecting reclassified fees, and evaluating TRID tolerance buckets (Zero/10%/Unlimited). Features include visual PDF highlights with color-coded changes, aggregate 10% tolerance testing with automatic cure calculation, and curated compliance reports with AI-written loan summaries."
@@ -147,7 +147,7 @@
     "team_name": "ADE-gotiator",
     "github": "https://github.com/panforrest/ADE-gotiator",
     "youtube": "https://www.youtube.com/watch?v=H_u9Wc3LahU",
-    "team_members": "Forrest Pan fpreactrn@gmail.com Conveneur Cofounder / Jitender Thakur tjitender@gmail.com, Bank of America Researcher",
+    "team_members": "Forrest Pan Conveneur Cofounder / Jitender Thakur , Bank of America Researcher",
     "team_size": 3,
     "abstract": "Contract Negotiation Intelligence",
     "summary": "ADE-gotiator democratizes contract negotiation by automatically extracting key terms from financial agreements, assessing risk levels, and providing AI-generated recommendations with negotiation scripts. The system uses LandingAI ADE for document extraction with grounding and OpenAI GPT-4o for parallel AI recommendations (2-3 seconds for 10 recommendations), analyzing 10 critical terms including payment amounts, interest rates, liability caps, and termination clauses. Features three-column layout with original PDF, extracted terms with risk scoring, and market-competitive alternatives with success probability estimates and financial impact analysis."
@@ -156,7 +156,7 @@
     "team_name": "Pura Vida Sloth",
     "github": "https://github.com/omontes/pura-vida-sloth",
     "youtube": "https://youtu.be/9g3f8udjWU0",
-    "team_members": "Oscar Montes and Michael Varela (omontes@nairu.ai, mvarela@nairu.ai)",
+    "team_members": "Oscar Montes and Michael Varela (, )",
     "team_size": 1,
     "abstract": "FinTech Hype Cycle Intelligence",
     "summary": "Canopy Intelligence provides multi-layer temporal intelligence triangulation across 4 layers (Innovation, Market Formation, Financial Reality, Narrative) using 14 independent data sources to detect technology maturity positioning 12-24 months ahead of market consensus. The 12-agent LangGraph system processes 2,000+ documents through a 5-phase pipeline: data collection, LLM processing with GPT-4o-mini, Neo4j pure GraphRAG storage, multi-agent analysis with cross-layer contradiction detection, and real-time visualization with WebSocket streaming. Features FastAPI backend, React 18 frontend with custom D3.js Hype Cycle charts, evidence-based analysis with 5-15 source citations per score, and production-ready architecture with checkpoint/resume capabilities."
@@ -165,7 +165,7 @@
     "team_name": "Finbuster",
     "github": "https://github.com/Abi5678/Finbuster_landingAI_FraudLensAI",
     "youtube": "https://youtu.be/0hUnlTnXpp8",
-    "team_members": "Name: Abishek Muralikrishna; Work Email: ab1659@usnh.edu, Organization: University of New Hampshire, Title: Research Assistant",
+    "team_members": "Name: Abishek Muralikrishna; Work Email: , Organization: University of New Hampshire, Title: Research Assistant",
     "team_size": 1,
     "abstract": "Insurance Fraud Ring Detection",
     "summary": "FraudLens AI detects not just individual fraud but organized fraud rings across multiple claims in under 5 minutes, combining LandingAI ADE with Google Gemini 2.0 Flash. The breakthrough multi-agent system features AI-generated investigative narratives explaining what happened and why it's suspicious, fraud collaboration network detection tracking 10-25+ individuals using network risk scoring (0-100), and deepfake/photo manipulation detection with 5 independent algorithms. Achieves 99.9% faster processing than traditional 60-day investigations, 92%+ fraud detection rate, and $45M+ annual savings for mid-size insurers processing 50,000 claims yearly."
@@ -174,7 +174,7 @@
     "team_name": "Crunchtime Coder",
     "github": "https://github.com/kaushik-holla/PactProof-Compliance-Invoice-Reconciliation/tree/main",
     "youtube": "https://youtu.be/3JVC2obJunU",
-    "team_members": "Kaushik Holla, kholla@redventures.com, Red Ventures, Senior Data Scientist",
+    "team_members": "Kaushik Holla, Red Ventures, Senior Data Scientist",
     "team_size": 1,
     "abstract": "Contract-Invoice Compliance Verification",
     "summary": "PactProof automates accounts payable compliance by comparing supplier invoices to governing contracts and SOWs, detecting variances in unit prices, quantities, currencies, and payment terms. The system uses LandingAI ADE for document extraction with grounding, performs deterministic reconciliation with fuzzy matching (85%+ confidence), and generates CFO-ready exception notes in under 8 seconds. Features include price variance detection (2% tolerance), quantity cap enforcement, unknown line-item flagging, and LLM-polished markdown reports with Google Gemini 2.0 Flash. Built with FastAPI backend (Pydantic validation, RapidFuzz matching) and React TypeScript frontend with Zustand state management, targeting services/SOW and order-form invoices where POs don't capture contract details."
@@ -183,7 +183,7 @@
     "team_name": "CrediLens",
     "github": "https://github.com/Rogan-afk/credilens.app",
     "youtube": "https://youtu.be/2ttvT7-4H10",
-    "team_members": "Team Members (Name, Work Email, Organization, Title)\n\n1. Aurokrishnaa Ravindran Lakshmi – aurokrishnaa2000@gmail.com – University at Buffalo – Finance Lead & Narration  \n2. Nithin Rogan A – nithinro@buffalo.edu – University at Buffalo – AI & Backend Lead  \n3. Hariharan S – hsriram@buffalo.edu – University at Buffalo – UI/UX Lead & Visual Design",
+    "team_members": "Team Members (Name, Work Email, Organization, Title) 1. Aurokrishnaa Ravindran Lakshmi – – University at Buffalo – Finance Lead & Narration 2. Nithin Rogan A – – University at Buffalo – AI & Backend Lead 3. Hariharan S – – University at Buffalo – UI/UX Lead & Visual Design",
     "team_size": 2,
     "abstract": "Credit Analysis Intelligence Platform",
     "summary": "CrediLens transforms corporate filings (10-K/Annual Reports) into structured credit health insights using multimodal agentic RAG architecture. The system integrates LandingAI ADE for structured extraction of sections, tables, and narratives, LLM reasoning (OpenAI/Gemini) for contextual summarization, and FAISS vector retrieval for grounding conversational responses. Features include credit health scoring (0-100), automated financial ratio computation (liquidity, leverage, profitability), knowledge graph mapping of business entities and risk factors, interactive React dashboard with gauges and charts, and downloadable professional PDF reports with company logos and key metrics."
@@ -192,7 +192,7 @@
     "team_name": "Alpha Agents",
     "github": "https://github.com/anshuldani/finance_ai_hackathon",
     "youtube": "https://www.loom.com/share/c1bf57835c32434aa53edf2ee0cefcdb",
-    "team_members": "1. Sanjana Waghray - swaghray1@hawk.illinoistech.edu\n2. Anshul Dani - adani2@hawk.illinoistech.edu",
+    "team_members": "1. Sanjana Waghray - 2. Anshul Dani -",
     "team_size": 2,
     "abstract": "Activist Investor Intelligence Platform",
     "summary": "Shareholder Catalyst reimagines activist investing by transforming dense corporate filings into actionable insights using AI-powered document intelligence and financial modeling. The system extracts structured data from SEC filings (10-K, 8-K, proxy statements) using LandingAI, computes activist-relevant metrics (ROE, ROIC, cash efficiency, leverage), and analyzes governance (board composition, tenure, compensation alignment). Features LLM-based investment thesis generation synthesizing financial and governance data, interactive Streamlit dashboard for dynamic exploration, peer benchmarking for relative performance analysis, and professional report export in PDF/JSON/Markdown formats, processing complete company profiles in 45 seconds."
@@ -201,7 +201,7 @@
     "team_name": "67",
     "github": "https://github.com/KhoaLaptop/Counterfactual-Financial-Oracle-67",
     "youtube": "https://youtu.be/2OMJmIhLmh8",
-    "team_members": "(Le Minh Quan Pham, plminhquan2007@gmail.com, Millersville Univ, Freshman), (Anh Khoa Dang, danganhkhoa7@gmail.com, Perkiomen School, Junior)",
+    "team_members": "(Le Minh Quan Pham, Millersville Univ, Freshman), (Anh Khoa Dang, Perkiomen School, Junior)",
     "team_size": 2,
     "abstract": "Counterfactual Financial Simulation",
     "summary": "Counterfactual Financial Oracle implements a comprehensive financial analysis pipeline with AI-powered simulation, critique, and evaluation. The system features direct PDF upload and extraction using LandingAI ADE API, HTML table parsing that automatically maps ADE markdown tables into structured financial fields (revenue, opex, net income, balance sheet, cash flow), and three-agent architecture with OpenAI simulation using formula-driven projections with 10,000 Monte Carlo scenarios, DeepSeek critic for forensic review with constraint checking and validation, and ChatGPT evaluator for deterministic application of fixes. Includes Streamlit app with real-time debate logs, scenario controls (OpEx delta, revenue delta, discount rate), and PDF export."
@@ -210,7 +210,7 @@
     "team_name": "ParetoOptimal",
     "github": "https://github.com/n8mauer/ParetoOptimalAgents",
     "youtube": "https://youtu.be/lzYugeCFIoU",
-    "team_members": "Nate Mauer; nmauer@gatech.edu; GT and Booz Allen Hamilton; MS CS Student and AI/ML Solutions Architect",
+    "team_members": "Nate Mauer; ; GT and Booz Allen Hamilton; MS CS Student and AI/ML Solutions Architect",
     "team_size": 1,
     "abstract": "Multi-Agent Economic Trading System",
     "summary": "ParetoOptimal combines LandingAI ADE, Multi-Agent Reinforcement Learning (MADDPG + QMIX), and AWS Bedrock LLM reasoning to extract real-world economic data and learn Pareto-optimal trading strategies. The system processes 40 documents across 7 categories (tariff schedules, commodity prices, sentiment proxies, trade balance releases) using ADE for autonomous parsing and structured extraction, trains 3 specialized trading agents (Gold, Tariff, Sentiment) that coordinate via QMIX mixing network for decentralized execution, and provides AWS Bedrock Claude Sonnet 4.5 for semantic analysis and reasoning. Features live interactive Streamlit app with dynamic pricing, real-time signal generation, and coordinated trading insights for retail investors."
@@ -219,7 +219,7 @@
     "team_name": "Nickisback",
     "github": "https://github.com/nickisback90",
     "youtube": "https://youtu.be/bz-FFhIji88",
-    "team_members": "nruizfinance@gmail.com",
+    "team_members": "",
     "team_size": 1,
     "abstract": "Repository Not Available",
     "summary": "Repository not found or access restricted. The GitHub URL (https://github.com/nickisback90) does not point to a valid accessible repository. Unable to extract project details."
@@ -228,7 +228,7 @@
     "team_name": "Eyesquare",
     "github": "https://github.com/ikitcheng/financial-advisor-agent",
     "youtube": "https://www.youtube.com/watch?v=oqlkD0KvhY4",
-    "team_members": "Matthew Cheng (matthewkit@gmail.com), Ray Lao,  Rijul Sharma (confirm speaker today)",
+    "team_members": "Matthew Cheng (), Ray Lao, Rijul Sharma (confirm speaker today)",
     "team_size": 1,
     "abstract": "Credit Card Spending Analysis Assistant",
     "summary": "Financial Advisor Agent analyzes credit card statements using AI-powered document extraction and hybrid RAG to provide personalized financial insights. The system uses LandingAI ADE for parsing statements to markdown with structured data extraction (transactions, balances, payment dates), automatically categorizes spending (dining, transportation, entertainment, housing), calculates financial health scores (0-100), and generates monthly spending reports. Features hybrid RAG indexing with sentence-transformers embeddings, interactive Q&A with citations from statements, spending pattern analysis with trend detection, and personalized budgeting/investment recommendations based on financial health assessment."
@@ -237,7 +237,7 @@
     "team_name": "Crow",
     "github": "https://github.com/aryanvij02/crow",
     "youtube": "https://youtu.be/bhXDjI82pHo",
-    "team_members": "Aryan Vij, aryanv0213@berkeley.edu, Crow, Founder\nBen Sikes, bcsikes@berkeley.edu, Crow, Founder\nJai Bhatia, jai.bhatia@berkeley.edu, Crow, Founder",
+    "team_members": "Aryan Vij, Crow, Founder Ben Sikes, Crow, Founder Jai Bhatia, Crow, Founder",
     "team_size": 0,
     "abstract": "AI-Powered Investment Analysis Platform",
     "summary": "Crow provides comprehensive investment analysis through an 8-module AI-powered pipeline with interactive visualization. The platform combines Next.js frontend with shadcn/ui components and React Flow for workflow visualization, Flask API backend wrapping Python analysis modules, and real-time pipeline execution displaying results through interactive flow diagrams. Features modular architecture for easy extension with new pipeline modules, responsive design with modern UI components, and complete analysis workflow covering risk assessment, evaluation, and processing. Built with comprehensive error handling, real-time status monitoring, and CORS-enabled frontend-backend communication for seamless integration."
@@ -246,7 +246,7 @@
     "team_name": "W11",
     "github": "https://github.com/invst-git/tmc-v1",
     "youtube": "https://youtu.be/JegVT3a4zgk",
-    "team_members": "Nitish Dandu, dandunitish@gmail.com, University, Undergrad",
+    "team_members": "Nitish Dandu, University, Undergrad",
     "team_size": 0,
     "abstract": "Enterprise Invoice Processing Automation",
     "summary": "TMC-v1 transforms traditional accounts payable by automating every step from email intake to payment, processing invoices from email attachments, extracting structured data with Landing AI OCR, and matching against purchase orders. The system monitors email accounts for invoice attachments from configured vendors, extracts all relevant data using Landing AI's DPT-2 model handling multiple formats/currencies/languages, automatically matches invoices to open POs with configurable tolerance thresholds, flags exceptions for manual review, and processes payments through Stripe integration. Reduces processing time from 15 minutes to 2 minutes per invoice, achieves near-zero error rate vs 1-3% manual errors, and enables scale without proportional headcount growth."
@@ -255,7 +255,7 @@
     "team_name": "Ken.(Duplication)",
     "github": "https://github.com/Prasanna721/ken-analyst",
     "youtube": "https://www.loom.com/share/86e94bd4f0fc4753ad648d4b17cb28f9",
-    "team_members": "Prasanna A P, prasanna@antiparticle.co, Anti Particle, Founding Engineer",
+    "team_members": "Prasanna A P, Anti Particle, Founding Engineer",
     "team_size": 0,
     "abstract": "Repository Not Available",
     "summary": "Repository not found or access restricted. The GitHub URL (https://github.com/Prasanna721/ken-analyst) does not point to a valid accessible repository. Unable to extract project details."
@@ -273,7 +273,7 @@
     "team_name": "PharmaSight",
     "github": "https://github.com/JJC3321/PharmaSight/tree/main",
     "youtube": "https://youtu.be/kX0jAY_eK-c",
-    "team_members": "Jian Jin Chen, jchen511@fordham.edu, Fordham University, Student",
+    "team_members": "Jian Jin Chen, Fordham University, Student",
     "team_size": 0,
     "abstract": "Biotech Clinical Trial Intelligence",
     "summary": "PharmaSight automates biotech due diligence workflows by gathering scientific evidence, clinical trial activity, and company process documentation to produce investor-ready PDF briefings. The system orchestrates Google Gemini with custom retrieval tooling for intelligent analysis, integrates LandingAI ADE with DPT-2 model for advanced PDF parsing, and combines FastAPI backend with React Vite frontend for accessible product workflows. Features automated evidence gathering from scientific sources, clinical trial activity monitoring, company documentation analysis, and AI-powered insight generation. Built with comprehensive configuration management via environment variables, multi-agent system for specialized tasks, and professional PDF report generation for investors and analysts."
@@ -282,7 +282,7 @@
     "team_name": "Diligent",
     "github": "https://github.com/manuvikash/mna-agent",
     "youtube": "https://youtu.be/VKW7LaO2ntI",
-    "team_members": "Ayaan, ayaangazali.work@gmail.com, Diligent, CEO",
+    "team_members": "Ayaan, Diligent, CEO",
     "team_size": 0,
     "abstract": "AI-Powered M&A Due Diligence",
     "summary": "Diligent assists deal teams by extracting structured data from financial documents, performing semantic search across datarooms, and providing AI-generated insights with full citations. The system extracts 39 financial fields (revenue, EBITDA, debt, margins) from 10-Q/10-K reports, computes 5 financial ratios (D/E, net margin, ROE, debt coverage), and implements multi-query RAG with hybrid indexing (70% semantic, 30% keyword) for accurate document retrieval. Features LandingAI ADE for PDF parsing, Marker for markdown conversion, Pathway for data normalization and metric computation, sentence-transformers for 384-dim embeddings, and Google Gemini Flash for query decomposition and answer synthesis. Built with Next.js 14 TypeScript frontend, FastAPI SQLModel backend with SQLite, and comprehensive citation tracking with sub-query attribution for transparent, verifiable analysis."
@@ -300,7 +300,7 @@
     "team_name": "Muhammad Zeeshan",
     "github": "https://github.com/MalikZeeshan1122/ad-audit-buddy   https://lovable.dev/projects/a4597e8f-2f9b-4674-bedc-c6238bbefa5f",
     "youtube": "https://drive.google.com/file/d/1oXxLn8KR5qY6Bz2R3HX-7iJ3Lo8P2Y2N/view?usp=sharing",
-    "team_members": "AI Squad malikzeeshan3.1417@gmail.com",
+    "team_members": "AI Squad",
     "team_size": 0,
     "abstract": "Lovable Project Template",
     "summary": "This is a Lovable.dev project template built with modern web technologies including Vite, TypeScript, React, shadcn-ui, and Tailwind CSS. The project is configured for rapid development with hot reloading, instant preview, and GitHub Codespaces support. Features seamless integration with Lovable's AI-powered development platform where changes made via prompting are automatically committed to the repository. Includes comprehensive deployment options through Lovable's publishing feature and supports custom domain connections. Built as a starting template for web applications with modern tooling and developer-friendly workflows."
@@ -309,7 +309,7 @@
     "team_name": "FinGenie",
     "github": "https://github.com/sss483492/financial-doc-agent",
     "youtube": "https://youtu.be/Pt2Q8iQ25lI",
-    "team_members": "Surendra Singh, surendra.singh02@nagarro.com, Nagarro, Associate Principal Engineer",
+    "team_members": "Surendra Singh, Nagarro, Associate Principal Engineer",
     "team_size": 0,
     "abstract": "Financial Document Intelligence Agent",
     "summary": "FinGenie implements an agentic AI workflow combining LandingAI ADE for structured extraction, AWS Bedrock for embeddings and LLM reasoning, and FAISS for vector search in an interactive Streamlit interface. The system extracts fields, values, and insights from financial PDFs using ADE, enables efficient similarity search across extracted text with FAISS vector indexing, and uses Claude 3 Sonnet via AWS Bedrock for financial Q&A and summaries. Features simple and intuitive Streamlit UI, multi-document query support, and modern Python environment management with uv. Built with comprehensive AWS integration (Bedrock embeddings and LLM models), LangChain/LangGraph for workflow orchestration, and efficient vector similarity search for fast retrieval across large document collections."
@@ -318,7 +318,7 @@
     "team_name": "vramanr",
     "github": "https://github.com/vramanr/AIRiskGuard.git",
     "youtube": "No",
-    "team_members": "Venkatraman Rajaram, venkatraman@innovatixinc.com, Innovatix technology partners, QA Manager",
+    "team_members": "Venkatraman Rajaram, Innovatix technology partners, QA Manager",
     "team_size": 0,
     "abstract": "Financial Risk & Fraud Detection",
     "summary": "AI RiskGuard provides intelligent financial risk and fraud detection using ML-based dynamic risk scoring, unsupervised anomaly detection, and LLM-powered explanations. The platform assigns adaptive risk scores to entities and transactions, detects unusual transaction patterns using unsupervised ML, and explains suspicious activity in plain English using OpenAI GPT API. Features graph-based relationship mapping with Neo4j to uncover hidden fraud rings and circular money flows, continuous learning loop retraining models using auditor validation feedback, and real-time risk intelligence. Built with FastAPI backend, React frontend with Plotly visualizations, Scikit-learn and PyTorch for ML models, PostgreSQL for transactional data, and Neo4j graph database for relationship analysis. Delivers 40% reduction in fraud losses and 60% improvement in audit productivity."
@@ -327,7 +327,7 @@
     "team_name": "x402",
     "github": "http://github.com/Steve-Dusty/homes-ai",
     "youtube": "https://youtu.be/hBcWVf1s8H0?si=2HADZfz3tt4sOrYS",
-    "team_members": "Steve Kuo kuantingk2@gmail.com",
+    "team_members": "Steve Kuo",
     "team_size": 0,
     "abstract": "AI Property Search Platform",
     "summary": "Homes AI combines Fetch.ai uAgents, ASI-1 mini, and MCP tools for intelligent real estate search through natural conversation. The platform features three specialized agents: Scoping Agent for natural conversation gathering location, budget, beds, and baths using ASI-1 mini; Research Agent for property search via Tavily web search and BrightData real estate scraping MCP integrations; and Mapbox Agent for interactive map visualization with real coordinates. Built with pure uAgents REST endpoints (no FastAPI adapters), Next.js 15 and React 19 TypeScript frontend, Mapbox GL JS for visualization, and direct SSE endpoint integration with MCP tools. Features smart location recommendations based on job and lifestyle, multi-source property data aggregation, and straightforward helpful responses without robotic AI repetition."
@@ -336,7 +336,7 @@
     "team_name": "Caballo AI",
     "github": "https://github.com/pbrain19/caballo-money",
     "youtube": "https://www.loom.com/share/4a0492ec748a4116915424d63e7801a4",
-    "team_members": "Paul garcia - paul@andinolabs.io, Caballo Money, CTO",
+    "team_members": "Paul garcia - , Caballo Money, CTO",
     "team_size": 0,
     "abstract": "AI-Powered DeFi Yield Optimizer",
     "summary": "Caballo democratizes DeFi yield generation by providing a voice-first AI-driven wealth management platform that educates users about liquidity pools, assesses risk tolerance, and automatically deploys capital into highest-yield opportunities across multiple blockchains. The system uses OpenAI Realtime API for ultra-low latency voice conversations, @openai/agents framework for tool calling and structured interactions, and Circle CCTP for secure native USDC cross-chain transfers. Features WebRTC peer-to-peer audio streaming, Three.js and React Three Fiber for immersive 3D orb visualizations, Thirdweb SDK for production-ready Web3 wallet connectivity, and Prisma ORM with PostgreSQL for type-safe database operations. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4, targeting the massive gap where 95% of 300M+ crypto holders never access 10-40% APY yields due to complexity. Delivers auto-rebalancing, real-time earnings tracking, and full non-custodial control."
@@ -354,7 +354,7 @@
     "team_name": "Personal Finance App",
     "github": "https://github.com/mi-kapital/personal-finance-app",
     "youtube": "https://github.com/mi-kapital/personal-finance-app",
-    "team_members": "Juan Jose Giraldo Jimenez, juanjosegdoj@gmail.com,Devlane, Software developer\nEnid Soleny Guarin Quintero, solenyquintero7@gmail.com,,Software developer",
+    "team_members": "Juan Jose Giraldo Jimenez,Devlane, Software developer Enid Soleny Guarin Quintero,,Software developer",
     "team_size": 0,
     "abstract": "Repository Not Available",
     "summary": "Repository not found or access restricted. The GitHub URL (https://github.com/mi-kapital/personal-finance-app) does not point to a valid accessible repository. Unable to extract project details."
@@ -363,7 +363,7 @@
     "team_name": "Gair lab inc",
     "github": "https://www.githun.com/hamzabfx",
     "youtube": "http.www.linkdin.com/in/hamza-khan.a1b73800",
-    "team_members": "HAMZA KHAN \nhk6310523@gmail.com",
+    "team_members": "HAMZA KHAN",
     "team_size": 0,
     "abstract": "Invalid Repository URL",
     "summary": "The provided GitHub URL (https://www.githun.com/hamzabfx) is invalid and does not point to a valid GitHub repository. The domain 'githun.com' is not the correct GitHub domain. Unable to access or extract project details."
@@ -372,7 +372,7 @@
     "team_name": "Hack-Ed ( I think)",
     "github": "https://github.com/edilma/coderisk-sf",
     "youtube": "https://youtu.be/ARuEhwtL-gg",
-    "team_members": "Edilma Riano - EdilmaDev@gmail.com ,",
+    "team_members": "Edilma Riano -",
     "team_size": 0,
     "abstract": "Property Risk Intelligence Platform",
     "summary": "The Structural Risk Index (SRI) system transforms municipal code violation data into actionable risk intelligence using a proprietary weighted scoring algorithm. The platform assigns risk scores (1-26+ points) based on code violation patterns with weighted categories: Unsafe Structure (+5), 40/50-Year Inspection (+3), Work Without Permit (+2), Nuisance/Maintenance (+1), and Multiple Violations (+1 each). Currently analyzes 1,089 properties across 3 South Florida municipalities, identifying high-risk properties (SRI ≥ 8) for targeted intervention. Features interactive dashboard with real-time filtering, cross-validated against municipal inspection priorities, and provides intelligence for investors, insurance companies, residents, and city safety departments."
@@ -381,7 +381,7 @@
     "team_name": "FinForge AI",
     "github": "https://github.com/Thanakorn-AI/FinForge_AI_submission",
     "youtube": "https://www.youtube.com/watch?v=gccDz-vPghs",
-    "team_members": "Thanakorn Kitviriya, dukethanakorn@gmail.com, Nihon M&A Center, M&A Consultant",
+    "team_members": "Thanakorn Kitviriya, Nihon M&A Center, M&A Consultant",
     "team_size": 0,
     "abstract": "Financial Document Analysis System",
     "summary": "FinForge AI transforms complex financial PDF documents into interactive Excel reports and visualizations using multi-stage AI processing. The system combines LandingAI ADE for handling picture-based and scanned PDFs with complex table structures, Claude Agent SDK for conversational interface, and Claude Sonnet 4.5 for AI-powered table classification (Balance Sheet, P&L Statement, Cash Flow, Fixed Assets). Automates the entire pipeline from PDF upload to insights generation, eliminating manual data extraction work that typically takes hours per document. Features multi-file upload processing, automatic table extraction and classification, built-in tools for data access, and instant generation of Excel files with HTML visualizations."
@@ -390,7 +390,7 @@
     "team_name": "K2",
     "github": "https://github.com/mbzuaiciao/K2-Risk",
     "youtube": "https://youtu.be/JiAMatDFBJY",
-    "team_members": "C Chao, paris.tocode@gmail.com",
+    "team_members": "C Chao",
     "team_size": 0,
     "abstract": "Repository Not Available",
     "summary": "Repository not found or access restricted. The GitHub URL (https://github.com/mbzuaiciao/K2-Risk) does not point to a valid accessible repository. Unable to extract project details."
@@ -399,7 +399,7 @@
     "team_name": "Ana",
     "github": "https://github.com/nehasmhs/Financial-AI-Hackathon",
     "youtube": "https://youtu.be/dHHgJFwuBPs",
-    "team_members": "nehasmhs46@gmail.com",
+    "team_members": "",
     "team_size": 0,
     "abstract": "Bank Document Performance Analysis",
     "summary": "This project focuses on building logic for financial document performance analysis specifically designed for banking institutions. The system analyzes financial documents to extract performance metrics and insights relevant to bank operations. While the README is minimal, the project aims to provide automated analysis capabilities for financial document processing in banking contexts. Built as part of the Financial AI Hackathon, targeting document intelligence and performance evaluation workflows for financial institutions."
@@ -408,7 +408,7 @@
     "team_name": "Quant Duo",
     "github": "https://github.com/zkkhan01/FinSight",
     "youtube": "https://v0-fin-sight11-av.vercel.app/",
-    "team_members": "Zain Khan - zkhan65@depaul.edu\nShanzay Khan - skhan258@depaul.edu",
+    "team_members": "Zain Khan - Shanzay Khan -",
     "team_size": 0,
     "abstract": "KYC/AML Compliance Intelligence System",
     "summary": "FinSight transforms PDFs and images into structured, validated, and audit-ready compliance intelligence using ADE-style extraction and a declarative rule engine. The system ingests KYC packets, identity documents, bank forms, and regulatory disclosures, extracting structured fields using LandingAI-style document extraction pipeline, normalizing data into canonical schema, and evaluating against declarative YAML rulepacks representing KYC, AML, and document-integrity controls. Features deterministic pass/fail outcomes with field-level evidence, metadata traces, and configuration-driven thresholds for explainability and reproducibility. Built with FastAPI backend, React frontend with premium dashboard, Docker Compose deployment, and pluggable rule system supporting custom compliance requirements. Emphasizes transparency, auditability, and system-level explainability for automated onboarding pipelines, internal audit workflows, and pre-compliance screening systems."
@@ -417,7 +417,7 @@
     "team_name": "warpflow",
     "github": "https://github.com/HtmMhmd/finantial-analizer.git",
     "youtube": "https://www.youtube.com/watch?v=E9zePgrR6cI",
-    "team_members": "(hatem mohamed, hatemmohamed3141@gmail.com, alexandria university, indevidual )",
+    "team_members": "(hatem mohamed, alexandria university, indevidual )",
     "team_size": 0,
     "abstract": "Multi-Agent Financial Document Analysis",
     "summary": "DocAnalizer provides automated end-to-end financial document analysis using CrewAI multi-agent architecture with three specialized agents: Extractor for lossless structured JSON extraction with provenance tracking, Analyst for metrics computation with stress-testing scenarios, and Report Writer for stakeholder-ready Markdown reports. The system integrates LandingAI ADE for robust OCR and structure extraction, uses sandboxed calculator tool for safe formula evaluation (ratios, CAGR, NPV, WACC), and supports pluggable LLM backends (OpenRouter, Groq, OpenAI, Gemini) via LiteLLM abstraction. Features strict output contracts with JSON schemas and Markdown section ordering, provenance tracking with page and locator for every sourced metric, scenario analysis with base/downside/upside numeric deltas, and configuration-driven prompts via agents.yaml and tasks.yaml. Built with Python 3.10+, CrewAI orchestration, UV environment management, and optional Pushover integration for push notifications."
