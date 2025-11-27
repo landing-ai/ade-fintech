@@ -58,7 +58,7 @@
 
     async function loadProjects() {
         try {
-            const response = await fetch('data/projects_data.json?v=34');
+            const response = await fetch('data/projects_data.json?v=36');
             allProjects = await response.json();
             console.log('Loaded projects:', allProjects.length);
             console.log('First project:', allProjects[0].team_name, {
