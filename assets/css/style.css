@@ -1282,7 +1282,8 @@ a:hover {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: var(--spacing-md);
-    color: var(--color-gray-dark);
+    color: var(--color-white);
+    opacity: 0.95;
 }
 
 .testimonial-author {
