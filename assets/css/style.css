@@ -3,19 +3,26 @@
    "Determinant Precision"
    ================================ */
 
-/* Color Palette - A System of Signal and Structure */
+/* Color Palette - Matrix Digital Theme */
 :root {
-    /* Primary Structural Colors */
+    /* Primary Structural Colors - Matrix */
     --color-black: #000000;
     --color-white: #FFFFFF;
-    --color-gray-light: #F5F5F5;
-    --color-gray-medium: #E0E0E0;
-    --color-gray-dark: #333333;
+    --color-gray-light: #0a0a0a;
+    --color-gray-medium: #1a1a1a;
+    --color-gray-dark: #0d0d0d;
+
+    /* Matrix Green Palette */
+    --color-matrix-dark: #001a00;
+    --color-matrix-primary: #00ff41;    /* Bright Matrix Green */
+    --color-matrix-secondary: #00cc33;  /* Medium Green */
+    --color-matrix-tertiary: #008f11;   /* Dark Green */
+    --color-matrix-glow: #39ff14;       /* Neon Green */
 
     /* Accent Colors - Intelligence Cues */
-    --color-blue: #4A9FE8;          /* Classification/Interaction */
-    --color-green: #2ECC71;          /* Verification */
-    --color-orange: #FF6B35;         /* Alert/Emphasis */
+    --color-blue: #00ff41;           /* Changed to Matrix green */
+    --color-green: #00ff41;          /* Matrix green */
+    --color-orange: #00ff41;         /* Changed to Matrix green for consistency */
 
     /* Typography */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -58,17 +65,17 @@ html {
 }
 
 body {
-    font-family: var(--font-sans);
+    font-family: var(--font-mono);
     font-weight: 400;
     line-height: 1.6;
-    color: var(--color-black);
-    background-color: var(--color-white);
+    color: var(--color-matrix-primary);
+    background-color: #000000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
 
-/* Futuristic Background Pattern */
+/* Matrix Digital Rain Background */
 body::before {
     content: '';
     position: fixed;
@@ -77,11 +84,21 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 20% 50%, rgba(74, 159, 232, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(46, 204, 113, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 50% 20%, rgba(255, 107, 53, 0.02) 0%, transparent 50%);
+        linear-gradient(180deg, transparent 0%, rgba(0, 26, 0, 0.3) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 65, 0.03) 2px, rgba(0, 255, 65, 0.03) 4px);
     pointer-events: none;
     z-index: 0;
+    animation: scanlines 8s linear infinite;
+}
+
+/* Scanline effect */
+@keyframes scanlines {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
 }
 
 /* Typography - Systematic Clarity */

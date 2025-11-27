@@ -1,0 +1,560 @@
+/* ==========================================
+   MATRIX DIGITAL RAIN THEME
+   "Welcome to the Real World"
+   ========================================== */
+
+/* Matrix Glitch Animation */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* Matrix Text Flicker */
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px var(--color-matrix-glow), 0 0 20px var(--color-matrix-primary);
+    }
+    50% {
+        opacity: 0.8;
+        text-shadow: 0 0 5px var(--color-matrix-glow);
+    }
+}
+
+/* Digital Rain Columns */
+@keyframes rain {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Phosphor Glow Pulse */
+@keyframes phosphorGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 5px var(--color-matrix-primary),
+            0 0 10px var(--color-matrix-primary),
+            0 0 20px var(--color-matrix-secondary),
+            0 0 40px var(--color-matrix-secondary),
+            inset 0 0 10px rgba(0, 255, 65, 0.1);
+    }
+    50% {
+        box-shadow:
+            0 0 10px var(--color-matrix-primary),
+            0 0 20px var(--color-matrix-primary),
+            0 0 40px var(--color-matrix-glow),
+            0 0 80px var(--color-matrix-glow),
+            inset 0 0 20px rgba(0, 255, 65, 0.2);
+    }
+}
+
+/* Terminal Typing Effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Matrix Override Styles */
+
+/* All text becomes Matrix green */
+body * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Section backgrounds */
+.section {
+    background: rgba(0, 0, 0, 0.85);
+    border-top: 1px solid rgba(0, 255, 65, 0.2);
+    border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.section-dark {
+    background: rgba(0, 10, 0, 0.95) !important;
+    border-top: 1px solid rgba(0, 255, 65, 0.3);
+    border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+.section::before {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 65, 0.03) 2px,
+            rgba(0, 255, 65, 0.03) 4px
+        ) !important;
+}
+
+/* Enhanced Header - Terminal Style */
+.header {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 2px solid var(--color-matrix-primary) !important;
+    box-shadow:
+        0 0 20px rgba(0, 255, 65, 0.5),
+        0 4px 20px rgba(0, 0, 0, 0.8) !important;
+}
+
+.nav-link {
+    color: var(--color-matrix-primary) !important;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 5px var(--color-matrix-glow);
+}
+
+.nav-link:hover {
+    animation: glitch 0.3s infinite;
+    text-shadow: 0 0 10px var(--color-matrix-glow), 0 0 20px var(--color-matrix-primary);
+}
+
+.nav-link.active {
+    color: var(--color-matrix-glow) !important;
+    text-shadow:
+        0 0 10px var(--color-matrix-glow),
+        0 0 20px var(--color-matrix-primary),
+        0 0 30px var(--color-matrix-secondary) !important;
+    animation: flicker 2s infinite;
+}
+
+.nav-link::after {
+    background: var(--color-matrix-primary) !important;
+    box-shadow: 0 0 10px var(--color-matrix-glow) !important;
+    height: 2px !important;
+}
+
+/* Hero Section - Matrix Entry */
+.hero {
+    background: #000000 !important;
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 50px,
+            rgba(0, 255, 65, 0.05) 50px,
+            rgba(0, 255, 65, 0.05) 51px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 50px,
+            rgba(0, 255, 65, 0.05) 50px,
+            rgba(0, 255, 65, 0.05) 51px
+        );
+    animation: none !important;
+}
+
+.hero::after {
+    display: none;
+}
+
+.hero-background {
+    opacity: 0.3 !important;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 50px, var(--color-matrix-primary) 50px, var(--color-matrix-primary) 51px),
+        repeating-linear-gradient(90deg, transparent, transparent 50px, var(--color-matrix-primary) 50px, var(--color-matrix-primary) 51px) !important;
+    animation: pulse 4s ease-in-out infinite !important;
+}
+
+.hero-title {
+    color: var(--color-matrix-primary) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--color-matrix-primary) !important;
+    text-shadow:
+        0 0 10px var(--color-matrix-glow),
+        0 0 20px var(--color-matrix-primary),
+        0 0 30px var(--color-matrix-secondary),
+        0 0 40px var(--color-matrix-secondary) !important;
+    animation: flicker 3s infinite, glitch 5s infinite !important;
+    font-family: var(--font-mono);
+}
+
+.hero-subtitle {
+    color: var(--color-matrix-secondary) !important;
+    text-shadow: 0 0 10px var(--color-matrix-tertiary);
+    font-family: var(--font-mono);
+}
+
+.hero-description {
+    color: var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+}
+
+/* Buttons - Terminal Style */
+.btn {
+    font-family: var(--font-mono);
+    border: 2px solid var(--color-matrix-primary) !important;
+    box-shadow:
+        0 0 10px rgba(0, 255, 65, 0.5),
+        inset 0 0 10px rgba(0, 255, 65, 0.1);
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: var(--color-matrix-primary) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    display: none;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::after {
+    left: 100%;
+}
+
+.btn:hover {
+    background: rgba(0, 255, 65, 0.2) !important;
+    color: var(--color-matrix-glow) !important;
+    border-color: var(--color-matrix-glow) !important;
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 20px rgba(0, 255, 65, 0.8),
+        0 0 40px rgba(0, 255, 65, 0.5),
+        inset 0 0 20px rgba(0, 255, 65, 0.2) !important;
+    animation: phosphorGlow 1s infinite;
+}
+
+/* Cards - Terminal Windows */
+.about-card, .stat-card {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid var(--color-matrix-tertiary) !important;
+    box-shadow:
+        0 0 20px rgba(0, 255, 65, 0.3),
+        inset 0 0 20px rgba(0, 255, 65, 0.05) !important;
+    backdrop-filter: blur(5px);
+}
+
+.about-card::before, .stat-card::before {
+    content: '> SYSTEM_READY';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-matrix-tertiary);
+    opacity: 0.5;
+}
+
+.about-card:hover, .stat-card:hover {
+    border-color: var(--color-matrix-primary) !important;
+    box-shadow:
+        0 0 30px rgba(0, 255, 65, 0.6),
+        0 0 60px rgba(0, 255, 65, 0.4),
+        inset 0 0 30px rgba(0, 255, 65, 0.1) !important;
+    transform: translateY(-10px) scale(1.02);
+    animation: phosphorGlow 2s infinite;
+}
+
+.about-card-title, .about-card-text {
+    color: var(--color-matrix-primary) !important;
+    font-family: var(--font-mono);
+}
+
+.about-icon svg {
+    stroke: var(--color-matrix-primary) !important;
+    filter: drop-shadow(0 0 10px var(--color-matrix-glow)) !important;
+}
+
+/* Stats */
+.stat-number {
+    background: none !important;
+    color: var(--color-matrix-glow) !important;
+    -webkit-text-fill-color: var(--color-matrix-glow) !important;
+    text-shadow:
+        0 0 10px var(--color-matrix-glow),
+        0 0 20px var(--color-matrix-primary),
+        0 0 30px var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+    animation: flicker 4s infinite !important;
+}
+
+.stat-label {
+    color: var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Section Titles */
+.section-title {
+    color: var(--color-matrix-primary) !important;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--color-matrix-glow), 0 0 20px var(--color-matrix-primary);
+    letter-spacing: 0.15em;
+}
+
+.section-title::after {
+    background: linear-gradient(90deg, transparent, var(--color-matrix-primary), transparent) !important;
+    box-shadow: 0 0 20px var(--color-matrix-glow) !important;
+    height: 2px !important;
+}
+
+.section-description {
+    color: var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+}
+
+/* Projects Table - Terminal Output */
+.projects-table {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid var(--color-matrix-tertiary);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3), inset 0 0 20px rgba(0, 255, 65, 0.05);
+    font-family: var(--font-mono);
+}
+
+.projects-table thead {
+    background: rgba(0, 255, 65, 0.1) !important;
+    border-bottom: 2px solid var(--color-matrix-primary) !important;
+}
+
+.projects-table th {
+    color: var(--color-matrix-glow) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 5px var(--color-matrix-glow);
+}
+
+.projects-table tbody tr {
+    border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.projects-table tbody tr:hover {
+    background: rgba(0, 255, 65, 0.1) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3) !important;
+}
+
+.projects-table td {
+    color: var(--color-matrix-secondary) !important;
+}
+
+.projects-table a {
+    color: var(--color-matrix-primary) !important;
+    text-shadow: 0 0 5px var(--color-matrix-glow);
+}
+
+.projects-table a:hover {
+    color: var(--color-matrix-glow) !important;
+    text-shadow: 0 0 10px var(--color-matrix-glow), 0 0 20px var(--color-matrix-primary);
+    animation: glitch 0.3s;
+}
+
+/* Search Bar - Command Line */
+.search-input {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid var(--color-matrix-tertiary) !important;
+    color: var(--color-matrix-primary) !important;
+    font-family: var(--font-mono);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2), inset 0 0 10px rgba(0, 255, 65, 0.05);
+}
+
+.search-input::placeholder {
+    color: var(--color-matrix-tertiary) !important;
+}
+
+.search-input:focus {
+    border-color: var(--color-matrix-primary) !important;
+    box-shadow:
+        0 0 20px rgba(0, 255, 65, 0.5),
+        inset 0 0 20px rgba(0, 255, 65, 0.1) !important;
+}
+
+.search-icon {
+    stroke: var(--color-matrix-primary);
+}
+
+/* Gallery Items */
+.gallery-item {
+    border: 2px solid var(--color-matrix-tertiary);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.gallery-item:hover {
+    border-color: var(--color-matrix-primary) !important;
+    box-shadow:
+        0 0 30px rgba(0, 255, 65, 0.6),
+        0 0 60px rgba(0, 255, 65, 0.4) !important;
+}
+
+.gallery-item img {
+    filter: contrast(1.1) brightness(0.95);
+    mix-blend-mode: screen;
+}
+
+/* YouTube Embeds */
+.youtube-embed {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid var(--color-matrix-tertiary) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3) !important;
+}
+
+.youtube-embed h3 {
+    color: var(--color-matrix-primary) !important;
+    font-family: var(--font-mono);
+    text-shadow: 0 0 10px var(--color-matrix-glow);
+}
+
+.youtube-embed iframe {
+    border: 2px solid var(--color-matrix-primary) !important;
+}
+
+/* Filter Buttons */
+.filter-btn {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid var(--color-matrix-tertiary) !important;
+    color: var(--color-matrix-primary) !important;
+    font-family: var(--font-mono);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    border-color: var(--color-matrix-primary) !important;
+    background: rgba(0, 255, 65, 0.2) !important;
+    box-shadow:
+        0 0 20px rgba(0, 255, 65, 0.5),
+        inset 0 0 10px rgba(0, 255, 65, 0.1) !important;
+}
+
+/* Page Header */
+.page-header {
+    background: #000000 !important;
+    border-bottom: 2px solid var(--color-matrix-primary);
+}
+
+.page-header::before {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 65, 0.05) 2px,
+            rgba(0, 255, 65, 0.05) 4px
+        ) !important;
+}
+
+.page-title {
+    color: var(--color-matrix-primary) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--color-matrix-primary) !important;
+    text-shadow:
+        0 0 10px var(--color-matrix-glow),
+        0 0 20px var(--color-matrix-primary),
+        0 0 30px var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+    animation: flicker 3s infinite;
+}
+
+.page-description {
+    color: var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+}
+
+/* Community Features */
+.community-features li {
+    color: var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+}
+
+.community-features li svg {
+    stroke: var(--color-matrix-primary) !important;
+}
+
+.community-text h3 {
+    color: var(--color-matrix-primary) !important;
+    font-family: var(--font-mono);
+    text-shadow: 0 0 10px var(--color-matrix-glow);
+}
+
+.community-text p {
+    color: var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+}
+
+/* Footer */
+.footer {
+    background: #000000 !important;
+    border-top: 2px solid var(--color-matrix-primary);
+}
+
+.footer::before {
+    background: var(--color-matrix-primary) !important;
+    box-shadow: 0 0 20px var(--color-matrix-glow) !important;
+    height: 2px !important;
+}
+
+.footer-tagline, .footer-column h4, .footer-column a, .footer-bottom p {
+    color: var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+}
+
+.footer-column a:hover {
+    color: var(--color-matrix-primary) !important;
+    text-shadow: 0 0 10px var(--color-matrix-glow);
+}
+
+/* Testimonials */
+.testimonial-text {
+    color: var(--color-matrix-secondary) !important;
+    font-family: var(--font-mono);
+    font-style: normal;
+}
+
+.testimonial-author {
+    color: var(--color-matrix-primary) !important;
+    font-family: var(--font-mono);
+    text-shadow: 0 0 5px var(--color-matrix-glow);
+}
+
+/* Container - relative positioning for rain effect */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo Tint */
+.logo, .footer-logo {
+    filter: brightness(0) saturate(100%) invert(85%) sepia(79%) saturate(2476%) hue-rotate(52deg) brightness(118%) contrast(119%);
+    opacity: 0.9;
+}
