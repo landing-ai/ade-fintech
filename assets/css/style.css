@@ -514,6 +514,55 @@ a:hover {
     text-align: center;
     padding: var(--spacing-3xl);
     color: var(--color-gray-dark);
+    grid-column: 1 / -1;
+}
+
+.gallery-placeholder h3 {
+    color: var(--color-blue);
+    margin-bottom: var(--spacing-md);
+}
+
+/* YouTube Section */
+.youtube-section {
+    grid-column: 1 / -1;
+    margin-bottom: var(--spacing-xl);
+}
+
+.youtube-embed {
+    background-color: var(--color-gray-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+}
+
+.youtube-embed h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-black);
+}
+
+.youtube-embed iframe {
+    width: 100%;
+    min-height: 400px;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.youtube-link {
+    text-align: center;
+    margin: 0;
+}
+
+.youtube-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--color-blue);
+    transition: color var(--transition-fast);
+}
+
+.youtube-link a:hover {
+    color: var(--color-green);
 }
 
 /* ================================
