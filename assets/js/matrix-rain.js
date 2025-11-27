@@ -15,7 +15,7 @@
     canvas.style.height = '100%';
     canvas.style.zIndex = '-1';
     canvas.style.pointerEvents = 'none';
-    canvas.style.opacity = '0.9';
+    canvas.style.opacity = '0.7';
 
     document.body.insertBefore(canvas, document.body.firstChild);
 
@@ -33,26 +33,22 @@
     const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?/';
     const chars = matrixChars.split('');
 
-    const fontSize = 20; // Increased from 16 for better visibility
+    const fontSize = 16;
     const columns = canvas.width / fontSize;
 
     // Initialize drops - one per column
     const drops = [];
     for (let i = 0; i < columns; i++) {
-        drops[i] = Math.random() * -100; // Start above screen with random delays
+        drops[i] = Math.random() * -100;
     }
 
     // Draw the matrix
     function draw() {
-        // Black background with slower fade effect for longer trails
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.03)'; // Reduced from 0.05 for longer trails
+        // Black background with fade effect - creates the trail
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Matrix green text with shadow glow
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = '#00ff41';
-        ctx.fillStyle = '#00ff41';
-        ctx.font = 'bold ' + fontSize + 'px monospace'; // Bold for more impact
+        ctx.font = fontSize + 'px monospace';
 
         // Loop through drops
         for (let i = 0; i < drops.length; i++) {
@@ -61,18 +57,35 @@
             const x = i * fontSize;
             const y = drops[i] * fontSize;
 
-            // Draw character
+            // Authentic Matrix color palette - darker, muted greens
+            // Leading character is brighter but not white
+            const isLeading = y > 0 && y < canvas.height;
+
+            if (isLeading) {
+                // Bright leading character (like in the movie)
+                ctx.fillStyle = '#cefbe4'; // Pale green/white for leading edge
+            } else {
+                // Body of the trail - darker green
+                ctx.fillStyle = '#0aff0a'; // Medium-dark green
+            }
+
             ctx.fillText(text, x, y);
 
-            // Add ultra-bright character at the front of the trail
-            if (drops[i] * fontSize > 0 && drops[i] * fontSize < canvas.height) {
-                ctx.shadowBlur = 25; // Stronger glow
-                ctx.shadowColor = '#39ff14';
-                ctx.fillStyle = '#FFFFFF'; // White for maximum brightness at front
-                ctx.fillText(text, x, y);
-                ctx.shadowBlur = 15;
-                ctx.shadowColor = '#00ff41';
-                ctx.fillStyle = '#00ff41'; // Return to normal green
+            // Draw fading characters in the trail behind
+            const trailLength = 15;
+            for (let j = 1; j < trailLength; j++) {
+                const trailY = (drops[i] - j) * fontSize;
+                if (trailY > 0) {
+                    // Gradually fade from green to dark
+                    const alpha = 1 - (j / trailLength);
+                    const darkness = Math.floor(10 + (alpha * 30)); // Ranges from 10 to 40
+                    ctx.fillStyle = `rgb(0, ${darkness}, 0)`;
+                    ctx.fillText(
+                        chars[Math.floor(Math.random() * chars.length)],
+                        x,
+                        trailY
+                    );
+                }
             }
 
             // Reset drop to top randomly after it crosses the screen
