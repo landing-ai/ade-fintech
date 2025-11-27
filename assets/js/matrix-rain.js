@@ -15,7 +15,7 @@
     canvas.style.height = '100%';
     canvas.style.zIndex = '-1';
     canvas.style.pointerEvents = 'none';
-    canvas.style.opacity = '0.5';
+    canvas.style.opacity = '0.9';
 
     document.body.insertBefore(canvas, document.body.firstChild);
 
@@ -33,7 +33,7 @@
     const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?/';
     const chars = matrixChars.split('');
 
-    const fontSize = 16;
+    const fontSize = 20; // Increased from 16 for better visibility
     const columns = canvas.width / fontSize;
 
     // Initialize drops - one per column
@@ -44,13 +44,15 @@
 
     // Draw the matrix
     function draw() {
-        // Black background with fade effect
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        // Black background with slower fade effect for longer trails
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.03)'; // Reduced from 0.05 for longer trails
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Matrix green text
+        // Matrix green text with shadow glow
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = '#00ff41';
         ctx.fillStyle = '#00ff41';
-        ctx.font = fontSize + 'px monospace';
+        ctx.font = 'bold ' + fontSize + 'px monospace'; // Bold for more impact
 
         // Loop through drops
         for (let i = 0; i < drops.length; i++) {
@@ -62,10 +64,14 @@
             // Draw character
             ctx.fillText(text, x, y);
 
-            // Add brighter character at the front of the trail
+            // Add ultra-bright character at the front of the trail
             if (drops[i] * fontSize > 0 && drops[i] * fontSize < canvas.height) {
-                ctx.fillStyle = '#39ff14'; // Brighter green for front
+                ctx.shadowBlur = 25; // Stronger glow
+                ctx.shadowColor = '#39ff14';
+                ctx.fillStyle = '#FFFFFF'; // White for maximum brightness at front
                 ctx.fillText(text, x, y);
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#00ff41';
                 ctx.fillStyle = '#00ff41'; // Return to normal green
             }
 
