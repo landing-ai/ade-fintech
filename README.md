@@ -1,70 +1,104 @@
 # Agentic Document Extraction - Financial Services
 
-**Building the Future of Financial Services with AI**
+**Community-Built Fintech Solutions Powered by ADE**
 
-A showcase of innovative AI solutions developed during the LandingAI Financial Services Hackathon, highlighting groundbreaking projects in document extraction, fraud detection, and risk assessment.
-
----
-
-## 🎯 About This Project
-
-This website celebrates the vibrant community of developers, data scientists, and financial experts who came together to solve real-world challenges using cutting-edge AI technology. The hackathon focused on **Agentic Document Extraction** - intelligent systems that can understand and analyze complex financial data in real-time.
-
-### Key Highlights
-
-- **50+ Teams** participated from around the world
-- **100+ Developers** collaborated on innovative solutions
-- **48 Hours** of intense innovation and problem-solving
-- **Real-World Impact** addressing actual challenges in banking, lending, and financial operations
+A showcase of groundbreaking AI solutions developed by our vibrant community of innovators, transforming how financial institutions process and understand documents.
 
 ---
 
-## 🚀 Featured Projects
+## 🏆 Championship Results
 
-Our community built incredible AI-powered solutions including:
+**Financial AI Hackathon Championship 2025 - November 15, New York**
 
-- **Loan Underwriting Automation** - Automated credit decision engines with fraud detection
-- **Document Intelligence Platforms** - Knowledge-graph-native investigation tools
-- **Invoice Processing Systems** - Automated accounts payable workflows
-- **Risk Assessment Tools** - Real-time portfolio risk analysis
+- **🥇 Champion**: LoanLens AI - Loan Underwriting & Fraud Detection
+- **🥈 Runner-Up**: Skywalkers77 - Invoice & Contract Compliance Automation
+- **🏅 Best Online App**: Beemnet Haile - OTC Derivatives Collateral Management
+- **⭐ Top 4 Finalists**: Serimag (Pay Stub Fraud Detection), ExemptFlow/Luma (Nonprofit Tax Filing Intelligence)
 
 ---
 
-## 🎨 Brand & Design
+## 🎯 About The Hackathon
 
-This website is built following LandingAI's brand guidelines:
+The LandingAI Financial Services Hackathon brought together developers, data scientists, and financial experts from around the world to solve real-world challenges using cutting-edge AI technology.
 
-### Design Principles
-- **Determinant Precision** - Reflecting LandingAI's analytical precision
-- **Systematic Clarity** - Clean typographic layouts and geometric balance
-- **Modular Structure** - Organized information flow with visual hierarchy
+### Event Highlights
 
-### Color Palette
-- **Primary**: Black (#000000) & White (#FFFFFF) - Structural anchors
-- **Accent Colors**:
-  - **Sky Blue** (#4A9FE8) - Classification/Interaction
-  - **Green** (#2ECC71) - Verification
-  - **Orange** (#FF6B35) - Alert/Emphasis
+- **100+ submissions** from developers worldwide
+- **22 teams invited** to present in NYC
+- **International participation** with teams flying in from India, Spain, and Canada
+- **2-3 weeks** of dedicated development producing production-ready solutions
+- **120K+ lines of code** written across all projects
+- **48 innovative projects** spanning fraud detection, lending analysis, compliance automation, M&A tools, and more
 
-### Typography
-- **Sans-serif** (Inter) - For hierarchy, legibility, and UI
-- **Monospaced** - For technical content and data tables
+### Innovation Focus
+
+Projects continue to evolve beyond the championship, with teams passionately refining and expanding their innovations to tackle real challenges in banking, lending, and financial operations.
+
+---
+
+## 🚀 Featured Solutions
+
+Our community built incredible AI-powered solutions across multiple domains:
+
+### Financial Document Intelligence
+- Loan underwriting automation with fraud detection
+- Invoice & contract compliance verification
+- Tax filing intelligence for nonprofits
+- M&A due diligence platforms
+
+### Risk & Compliance
+- Pay stub fraud detection
+- AML compliance automation
+- Credit risk analysis
+- KYC/AML intelligence systems
+
+### Operations Automation
+- 3-way invoice matching
+- Contract negotiation intelligence
+- Reinsurance contract management
+- Collateral management for derivatives
+
+### Advanced Analytics
+- Knowledge graph-based financial investigation
+- Portfolio risk analysis
+- Financial data warehouse automation
+- Credit memo generation
+
+---
+
+## 🌐 Website Features
+
+### Pages
+
+- **Home** - Event overview, championship highlights video, key statistics
+- **Projects** - Comprehensive showcase of all 48 projects with search and pagination
+- **Gallery** - Event photos and videos from the championship
+- **Community** - Join our growing community of 4000+ developers
+
+### Interactive Elements
+
+- **Video Showcase** - Watch the championship highlights in an immersive player
+- **Project Search** - Find projects by team name, abstract, or technology
+- **Pagination** - Browse through 10 projects per page with smooth navigation
+- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **HTML5** - Semantic markup
-- **CSS3** - Custom styling following LandingAI brand guidelines
-- **Vanilla JavaScript** - Dynamic content loading and interactions
-- **GitHub Pages** - Hosting and deployment
+- **HTML5** - Semantic markup with modern structure
+- **CSS3** - Custom styling with Matrix-inspired theme
+- **Vanilla JavaScript** - Dynamic content loading, video player, search functionality
+- **GitHub Pages** - Static site hosting and deployment
 
 ### Key Features
-- Responsive design optimized for all devices
-- Interactive project table with search functionality
-- Event photo and video gallery
-- Smooth scrolling and animations
-- Optimized performance and accessibility
+
+- Component-based footer system
+- Matrix rain animation background
+- YouTube playlist integration
+- Project data management with JSON
+- Cache-busting for updates (v=36)
+- Privacy-first (no email exposure in public data)
 
 ---
 
@@ -72,25 +106,27 @@ This website is built following LandingAI's brand guidelines:
 
 ```
 ade-fintech/
-├── index.html              # Main HTML file
+├── index.html                 # Homepage with hero and stats
+├── projects.html              # Projects showcase with search
+├── gallery.html               # Event photos and videos
+├── community.html             # Community page with CTAs
 ├── assets/
 │   ├── css/
-│   │   └── style.css       # Stylesheet with brand colors
+│   │   ├── style.css         # Main stylesheet
+│   │   └── matrix-theme.css   # Matrix animation theme
 │   ├── js/
-│   │   └── main.js         # JavaScript functionality
-│   ├── images/
-│   │   └── logo.png        # LandingAI logo
-│   └── videos/             # Event videos (to be added)
+│   │   ├── main.js           # Core functionality
+│   │   ├── components.js      # Footer component
+│   │   ├── video-player.js    # Video modal player
+│   │   └── matrix-rain.js     # Background animation
+│   └── images/
+│       └── logo.png           # LandingAI logo
+├── components/
+│   └── footer.html            # Reusable footer
 ├── data/
-│   └── projects_data.json  # Project information
-└── README.md               # This file
+│   └── projects_data.json     # All 48 projects data
+└── README.md                  # This file
 ```
-
----
-
-## 🌐 Live Demo
-
-Visit the live website: [https://landing-ai.github.io/ade-fintech](https://landing-ai.github.io/ade-fintech) *(once deployed)*
 
 ---
 
@@ -104,86 +140,107 @@ git clone https://github.com/landing-ai/ade-fintech.git
 cd ade-fintech
 ```
 
-2. Open `index.html` in your browser:
-```bash
-# On macOS
-open index.html
-
-# On Linux
-xdg-open index.html
-
-# On Windows
-start index.html
-```
-
-Or use a local server (recommended):
+2. Start a local server:
 ```bash
 # Using Python 3
 python3 -m http.server 8000
 
-# Using Node.js (http-server)
+# Using Node.js
 npx http-server -p 8000
+
+# Using PHP
+php -S localhost:8000
 ```
 
-Then visit `http://localhost:8000`
+3. Open your browser:
+```
+http://localhost:8000
+```
 
----
+### Deployment
 
-## 📸 Gallery
+This site is configured for GitHub Pages deployment:
 
-The gallery section showcases photos and videos from our incredible hackathon event, including:
-- Team collaboration moments
-- Project demonstrations
-- Networking sessions
-- Award ceremonies
+1. Push to the `master` branch
+2. GitHub Pages will automatically deploy from `master`
+3. Site will be available at: `https://landing-ai.github.io/ade-fintech`
 
 ---
 
 ## 🤝 Community
 
-### Join Our Community
+### Join Our Growing Community
 
-Be part of the next wave of AI innovation in financial services!
+Be part of the next wave of Visual AI innovation in financial services, healthcare, legal, insurance, manufacturing, and a lot more... 🚀
 
-- **Access** cutting-edge AI tools and APIs
-- **Collaborate** with industry experts and peers
-- **Showcase** your work to potential employers
-- **Win** prizes and recognition
+### Community Benefits
 
-### Links
+- 🎯 Opportunity to meet Andrew Ng and industry leaders
+- 👥 Mentorship from leading experts
+- 🎁 Get exclusive LandingAI swag and merchandise
+- 💳 Access to free credits of cutting-edge AI tools and resources
+- 🏆 Showcase your work, win recognition and rewards
 
-- [LandingAI Platform](https://landing.ai)
-- [GitHub](https://github.com/landing-ai)
-- [Documentation](https://landing.ai/docs)
-- [Blog](https://landing.ai/blog)
+### Community Stats
+
+- **4000+ Developers** actively building with AI
+- **60+ Community Project Contributions** across domains
+- **100+ Verifiable Certificates Distributed** to participants
+
+### Get Involved
+
+- [Join Discord](https://discord.gg/landingai) - Connect with the community
+- [Follow LandingAI Events on Luma](https://lu.ma/landingai) - Stay updated on upcoming events
+
+---
+
+## 📸 Gallery
+
+Experience the innovation, excitement, and breakthrough AI solutions from the championship through our photo and video gallery featuring:
+
+- Team presentations and demos
+- Networking moments
+- Award ceremonies
+- Behind-the-scenes action
+- Full YouTube playlist of project videos
+
+---
+
+## 🏅 Special Recognition
+
+**LoanLens AI (Champion)** - Addressing critical challenges where 52% of loan processing time is spent manually collecting documents. The platform delivers faster, more accurate, and auditable underwriting decisions with fraud detection.
+
+**Skywalkers77 (Honorable Mention)** - Production-ready compliance automation platform combining RAG with deterministic rule engines. Perfect implementation scores with multi-model AI failover.
+
+**Beemnet Haile (Best Online App)** - Automates margin calculations for OTC derivatives with complete audit trails and 21 API endpoints for compliance.
 
 ---
 
 ## 📄 License
 
-© 2024 LandingAI. All rights reserved.
-
-Built with passion by our community ❤️
+© 2025 LandingAI. All rights reserved.
 
 ---
 
 ## 🙏 Acknowledgments
 
 Special thanks to:
-- All participating teams and developers
-- LandingAI for providing the platform and support
-- AWS for hosting the event
+- All 100+ participating teams and 1000+ developers
+- LandingAI for providing the ADE platform and support
+- AWS for hosting the championship in New York
 - Judges and mentors who guided the participants
-- The Branded Agency for brand guidelines
+- Community members who continue to build and innovate
 
 ---
 
 ## 📧 Contact
 
-For questions or feedback about this website or the hackathon:
+For questions about the hackathon or to get involved:
 - Visit [landing.ai](https://landing.ai)
-- Follow us on [GitHub](https://github.com/landing-ai)
+- Join our [Discord community](https://discord.gg/landingai)
+- Follow [LandingAI on GitHub](https://github.com/landing-ai)
 
 ---
 
-**Made with Claude Code** 🤖
+**Built with passion by our community** ❤️
+**Powered by Claude Code** 🤖
