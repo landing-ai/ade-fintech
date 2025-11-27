@@ -14,18 +14,22 @@
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
-    // Smooth scrolling for navigation links
+    // Smooth scrolling for in-page anchor links only (not cross-page links)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+        const href = anchor.getAttribute('href');
+        // Only add smooth scrolling if the target exists on this page
+        if (href !== '#' && document.querySelector(href)) {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        }
     });
 
     // Nav background on scroll

@@ -767,3 +767,82 @@ a:hover {
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .mb-md { margin-bottom: var(--spacing-md); }
 .mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* ================================
+   Multi-Page Navigation
+   ================================ */
+
+.nav-link.active {
+    color: var(--color-blue);
+    font-weight: 600;
+}
+
+/* ================================
+   Page Header (for non-homepage pages)
+   ================================ */
+
+.page-header {
+    padding: calc(var(--spacing-3xl) + 80px) 0 var(--spacing-3xl);
+    background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-white) 100%);
+    text-align: center;
+}
+
+.page-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-black);
+}
+
+.page-description {
+    font-size: 1.25rem;
+    color: var(--color-gray-dark);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ================================
+   Stats Grid (for homepage)
+   ================================ */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+/* ================================
+   Testimonials
+   ================================ */
+
+.testimonial-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-dark);
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--color-blue);
+    font-size: 0.9rem;
+}
+
+/* ================================
+   Mobile Responsive Updates
+   ================================ */
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: calc(var(--spacing-2xl) + 80px) var(--spacing-md) var(--spacing-2xl);
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-description {
+        font-size: 1rem;
+    }
+}

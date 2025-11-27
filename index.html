@@ -15,14 +15,15 @@
     <header class="header">
         <nav class="nav container">
             <div class="nav-logo">
-                <img src="assets/images/logo.png" alt="LandingAI" class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="LandingAI" class="logo">
+                </a>
             </div>
             <ul class="nav-menu">
-                <li><a href="#hero" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
             </ul>
             <div class="nav-toggle" id="nav-toggle">
                 <span></span>
@@ -42,8 +43,8 @@
                 transforming how financial institutions process and understand documents.
             </p>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">Explore Projects</a>
-                <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+                <a href="projects.html" class="btn btn-primary">Explore Projects</a>
+                <a href="gallery.html" class="btn btn-secondary">View Gallery</a>
             </div>
         </div>
         <div class="hero-background"></div>
@@ -94,129 +95,21 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects section section-dark">
+    <!-- Stats Section -->
+    <section class="community-stats section section-dark">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Community Projects</h2>
-                <p class="section-description">
-                    Explore the incredible projects built by our community
-                </p>
-            </div>
-
-            <div class="projects-controls">
-                <div class="search-bar">
-                    <input type="text" id="project-search" placeholder="Search projects by team name..." class="search-input">
-                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Teams Participated</div>
                 </div>
-            </div>
-
-            <div class="table-container">
-                <table class="projects-table" id="projects-table">
-                    <thead>
-                        <tr>
-                            <th>Team Name</th>
-                            <th>Team Size</th>
-                            <th>Links</th>
-                        </tr>
-                    </thead>
-                    <tbody id="projects-tbody">
-                        <!-- Projects will be loaded dynamically -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Event Gallery</h2>
-                <p class="section-description">
-                    Moments from our incredible hackathon event
-                </p>
-            </div>
-
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="photos">Photos</button>
-                <button class="filter-btn" data-filter="videos">Videos</button>
-                <button class="filter-btn" data-filter="reels">Reels</button>
-            </div>
-
-            <div class="gallery-grid" id="gallery-grid">
-                <!-- Gallery items will be loaded dynamically -->
-                <div class="gallery-placeholder">
-                    <p>Loading gallery...</p>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Developers</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Community Section -->
-    <section id="community" class="community section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Join Our Community</h2>
-                <p class="section-description">
-                    Be part of the next wave of AI innovation in financial services
-                </p>
-            </div>
-
-            <div class="community-content">
-                <div class="community-text">
-                    <h3>Build. Learn. Innovate.</h3>
-                    <p>
-                        Our community is where developers, data scientists, and financial professionals
-                        come together to push the boundaries of what's possible with AI in finance.
-                    </p>
-                    <ul class="community-features">
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Access to cutting-edge AI tools and APIs</span>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Collaborate with industry experts and peers</span>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Showcase your work to potential employers</span>
-                        </li>
-                        <li>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span>Win prizes and recognition</span>
-                        </li>
-                    </ul>
-                    <div class="community-cta">
-                        <a href="https://landing.ai" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit LandingAI</a>
-                        <a href="https://github.com/landing-ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="community-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Teams Participated</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label">Developers</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">48hrs</div>
-                        <div class="stat-label">Of Innovation</div>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-number">48hrs</div>
+                    <div class="stat-label">Of Innovation</div>
                 </div>
             </div>
         </div>
