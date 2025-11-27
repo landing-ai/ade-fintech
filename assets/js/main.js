@@ -105,7 +105,8 @@
     // Gallery
     // ================================
 
-    // YouTube Playlist ID - LandingAI Financial Services Hackathon
+    // YouTube Video & Playlist - LandingAI Financial Services Hackathon
+    const MAIN_VIDEO_ID = '5WTxmkld9Lg'; // Main event highlights video
     const YOUTUBE_PLAYLIST_ID = 'PLrKGAzovU85fQ9XGETV2b-qL6P92RlrhX';
 
     function setupGallery() {
@@ -139,7 +140,12 @@
 
         let html = '';
 
-        // Add YouTube videos section if playlist is available
+        // Add main highlight video
+        if (MAIN_VIDEO_ID) {
+            html += createMainVideoSection();
+        }
+
+        // Add YouTube playlist section if available
         if (YOUTUBE_PLAYLIST_ID !== 'YOUR_PLAYLIST_ID_HERE') {
             html += createYouTubeSection();
         }
@@ -152,6 +158,29 @@
         galleryGrid.innerHTML = html || `
             <div class="gallery-placeholder">
                 <p>Loading gallery...</p>
+            </div>
+        `;
+    }
+
+    function createMainVideoSection() {
+        return `
+            <div class="main-video-section" data-category="videos">
+                <div class="youtube-embed" style="margin-bottom: 3rem;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Event Highlights - Financial Services AI Hackathon</h3>
+                    <iframe
+                        width="100%"
+                        height="500"
+                        src="https://www.youtube.com/embed/${MAIN_VIDEO_ID}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <p class="youtube-link">
+                        <a href="https://www.youtube.com/watch?v=${MAIN_VIDEO_ID}" target="_blank" rel="noopener noreferrer">
+                            Watch on YouTube →
+                        </a>
+                    </p>
+                </div>
             </div>
         `;
     }
@@ -180,12 +209,18 @@
     }
 
     async function loadPhotos() {
-        // This would normally fetch a list of photos from a JSON file or directory
-        // For now, return an empty array - photos will be added manually
-        // When you add photos to assets/images/gallery/, update this array
+        // Event photos from LandingAI Financial Services Hackathon
         const photoFiles = [
-            // Example: 'event-001.jpg', 'event-002.jpg', etc.
-            // Add photo filenames here as you upload them
+            'event-001.jpg',
+            'event-002.jpg',
+            'event-003.jpg',
+            'event-004.jpg',
+            'event-005.jpg',
+            'event-006.jpg',
+            'event-007.jpg',
+            'event-008.jpg',
+            'event-009.jpg',
+            'event-010.jpg',
         ];
 
         return photoFiles;
