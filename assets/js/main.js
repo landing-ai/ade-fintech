@@ -47,8 +47,9 @@
         navToggle.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            navMenu.classList.toggle('active');
-            console.log('Menu toggled, active:', navMenu.classList.contains('active'));
+            const isActive = navMenu.classList.toggle('active');
+            document.body.classList.toggle('nav-open', isActive);
+            console.log('Menu toggled, active:', isActive);
         });
     } else {
         console.log('Nav elements not found:', { navToggle, navMenu });
@@ -60,6 +61,7 @@
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+                document.body.classList.remove('nav-open');
             });
         });
     }
@@ -69,6 +71,7 @@
         if (navMenu && navToggle) {
             if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
                 navMenu.classList.remove('active');
+                document.body.classList.remove('nav-open');
             }
         }
     });

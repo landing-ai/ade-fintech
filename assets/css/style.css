@@ -74,6 +74,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    padding-top: 88px; /* offset for fixed header */
 }
 
 /* Matrix Digital Rain Background */
@@ -248,6 +249,12 @@ a:hover {
     background-color: var(--color-blue);
     transition: var(--transition-fast);
     border-radius: 2px;
+}
+
+/* Prevent background scroll when mobile nav is open */
+body.nav-open {
+    overflow: hidden;
+    touch-action: none;
 }
 
 /* ================================
@@ -624,7 +631,9 @@ a:hover {
     z-index: 9999;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    padding: 120px 20px 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .video-showcase.active {
@@ -1135,24 +1144,38 @@ a:hover {
     /* Reset header z-index */
     .header {
         z-index: 998 !important;
+        position: relative;
     }
 
     .nav {
         z-index: 998 !important;
     }
 
+    /* Force all page content below menu */
+    .hero,
+    .section,
+    .page-header,
+    .about,
+    .projects,
+    .gallery,
+    .community,
+    .footer {
+        position: relative;
+        z-index: 1 !important;
+    }
+
     /* Mobile menu overlay - absolutely on top */
     .nav-menu {
         display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        z-index: 999999;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(0, 0, 0, 0.95) !important;
+        z-index: 9999999 !important;
         padding: 100px 20px 20px 20px;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
@@ -1160,10 +1183,13 @@ a:hover {
         align-items: center;
         justify-content: flex-start;
         gap: 15px;
+        pointer-events: auto !important;
     }
 
     .nav-menu.active {
         display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .nav-menu li {
@@ -1211,6 +1237,11 @@ a:hover {
 
     .hero {
         min-height: 80vh;
+    }
+
+    /* Slightly smaller top offset on mobile */
+    body {
+        padding-top: 76px;
     }
 
     .community-content {

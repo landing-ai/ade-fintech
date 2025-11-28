@@ -101,7 +101,15 @@
 /* Championship Override Styles */
 
 /* Ensure all content layers above rain canvas */
-.header, .hero, .section, .footer, .page-header {
+.header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000 !important;
+}
+
+.hero, .section, .footer, .page-header {
     position: relative;
     z-index: 100 !important;
 }
@@ -663,10 +671,13 @@ body > * {
     z-index: -1;
     opacity: 0;
     display: none;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
+    padding: 120px 20px 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .video-showcase.active {
@@ -682,13 +693,13 @@ body > * {
 .video-container {
     width: 90%;
     max-width: 1400px;
-    max-height: 85vh;
+    max-height: calc(100vh - 180px);
     background: linear-gradient(135deg, rgba(0, 0, 40, 0.98), rgba(20, 0, 60, 0.98));
     border: 3px solid var(--color-electric-blue);
     border-radius: 20px;
     padding: 0;
     position: relative;
-    transform: scale(0.7) translateY(50px);
+    transform: scale(0.7) translateY(20px);
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
@@ -737,8 +748,8 @@ body > * {
 /* Close Button */
 .close-video {
     position: absolute;
-    top: -20px;
-    right: -20px;
+    top: 14px;
+    right: 14px;
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, var(--color-electric-blue), var(--color-electric-purple));
@@ -850,6 +861,7 @@ body > * {
     .video-container {
         width: 95%;
         margin: 10px;
+        max-height: calc(100vh - 140px);
     }
 
     .video-wrapper {
@@ -865,10 +877,10 @@ body > * {
     }
 
     .close-video {
-        top: -15px;
-        right: -15px;
-        width: 40px;
-        height: 40px;
+        top: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
         font-size: 20px;
     }
 }
