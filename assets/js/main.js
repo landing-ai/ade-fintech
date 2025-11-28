@@ -48,6 +48,16 @@
         });
     }
 
+    // Close mobile menu when clicking on a link
+    if (navMenu) {
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
     // ================================
     // Projects Table with Pagination
     // ================================
