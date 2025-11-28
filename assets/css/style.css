@@ -1149,16 +1149,20 @@ a:hover {
         left: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
-        background: rgba(0, 0, 0, 0.5) !important;
-        z-index: 99999 !important;
-        padding-top: 65px !important;
+        background: red !important;
+        z-index: 999999 !important;
+        padding-top: 0 !important;
         pointer-events: auto !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
+        width: 100vw !important;
+        height: 100vh !important;
     }
 
     .nav-menu.active {
         display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .nav-menu li {
@@ -1174,15 +1178,16 @@ a:hover {
     .nav-menu li a {
         display: block !important;
         width: 100% !important;
-        padding: 25px 20px !important;
-        text-align: left !important;
-        color: #000000 !important;
-        font-size: 20px !important;
-        font-weight: 600 !important;
+        padding: 30px 20px !important;
+        text-align: center !important;
+        color: yellow !important;
+        font-size: 24px !important;
+        font-weight: 700 !important;
         text-decoration: none !important;
-        background: #ffffff !important;
-        border: none !important;
+        background: blue !important;
+        border: 5px solid white !important;
         box-sizing: border-box !important;
+        margin: 10px !important;
     }
 
     .nav-menu li a:active,
