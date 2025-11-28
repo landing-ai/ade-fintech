@@ -1132,76 +1132,64 @@ a:hover {
    ================================ */
 
 @media (max-width: 768px) {
+    /* Reset header z-index */
     .header {
-        z-index: 1000 !important;
-        position: fixed !important;
+        z-index: 998 !important;
     }
 
     .nav {
-        position: relative !important;
-        z-index: 1000 !important;
+        z-index: 998 !important;
     }
 
+    /* Mobile menu overlay - absolutely on top */
     .nav-menu {
         display: none !important;
-        position: fixed;
-        top: 65px;
-        left: 0;
-        right: 0;
-        background: #ffffff !important;
-        flex-direction: column;
-        padding: 0 !important;
-        margin: 0 !important;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        z-index: 10001 !important;
-        border-top: 3px solid #667eea;
-        list-style: none !important;
-        width: 100%;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: 99999 !important;
+        padding-top: 65px !important;
         pointer-events: auto !important;
-        opacity: 1 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
     }
 
     .nav-menu.active {
-        display: flex !important;
-        pointer-events: auto !important;
+        display: block !important;
     }
 
     .nav-menu li {
-        width: 100%;
+        width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
         list-style: none !important;
         display: block !important;
-        pointer-events: auto !important;
-        position: relative !important;
-        z-index: 10001 !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #e0e0e0 !important;
     }
 
     .nav-menu li a {
         display: block !important;
         width: 100% !important;
-        padding: 20px 30px !important;
-        text-align: center !important;
-        border-bottom: 2px solid #f0f0f0 !important;
+        padding: 25px 20px !important;
+        text-align: left !important;
         color: #000000 !important;
-        font-size: 18px !important;
-        font-weight: 700 !important;
+        font-size: 20px !important;
+        font-weight: 600 !important;
         text-decoration: none !important;
         background: #ffffff !important;
-        pointer-events: auto !important;
-        cursor: pointer !important;
-        position: relative !important;
-        z-index: 10002 !important;
+        border: none !important;
+        box-sizing: border-box !important;
     }
 
-    .nav-menu li a:hover,
-    .nav-menu li a:active {
+    .nav-menu li a:active,
+    .nav-menu li a:focus {
         background: #667eea !important;
         color: #ffffff !important;
-    }
-
-    .nav-menu li:last-child a {
-        border-bottom: none !important;
+        outline: none !important;
     }
 
     .nav-link::after {
@@ -1209,14 +1197,11 @@ a:hover {
     }
 
     .nav-toggle {
-        display: flex;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: var(--radius-sm);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-toggle:hover {
-        background: rgba(102, 126, 234, 0.1);
+        display: flex !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+        z-index: 999 !important;
     }
 
     .hero {
