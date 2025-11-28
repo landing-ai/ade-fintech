@@ -236,15 +236,18 @@ a:hover {
 .nav-toggle {
     display: none;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
     cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
 }
 
 .nav-toggle span {
-    width: 24px;
-    height: 2px;
-    background-color: var(--color-black);
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-blue);
     transition: var(--transition-fast);
+    border-radius: 2px;
 }
 
 /* ================================
@@ -1149,6 +1152,13 @@ a:hover {
 
     .nav-toggle {
         display: flex;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: var(--radius-sm);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-toggle:hover {
+        background: rgba(102, 126, 234, 0.1);
     }
 
     .nav-link {
