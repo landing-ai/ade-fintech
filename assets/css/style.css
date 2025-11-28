@@ -1132,6 +1132,16 @@ a:hover {
    ================================ */
 
 @media (max-width: 768px) {
+    .header {
+        z-index: 1000 !important;
+        position: fixed !important;
+    }
+
+    .nav {
+        position: relative !important;
+        z-index: 1000 !important;
+    }
+
     .nav-menu {
         display: none !important;
         position: fixed;
@@ -1143,14 +1153,17 @@ a:hover {
         padding: 0 !important;
         margin: 0 !important;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        z-index: 9999;
+        z-index: 10001 !important;
         border-top: 3px solid #667eea;
         list-style: none !important;
         width: 100%;
+        pointer-events: auto !important;
+        opacity: 1 !important;
     }
 
     .nav-menu.active {
         display: flex !important;
+        pointer-events: auto !important;
     }
 
     .nav-menu li {
@@ -1159,6 +1172,9 @@ a:hover {
         padding: 0 !important;
         list-style: none !important;
         display: block !important;
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 10001 !important;
     }
 
     .nav-menu li a {
@@ -1172,6 +1188,10 @@ a:hover {
         font-weight: 700 !important;
         text-decoration: none !important;
         background: #ffffff !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+        position: relative !important;
+        z-index: 10002 !important;
     }
 
     .nav-menu li a:hover,
