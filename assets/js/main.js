@@ -42,10 +42,16 @@
     });
 
     // Mobile menu toggle
-    if (navToggle) {
-        navToggle.addEventListener('click', () => {
+    if (navToggle && navMenu) {
+        console.log('Mobile menu initialized');
+        navToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             navMenu.classList.toggle('active');
+            console.log('Menu toggled, active:', navMenu.classList.contains('active'));
         });
+    } else {
+        console.log('Nav elements not found:', { navToggle, navMenu });
     }
 
     // Close mobile menu when clicking on a link
@@ -57,6 +63,15 @@
             });
         });
     }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu && navToggle) {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        }
+    });
 
     // ================================
     // Projects Table with Pagination
