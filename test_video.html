@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Video Extraction</title>
+</head>
+<body>
+    <h1>Video Extraction Test</h1>
+    <div id="output"></div>
+    
+    <script>
+    function extractVideoInfo(url) {
+        if (!url || url === 'No' || url === 'Will be share shortly') return null;
+
+        // YouTube
+        const youtubeRegExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+        const youtubeMatch = url.match(youtubeRegExp);
+        if (youtubeMatch && youtubeMatch[7].length === 11) {
+            return {
+                type: 'youtube',
+                id: youtubeMatch[7],
+                embedUrl: \`https://www.youtube.com/embed/\${youtubeMatch[7]}\`
+            };
+        }
+
+        // Loom
+        const loomRegExp = /loom\.com\/share\/([a-zA-Z0-9]+)/;
+        const loomMatch = url.match(loomRegExp);
+        if (loomMatch) {
+            return {
+                type: 'loom',
+                id: loomMatch[1],
+                embedUrl: \`https://www.loom.com/embed/\${loomMatch[1]}\`
+            };
+        }
+
+        // Vimeo
+        const vimeoRegExp = /vimeo\.com\/(\d+)/;
+        const vimeoMatch = url.match(vimeoRegExp);
+        if (vimeoMatch) {
+            return {
+                type: 'vimeo',
+                id: vimeoMatch[1],
+                embedUrl: \`https://player.vimeo.com/video/\${vimeoMatch[1]}\`
+            };
+        }
+
+        return null;
+    }
+    
+    const testUrl = 'https://youtu.be/VeF_WH0lBcg';
+    const result = extractVideoInfo(testUrl);
+    document.getElementById('output').innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+    console.log('Result:', result);
+    </script>
+</body>
+</html>

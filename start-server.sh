@@ -1,0 +1,18 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+echo "============================================"
+echo "  LandingAI Hackathon Projects Server"
+echo "============================================"
+echo ""
+echo "Starting server..."
+echo ""
+echo "✅ Server running on: http://localhost:8888"
+echo ""
+echo "📂 Open in browser:"
+echo "   → http://localhost:8888/projects.html"
+echo "   → http://localhost:8888/index.html"
+echo ""
+echo "Press Ctrl+C to stop the server"
+echo ""
+echo "============================================"
+python3 -m http.server 8888
