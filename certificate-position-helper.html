@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Position Helper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4a9fe8;
+        }
+
+        .instructions {
+            background: rgba(74, 159, 232, 0.1);
+            border: 1px solid rgba(74, 159, 232, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .instructions h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin: 5px 0;
+        }
+
+        .canvas-wrapper {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        #certificateImage {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: crosshair;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #4a9fe8;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3a8fd8;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .output {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(74, 159, 232, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .output h2 {
+            margin-bottom: 15px;
+            color: #4a9fe8;
+        }
+
+        .css-output {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 15px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #58a6ff;
+            overflow-x: auto;
+        }
+
+        .css-output .property {
+            color: #79c0ff;
+        }
+
+        .css-output .value {
+            color: #a5d6ff;
+        }
+
+        .css-output .comment {
+            color: #8b949e;
+        }
+
+        .rectangle-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: rgba(74, 159, 232, 0.1);
+            border: 1px solid rgba(74, 159, 232, 0.3);
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .info-box label {
+            display: block;
+            font-size: 0.85rem;
+            color: #a0a0a0;
+            margin-bottom: 5px;
+        }
+
+        .info-box .value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #4a9fe8;
+        }
+
+        #status {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        #status.drawing {
+            background: rgba(74, 159, 232, 0.2);
+            color: #4a9fe8;
+        }
+
+        #status.complete {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Certificate Position Helper</h1>
+
+        <div class="instructions">
+            <h2>Instructions:</h2>
+            <ol>
+                <li><strong>Click and drag</strong> on the certificate image below to draw a rectangle around the name box</li>
+                <li>The CSS values will be calculated automatically</li>
+                <li><strong>Copy the CSS</strong> values and share them with me</li>
+                <li>Click "Clear" to start over if needed</li>
+            </ol>
+        </div>
+
+        <div class="canvas-wrapper">
+            <img id="certificateImage" src="assets/images/certificates/landingAI_certificate.jpg" alt="Certificate">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <button class="btn-primary" id="clearBtn">Clear Rectangle</button>
+            <button class="btn-secondary" id="copyBtn">Copy CSS Values</button>
+        </div>
+
+        <div id="status"></div>
+
+        <div class="output" id="output" style="display: none;">
+            <h2>📋 CSS Position Values</h2>
+
+            <div class="rectangle-info">
+                <div class="info-box">
+                    <label>Top Position</label>
+                    <div class="value" id="topValue">-</div>
+                </div>
+                <div class="info-box">
+                    <label>Left Position</label>
+                    <div class="value" id="leftValue">-</div>
+                </div>
+                <div class="info-box">
+                    <label>Width</label>
+                    <div class="value" id="widthValue">-</div>
+                </div>
+                <div class="info-box">
+                    <label>Height</label>
+                    <div class="value" id="heightValue">-</div>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 10px;">CSS Code:</h3>
+            <div class="css-output" id="cssCode">
+                <span class="comment">/* Drag a rectangle on the certificate to generate CSS */</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const image = document.getElementById('certificateImage');
+        const output = document.getElementById('output');
+        const clearBtn = document.getElementById('clearBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const status = document.getElementById('status');
+
+        let isDrawing = false;
+        let startX, startY, endX, endY;
+        let rect = null;
+
+        // Set canvas size to match image
+        function resizeCanvas() {
+            canvas.width = image.offsetWidth;
+            canvas.height = image.offsetHeight;
+            if (rect) {
+                drawRectangle();
+            }
+        }
+
+        image.addEventListener('load', resizeCanvas);
+        window.addEventListener('resize', resizeCanvas);
+
+        // Get mouse position relative to canvas
+        function getMousePos(e) {
+            const canvasRect = canvas.getBoundingClientRect();
+            return {
+                x: e.clientX - canvasRect.left,
+                y: e.clientY - canvasRect.top
+            };
+        }
+
+        // Start drawing
+        canvas.addEventListener('mousedown', (e) => {
+            const pos = getMousePos(e);
+            startX = pos.x;
+            startY = pos.y;
+            isDrawing = true;
+            status.textContent = '🖱️ Drag to draw the rectangle...';
+            status.className = 'drawing';
+        });
+
+        // Draw rectangle
+        canvas.addEventListener('mousemove', (e) => {
+            if (!isDrawing) return;
+
+            const pos = getMousePos(e);
+            endX = pos.x;
+            endY = pos.y;
+
+            drawRectangle();
+        });
+
+        // Finish drawing
+        canvas.addEventListener('mouseup', (e) => {
+            if (!isDrawing) return;
+
+            const pos = getMousePos(e);
+            endX = pos.x;
+            endY = pos.y;
+            isDrawing = false;
+
+            rect = {
+                x: Math.min(startX, endX),
+                y: Math.min(startY, endY),
+                width: Math.abs(endX - startX),
+                height: Math.abs(endY - startY)
+            };
+
+            drawRectangle();
+            calculateCSS();
+
+            status.textContent = '✅ Rectangle drawn! CSS values generated below.';
+            status.className = 'complete';
+        });
+
+        function drawRectangle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const x = Math.min(startX, endX);
+            const y = Math.min(startY, endY);
+            const width = Math.abs(endX - startX);
+            const height = Math.abs(endY - startY);
+
+            // Draw rectangle
+            ctx.strokeStyle = '#4a9fe8';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(x, y, width, height);
+
+            // Fill with semi-transparent color
+            ctx.fillStyle = 'rgba(74, 159, 232, 0.2)';
+            ctx.fillRect(x, y, width, height);
+
+            // Draw corner handles
+            ctx.fillStyle = '#4a9fe8';
+            const handleSize = 8;
+            [
+                [x, y],
+                [x + width, y],
+                [x, y + height],
+                [x + width, y + height]
+            ].forEach(([hx, hy]) => {
+                ctx.fillRect(hx - handleSize/2, hy - handleSize/2, handleSize, handleSize);
+            });
+        }
+
+        function calculateCSS() {
+            if (!rect) return;
+
+            const imageWidth = canvas.width;
+            const imageHeight = canvas.height;
+
+            const topPercent = ((rect.y / imageHeight) * 100).toFixed(1);
+            const leftPercent = ((rect.x / imageWidth) * 100).toFixed(1);
+            const widthPercent = ((rect.width / imageWidth) * 100).toFixed(1);
+            const heightPercent = ((rect.height / imageHeight) * 100).toFixed(1);
+
+            // Update display
+            document.getElementById('topValue').textContent = `${topPercent}%`;
+            document.getElementById('leftValue').textContent = `${leftPercent}%`;
+            document.getElementById('widthValue').textContent = `${widthPercent}%`;
+            document.getElementById('heightValue').textContent = `${heightPercent}%`;
+
+            const cssCode = `.certificate-name-box {
+    <span class="property">position</span>: <span class="value">absolute</span>;
+    <span class="property">top</span>: <span class="value">${topPercent}%</span>;
+    <span class="property">left</span>: <span class="value">${leftPercent}%</span>;
+    <span class="property">width</span>: <span class="value">${widthPercent}%</span>;
+    <span class="property">height</span>: <span class="value">${heightPercent}%</span>;
+    <span class="property">display</span>: <span class="value">flex</span>;
+    <span class="property">align-items</span>: <span class="value">flex-end</span>;
+    <span class="property">justify-content</span>: <span class="value">flex-start</span>;
+    <span class="property">padding-left</span>: <span class="value">0.5rem</span>;
+    <span class="property">padding-bottom</span>: <span class="value">0.3rem</span>;
+}`;
+
+            document.getElementById('cssCode').innerHTML = cssCode;
+            output.style.display = 'block';
+
+            // Store plain text for copying
+            canvas.dataset.css = `top: ${topPercent}%;\nleft: ${leftPercent}%;\nwidth: ${widthPercent}%;\nheight: ${heightPercent}%;`;
+        }
+
+        // Clear button
+        clearBtn.addEventListener('click', () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            rect = null;
+            startX = startY = endX = endY = 0;
+            output.style.display = 'none';
+            status.textContent = '';
+            status.className = '';
+        });
+
+        // Copy button
+        copyBtn.addEventListener('click', () => {
+            if (!canvas.dataset.css) {
+                alert('Please draw a rectangle first!');
+                return;
+            }
+
+            navigator.clipboard.writeText(canvas.dataset.css).then(() => {
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy. Please select and copy manually.');
+            });
+        });
+
+        // Initialize
+        resizeCanvas();
+    </script>
+</body>
+</html>
