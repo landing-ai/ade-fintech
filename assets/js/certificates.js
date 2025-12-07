@@ -86,6 +86,40 @@
         el.className = `form-alert ${type}`;
     }
 
+    function updateMetaTags(data) {
+        // Update Open Graph and Twitter meta tags for social sharing
+        const url = window.location.href.split('?')[0] + '?id=' + data.id;
+        const title = `${data.name} - Financial AI Championship Certificate`;
+        const description = `Certificate of Participation for ${data.name} in the AI Financial Hackathon Championship, organized by LandingAI in collaboration with AWS.`;
+
+        // Update og:url
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', url);
+
+        // Update og:title
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', title);
+
+        // Update og:description
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', description);
+
+        // Update twitter:url
+        const twitterUrl = document.querySelector('meta[property="twitter:url"]');
+        if (twitterUrl) twitterUrl.setAttribute('content', url);
+
+        // Update twitter:title
+        const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+        if (twitterTitle) twitterTitle.setAttribute('content', title);
+
+        // Update twitter:description
+        const twitterDesc = document.querySelector('meta[property="twitter:description"]');
+        if (twitterDesc) twitterDesc.setAttribute('content', description);
+
+        // Update page title
+        document.title = title;
+    }
+
     function renderCertificate(target, data) {
         if (!target) return;
         if (!data) {
@@ -117,6 +151,9 @@
             credentialIdText.textContent = data.id;
         }
         if (issuedToName) issuedToName.textContent = data.name;
+
+        // Update meta tags for social sharing
+        updateMetaTags(data);
     }
 
     function normalizeId(input) {
