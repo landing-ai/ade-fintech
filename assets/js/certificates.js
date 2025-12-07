@@ -298,8 +298,8 @@
         }
     }
 
-    // LinkedIn integration
-    async function handleAddToLinkedIn() {
+    // LinkedIn integration - Temporarily disabled
+    /* async function handleAddToLinkedIn() {
         const certId = lookupInput.value;
         const url = getCertificateShareUrl(certId);
         const certFrame = document.getElementById('certificate-full-frame');
@@ -341,7 +341,7 @@
             const linkedInUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Financial%20AI%20Championship%20Participant&organizationName=LandingAI&issueYear=${new Date().getFullYear()}&issueMonth=${new Date().getMonth() + 1}&certUrl=${encodeURIComponent(url)}&certId=${encodeURIComponent(certId)}`;
             window.open(linkedInUrl, '_blank');
         }
-    }
+    } */
 
     // Download certificate - capture exactly as displayed on screen
     const CERT_IMG_WIDTH = 2441;
@@ -500,22 +500,22 @@
 
         // Add event listeners for action buttons
         const shareBtn = document.getElementById('share-award-btn');
-        const linkedInBtn = document.getElementById('add-to-linkedin-btn');
+        // const linkedInBtn = document.getElementById('add-to-linkedin-btn'); // Temporarily disabled
         const downloadBtn = document.getElementById('download-btn');
         const copyLinkBtn = document.getElementById('copy-link-btn');
 
         if (shareBtn) shareBtn.addEventListener('click', handleShareAward);
-        if (linkedInBtn) linkedInBtn.addEventListener('click', handleAddToLinkedIn);
+        // if (linkedInBtn) linkedInBtn.addEventListener('click', handleAddToLinkedIn); // Temporarily disabled
         if (downloadBtn) downloadBtn.addEventListener('click', handleDownload);
         if (copyLinkBtn) copyLinkBtn.addEventListener('click', handleCopyLink);
 
         // Add event listeners for overlay buttons
         const shareOverlayBtn = document.getElementById('share-award-overlay-btn');
-        const linkedInOverlayBtn = document.getElementById('linkedin-overlay-btn');
+        // const linkedInOverlayBtn = document.getElementById('linkedin-overlay-btn'); // Temporarily disabled
         const downloadOverlayBtn = document.getElementById('download-overlay-btn');
 
         if (shareOverlayBtn) shareOverlayBtn.addEventListener('click', handleShareAward);
-        if (linkedInOverlayBtn) linkedInOverlayBtn.addEventListener('click', handleAddToLinkedIn);
+        // if (linkedInOverlayBtn) linkedInOverlayBtn.addEventListener('click', handleAddToLinkedIn); // Temporarily disabled
         if (downloadOverlayBtn) downloadOverlayBtn.addEventListener('click', handleDownload);
 
         // Add event listeners for share modal
