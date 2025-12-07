@@ -1,0 +1,33 @@
+# Certificate Data - NEVER COMMIT PLAIN CSV OR GENERATED IMAGES
+data/certificate_list.csv
+assets/images/certificates/generated/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Certificate Backups
+backups/
+
+# Node modules (if added in future)
+node_modules/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary Files
+*.tmp
+.cache/

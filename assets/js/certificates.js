@@ -92,6 +92,10 @@
         const title = `${data.name} - Financial AI Championship Certificate`;
         const description = `Certificate of Participation for ${data.name} in the AI Financial Hackathon Championship, organized by LandingAI in collaboration with AWS.`;
 
+        // Use personalized certificate image if available
+        const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+        const imageUrl = `${baseUrl}/assets/images/certificates/generated/${data.id}.png`;
+
         // Update og:url
         const ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl) ogUrl.setAttribute('content', url);
@@ -104,6 +108,10 @@
         const ogDesc = document.querySelector('meta[property="og:description"]');
         if (ogDesc) ogDesc.setAttribute('content', description);
 
+        // Update og:image to personalized certificate
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) ogImage.setAttribute('content', imageUrl);
+
         // Update twitter:url
         const twitterUrl = document.querySelector('meta[property="twitter:url"]');
         if (twitterUrl) twitterUrl.setAttribute('content', url);
@@ -115,6 +123,10 @@
         // Update twitter:description
         const twitterDesc = document.querySelector('meta[property="twitter:description"]');
         if (twitterDesc) twitterDesc.setAttribute('content', description);
+
+        // Update twitter:image to personalized certificate
+        const twitterImage = document.querySelector('meta[property="twitter:image"]');
+        if (twitterImage) twitterImage.setAttribute('content', imageUrl);
 
         // Update page title
         document.title = title;
