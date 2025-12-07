@@ -231,11 +231,17 @@
         }
     }
 
+    // Helper function to generate shareable certificate URL
+    function getCertificateShareUrl(certId) {
+        const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+        return `${baseUrl}/cert/${certId}.html`;
+    }
+
     // Share functionality - Open modal
     function handleShareAward() {
         const modal = document.getElementById('shareModal');
         const shareUrlInput = document.getElementById('shareUrl');
-        const url = window.location.href.split('?')[0] + '?id=' + lookupInput.value;
+        const url = getCertificateShareUrl(lookupInput.value);
 
         if (shareUrlInput) {
             shareUrlInput.value = url;
@@ -258,14 +264,14 @@
 
     // Share on LinkedIn
     function shareOnLinkedIn() {
-        const url = window.location.href.split('?')[0] + '?id=' + lookupInput.value;
+        const url = getCertificateShareUrl(lookupInput.value);
         const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
         window.open(linkedInUrl, '_blank');
     }
 
     // Share on X (Twitter)
     function shareOnTwitter() {
-        const url = window.location.href.split('?')[0] + '?id=' + lookupInput.value;
+        const url = getCertificateShareUrl(lookupInput.value);
         const text = 'Check out my Financial AI Championship certificate! 🎓';
         const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
         window.open(twitterUrl, '_blank');
@@ -295,7 +301,7 @@
     // LinkedIn integration
     async function handleAddToLinkedIn() {
         const certId = lookupInput.value;
-        const url = window.location.href.split('?')[0] + '?id=' + certId;
+        const url = getCertificateShareUrl(certId);
         const certFrame = document.getElementById('certificate-full-frame');
         const overlay = document.querySelector('.certificate-actions-overlay');
 
@@ -476,7 +482,7 @@
 
     // Copy certificate link
     function handleCopyLink() {
-        const url = window.location.href.split('?')[0] + '?id=' + lookupInput.value;
+        const url = getCertificateShareUrl(lookupInput.value);
         navigator.clipboard.writeText(url).then(() => {
             alert('Certificate link copied to clipboard!');
         }).catch(err => {
