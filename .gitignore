@@ -1,6 +1,5 @@
-# Certificate Data - NEVER COMMIT PLAIN CSV OR GENERATED IMAGES
+# Certificate Data - NEVER COMMIT PLAIN CSV
 data/certificate_list.csv
-assets/images/certificates/generated/
 
 # Environment Variables
 .env
