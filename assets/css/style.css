@@ -360,6 +360,203 @@ body.nav-open {
 }
 
 /* ================================
+   Certificates
+   ================================ */
+
+.certificate-section {
+    padding-top: var(--spacing-2xl);
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(74, 159, 232, 0.2);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+.card-header h3 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.card-header p {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-medium);
+}
+
+.certificate-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.certificate-form label {
+    font-weight: 600;
+    color: var(--color-blue);
+}
+
+.certificate-form input,
+.certificate-form textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
+}
+
+.certificate-form textarea {
+    resize: vertical;
+}
+
+.input-row {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: stretch;
+}
+
+.input-row input {
+    flex: 1;
+}
+
+.helper-text {
+    font-size: 0.9rem;
+    color: var(--color-gray-medium);
+}
+
+.certificate-preview {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(74, 159, 232, 0.15);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    min-height: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-preview-header h3 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.certificate-preview-header p {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-medium);
+}
+
+.certificate-render {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certificate-render .placeholder {
+    text-align: center;
+    color: var(--color-gray-medium);
+    padding: var(--spacing-md);
+}
+
+.certificate-card {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    background: url('../images/certificates/landingAI_certificate.jpg') center/cover no-repeat;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.certificate-overlay {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    right: 8%;
+    bottom: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #0b3050;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.certificate-title {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.certificate-name {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.certificate-role {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    margin-bottom: var(--spacing-sm);
+}
+
+.certificate-email {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.certificate-id {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #0b5fa4;
+    margin-top: var(--spacing-xs);
+}
+
+.form-alert {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    display: none;
+}
+
+.form-alert.success {
+    display: block;
+    background: rgba(46, 204, 113, 0.15);
+    border: 1px solid rgba(46, 204, 113, 0.5);
+    color: #2ecc71;
+}
+
+.form-alert.error {
+    display: block;
+    background: rgba(231, 76, 60, 0.15);
+    border: 1px solid rgba(231, 76, 60, 0.5);
+    color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+    .input-row {
+        flex-direction: column;
+    }
+
+    .certificate-card {
+        max-width: 100%;
+    }
+}
+
+/* ================================
    About Section - Card Grid
    ================================ */
 

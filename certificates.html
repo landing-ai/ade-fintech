@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Certificate - Agentic Document Extraction | LandingAI</title>
+    <meta name="description" content="Verify Financial AI Championship certificates and generate your personalized verifiable certificate with feedback.">
+    <link rel="stylesheet" href="assets/css/style.css?v=52">
+    <link rel="stylesheet" href="assets/css/matrix-theme.css?v=52">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="LandingAI" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="certificates.html" class="nav-link active">Verify Certificate</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header certificates-hero">
+        <div class="container">
+            <h1 class="page-title">Verify Your Certificate</h1>
+            <p class="page-description">
+                Validate championship participation, view your verifiable certificate, and generate a fresh certificate after sharing quick feedback.
+            </p>
+        </div>
+    </section>
+
+    <!-- Verify Section -->
+    <section class="section certificate-section">
+        <div class="container certificate-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Find an existing certificate</h3>
+                    <p>Enter your unique certificate ID to instantly view the official certificate.</p>
+                </div>
+                <form id="certificate-lookup-form" class="certificate-form">
+                    <label for="certificate-id">Certificate ID</label>
+                    <div class="input-row">
+                        <input type="text" id="certificate-id" placeholder="e.g., ADE-1A2B-3C4D" required>
+                        <button type="submit" class="btn btn-primary">Verify</button>
+                    </div>
+                    <p class="helper-text">Use the ID shared with your certificate email. IDs are case-insensitive.</p>
+                    <div id="lookup-alert" class="form-alert" role="alert" aria-live="polite"></div>
+                </form>
+            </div>
+
+            <div class="certificate-preview">
+                <div class="certificate-preview-header">
+                    <h3>Certificate Preview</h3>
+                    <p id="certificate-preview-subtitle">Enter an ID to display the matching certificate.</p>
+                </div>
+                <div id="certificate-render" class="certificate-render">
+                    <!-- Certificate will be injected here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback + Generate Section -->
+    <section class="section certificate-section section-dark">
+        <div class="container certificate-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Share feedback & get your certificate</h3>
+                    <p>Tell us about your experience to generate a verifiable certificate with a unique ID.</p>
+                </div>
+                <form id="certificate-feedback-form" class="certificate-form">
+                    <label for="feedback-name">Full Name</label>
+                    <input type="text" id="feedback-name" placeholder="Your full name" required>
+
+                    <label for="feedback-email">Email</label>
+                    <input type="email" id="feedback-email" placeholder="you@example.com" required>
+
+                    <label for="feedback-role">Role / Organization</label>
+                    <input type="text" id="feedback-role" placeholder="Your title or team name" required>
+
+                    <label for="feedback-notes">Feedback</label>
+                    <textarea id="feedback-notes" rows="4" placeholder="What did you build or learn?"></textarea>
+
+                    <button type="submit" class="btn btn-secondary">Submit & Generate</button>
+                    <div id="feedback-alert" class="form-alert" role="alert" aria-live="polite"></div>
+                </form>
+            </div>
+
+            <div class="certificate-preview">
+                <div class="certificate-preview-header">
+                    <h3>Generated certificate</h3>
+                    <p id="generated-preview-subtitle">Submit the form to receive a new certificate ID.</p>
+                </div>
+                <div id="generated-certificate-render" class="certificate-render">
+                    <!-- Generated certificate will appear here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/components.js?v=52"></script>
+    <script src="assets/js/matrix-rain.js?v=52"></script>
+    <script src="assets/js/main.js?v=52"></script>
+    <script src="assets/js/certificates.js?v=52"></script>
+</body>
+</html>
