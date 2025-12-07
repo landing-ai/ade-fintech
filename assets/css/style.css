@@ -381,6 +381,7 @@ body.nav-open {
     padding: var(--spacing-xl);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
+    color: var(--color-white);
 }
 
 .card-header h3 {
@@ -389,7 +390,7 @@ body.nav-open {
 
 .card-header p {
     margin-bottom: var(--spacing-md);
-    color: var(--color-gray-medium);
+    color: rgba(255, 255, 255, 0.82);
 }
 
 .certificate-form {
@@ -429,7 +430,7 @@ body.nav-open {
 
 .helper-text {
     font-size: 0.9rem;
-    color: var(--color-gray-medium);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .certificate-preview {
@@ -439,6 +440,7 @@ body.nav-open {
     padding: var(--spacing-lg);
     min-height: 320px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
 }
 
 .certificate-preview-header h3 {
@@ -447,7 +449,7 @@ body.nav-open {
 
 .certificate-preview-header p {
     margin-bottom: var(--spacing-md);
-    color: var(--color-gray-medium);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .certificate-render {

@@ -45,37 +45,6 @@
         </div>
     </section>
 
-    <!-- Verify Section -->
-    <section class="section certificate-section">
-        <div class="container certificate-grid">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Find an existing certificate</h3>
-                    <p>Enter your unique certificate ID to instantly view the official certificate.</p>
-                </div>
-                <form id="certificate-lookup-form" class="certificate-form">
-                    <label for="certificate-id">Certificate ID</label>
-                    <div class="input-row">
-                        <input type="text" id="certificate-id" placeholder="e.g., ADE-1A2B-3C4D" required>
-                        <button type="submit" class="btn btn-primary">Verify</button>
-                    </div>
-                    <p class="helper-text">Use the ID shared with your certificate email. IDs are case-insensitive.</p>
-                    <div id="lookup-alert" class="form-alert" role="alert" aria-live="polite"></div>
-                </form>
-            </div>
-
-            <div class="certificate-preview">
-                <div class="certificate-preview-header">
-                    <h3>Certificate Preview</h3>
-                    <p id="certificate-preview-subtitle">Enter an ID to display the matching certificate.</p>
-                </div>
-                <div id="certificate-render" class="certificate-render">
-                    <!-- Certificate will be injected here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Feedback + Generate Section -->
     <section class="section certificate-section section-dark">
         <div class="container certificate-grid">
@@ -109,6 +78,37 @@
                 </div>
                 <div id="generated-certificate-render" class="certificate-render">
                     <!-- Generated certificate will appear here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verify Section -->
+    <section class="section certificate-section">
+        <div class="container certificate-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Find an existing certificate</h3>
+                    <p>Enter your unique certificate ID to instantly view the official certificate.</p>
+                </div>
+                <form id="certificate-lookup-form" class="certificate-form">
+                    <label for="certificate-id">Certificate ID</label>
+                    <div class="input-row">
+                        <input type="text" id="certificate-id" placeholder="e.g., ADE-1A2B-3C4D" required>
+                        <button type="submit" class="btn btn-primary">Verify</button>
+                    </div>
+                    <p class="helper-text">Use the ID shared with your certificate email. IDs are case-insensitive.</p>
+                    <div id="lookup-alert" class="form-alert" role="alert" aria-live="polite"></div>
+                </form>
+            </div>
+
+            <div class="certificate-preview">
+                <div class="certificate-preview-header">
+                    <h3>Certificate Preview</h3>
+                    <p id="certificate-preview-subtitle">Enter an ID to display the matching certificate.</p>
+                </div>
+                <div id="certificate-render" class="certificate-render">
+                    <!-- Certificate will be injected here -->
                 </div>
             </div>
         </div>
