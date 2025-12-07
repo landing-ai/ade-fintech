@@ -1,19 +1,15 @@
 // ========================================
-// Certificate verification & generation
+// Certificate verification
 // ========================================
 (function() {
     'use strict';
 
     const csvPath = 'data/certificate_list.csv';
     const lookupForm = document.getElementById('certificate-lookup-form');
-    const feedbackForm = document.getElementById('certificate-feedback-form');
     const lookupInput = document.getElementById('certificate-id');
     const lookupAlert = document.getElementById('lookup-alert');
-    const feedbackAlert = document.getElementById('feedback-alert');
     const previewSubtitle = document.getElementById('certificate-preview-subtitle');
-    const generatedSubtitle = document.getElementById('generated-preview-subtitle');
     const renderTarget = document.getElementById('certificate-render');
-    const generatedTarget = document.getElementById('generated-certificate-render');
 
     let certificates = [];
 
@@ -76,6 +72,7 @@
         }
         target.innerHTML = `
             <div class="certificate-card">
+                ${data.photo ? `<div class="certificate-photo"><img src="${data.photo}" alt="${data.name} headshot"></div>` : ''}
                 <div class="certificate-overlay">
                     <div class="certificate-title">Financial AI Championship</div>
                     <div class="certificate-name">${data.name}</div>
@@ -115,39 +112,12 @@
         setAlert(lookupAlert, 'success', `Verified! Certificate for ${match.name} is ready.`);
     }
 
-    function handleFeedbackSubmit(e) {
-        e.preventDefault();
-        const name = document.getElementById('feedback-name').value.trim();
-        const email = document.getElementById('feedback-email').value.trim();
-        const role = document.getElementById('feedback-role').value.trim() || 'Participant';
-        const feedback = document.getElementById('feedback-notes').value.trim();
-
-        if (!name || !email) {
-            setAlert(feedbackAlert, 'error', 'Name and email are required.');
-            return;
-        }
-
-        const id = generateCertId(name, email);
-        const entry = { name, email, role, id, feedback };
-
-        // add to in-memory list so it can be immediately verified
-        certificates.push(entry);
-
-        renderCertificate(generatedTarget, entry);
-        generatedSubtitle.textContent = 'Your verifiable certificate is ready';
-        setAlert(feedbackAlert, 'success', `Certificate generated! Your ID is ${id}. Save it for verification.`);
-    }
-
     function init() {
         renderCertificate(renderTarget, null);
-        renderCertificate(generatedTarget, null);
         loadCertificates();
 
         if (lookupForm) {
             lookupForm.addEventListener('submit', handleLookupSubmit);
-        }
-        if (feedbackForm) {
-            feedbackForm.addEventListener('submit', handleFeedbackSubmit);
         }
     }
 

@@ -367,6 +367,20 @@ body.nav-open {
     padding-top: var(--spacing-2xl);
 }
 
+.certificates-hero {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%);
+    color: var(--color-white);
+}
+
+.certificates-hero .page-title {
+    color: var(--color-electric-cyan, #e0f4ff);
+    text-shadow: 0 0 18px rgba(74, 159, 232, 0.4);
+}
+
+.certificates-hero .page-description {
+    color: rgba(255, 255, 255, 0.85);
+}
+
 .certificate-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -376,7 +390,7 @@ body.nav-open {
 
 .card {
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(74, 159, 232, 0.2);
+    border: 1px solid rgba(74, 159, 232, 0.25);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -386,11 +400,12 @@ body.nav-open {
 
 .card-header h3 {
     margin-bottom: var(--spacing-xs);
+    color: var(--color-electric-cyan, #e0f4ff);
 }
 
 .card-header p {
     margin-bottom: var(--spacing-md);
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.86);
 }
 
 .certificate-form {
@@ -401,7 +416,7 @@ body.nav-open {
 
 .certificate-form label {
     font-weight: 600;
-    color: var(--color-blue);
+    color: var(--color-electric-cyan, var(--color-blue));
 }
 
 .certificate-form input,
@@ -416,6 +431,11 @@ body.nav-open {
 
 .certificate-form textarea {
     resize: vertical;
+}
+
+.certificate-form input::placeholder,
+.certificate-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .input-row {
@@ -435,7 +455,7 @@ body.nav-open {
 
 .certificate-preview {
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(74, 159, 232, 0.15);
+    border: 1px solid rgba(74, 159, 232, 0.2);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     min-height: 320px;
@@ -445,6 +465,7 @@ body.nav-open {
 
 .certificate-preview-header h3 {
     margin-bottom: var(--spacing-xs);
+    color: var(--color-electric-cyan, #e0f4ff);
 }
 
 .certificate-preview-header p {
@@ -493,6 +514,26 @@ body.nav-open {
     justify-content: center;
     color: #0b3050;
     text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+.certificate-photo {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(74, 159, 232, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.certificate-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .certificate-title {
