@@ -72,13 +72,13 @@
     "summary": "ComplianceGuard represents cutting-edge technology using ColPali embeddings (2024 SOTA) for multi-vector document analysis. The system features unified DocumentIndex API for indexing and search, automatic PDF to image conversion, hosted Modal service integration for embeddings (no local model required), Milvus vector database for fast retrieval, and MaxSim (Maximum Similarity) scoring for accurate document ranking. Architecture includes support for multiple independent indexes, duplicate prevention with automatic tracking, persistent index logs, efficient batch operations, and built-in result formatting. Winner of Most Advanced Embeddings award. Built with FastAPI, Docker Compose for service orchestration, S3 for file storage, PostgreSQL for metadata, and comprehensive batch processing capabilities."
   },
   {
-    "team_name": "pAIsa-pAIsa",
-    "github": "https://github.com/dharaneesh71/Financeflow_ai",
-    "youtube": "https://youtu.be/rbdXRPEVgTU",
-    "team_members": "Dharaneesh CKV, Virginia Tech, Student Sudip Manchare, Virginia Tech, Student",
-    "team_size": 2,
-    "abstract": "Financial Data Warehouse Automation",
-    "summary": "SnowFlow AI automates the complete pipeline from financial document upload to Snowflake data warehouse deployment. Uses Google Gemini AI and LandingAI ADE for intelligent extraction from PDFs, images, and financial statements. The LangGraph-based architecture orchestrates four key agents: Document Extractor (OCR and AI-powered markdown conversion), Financial Analyzer (document type identification and relationship mapping), Schema Designer (optimized database schema generation), and Snowflake Deployer (automated data loading). Built with FastAPI backend and React/Tailwind frontend, featuring user-driven metric discovery, automated schema design based on extracted data, and comprehensive workflow management with conditional processing."
+    "team_name": "W11",
+    "github": "https://github.com/invst-git/tmc-v1",
+    "youtube": "https://youtu.be/JegVT3a4zgk",
+    "team_members": "Nitish Dandu, University, Undergrad",
+    "team_size": 0,
+    "abstract": "Enterprise Invoice Processing Automation",
+    "summary": "TMC-v1 transforms traditional accounts payable by automating every step from email intake to payment, processing invoices from email attachments, extracting structured data with Landing AI OCR, and matching against purchase orders. The system monitors email accounts for invoice attachments from configured vendors, extracts all relevant data using Landing AI's DPT-2 model handling multiple formats/currencies/languages, automatically matches invoices to open POs with configurable tolerance thresholds, flags exceptions for manual review, and processes payments through Stripe integration. Reduces processing time from 15 minutes to 2 minutes per invoice, achieves near-zero error rate vs 1-3% manual errors, and enables scale without proportional headcount growth."
   },
   {
     "team_name": "ReLeap",
@@ -243,13 +243,13 @@
     "summary": "Crow provides comprehensive investment analysis through an 8-module AI-powered pipeline with interactive visualization. The platform combines Next.js frontend with shadcn/ui components and React Flow for workflow visualization, Flask API backend wrapping Python analysis modules, and real-time pipeline execution displaying results through interactive flow diagrams. Features modular architecture for easy extension with new pipeline modules, responsive design with modern UI components, and complete analysis workflow covering risk assessment, evaluation, and processing. Built with comprehensive error handling, real-time status monitoring, and CORS-enabled frontend-backend communication for seamless integration."
   },
   {
-    "team_name": "W11",
-    "github": "https://github.com/invst-git/tmc-v1",
-    "youtube": "https://youtu.be/JegVT3a4zgk",
-    "team_members": "Nitish Dandu, University, Undergrad",
-    "team_size": 0,
-    "abstract": "Enterprise Invoice Processing Automation",
-    "summary": "TMC-v1 transforms traditional accounts payable by automating every step from email intake to payment, processing invoices from email attachments, extracting structured data with Landing AI OCR, and matching against purchase orders. The system monitors email accounts for invoice attachments from configured vendors, extracts all relevant data using Landing AI's DPT-2 model handling multiple formats/currencies/languages, automatically matches invoices to open POs with configurable tolerance thresholds, flags exceptions for manual review, and processes payments through Stripe integration. Reduces processing time from 15 minutes to 2 minutes per invoice, achieves near-zero error rate vs 1-3% manual errors, and enables scale without proportional headcount growth."
+    "team_name": "pAIsa-pAIsa",
+    "github": "https://github.com/dharaneesh71/Financeflow_ai",
+    "youtube": "https://youtu.be/rbdXRPEVgTU",
+    "team_members": "Dharaneesh CKV, Virginia Tech, Student Sudip Manchare, Virginia Tech, Student",
+    "team_size": 2,
+    "abstract": "Financial Data Warehouse Automation",
+    "summary": "SnowFlow AI automates the complete pipeline from financial document upload to Snowflake data warehouse deployment. Uses Google Gemini AI and LandingAI ADE for intelligent extraction from PDFs, images, and financial statements. The LangGraph-based architecture orchestrates four key agents: Document Extractor (OCR and AI-powered markdown conversion), Financial Analyzer (document type identification and relationship mapping), Schema Designer (optimized database schema generation), and Snowflake Deployer (automated data loading). Built with FastAPI backend and React/Tailwind frontend, featuring user-driven metric discovery, automated schema design based on extracted data, and comprehensive workflow management with conditional processing."
   },
   {
     "team_name": "Ken. [this one]",
