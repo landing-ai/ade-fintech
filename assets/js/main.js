@@ -500,6 +500,19 @@
             html += createPhotoItem(photo);
         });
 
+        // Add individual YouTube videos
+        const videoUrls = [
+            'https://youtu.be/oZXQUr4lUWk',
+            'https://youtu.be/BMxZ8XpFeqA',
+            'https://youtu.be/Y9DrpxDBFfo',
+            'https://youtu.be/h3lRv-6S6fw',
+            'https://youtu.be/GQyXt1qhAaI',
+            'https://youtu.be/z9pMsxeBHkw'
+        ];
+        videoUrls.forEach(videoUrl => {
+            html += createVideoItem(videoUrl);
+        });
+
         galleryGrid.innerHTML = html || `
             <div class="gallery-placeholder">
                 <p>Loading gallery...</p>
@@ -560,6 +573,28 @@
         return `
             <div class="gallery-item" data-category="photos">
                 <img src="assets/images/gallery/${filename}" alt="Hackathon Event" loading="lazy" class="zoomable-image">
+            </div>
+        `;
+    }
+
+    function createVideoItem(videoUrl) {
+        // Extract video ID from YouTube URL
+        const videoId = videoUrl.split('/').pop().split('?')[0];
+        const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+
+        return `
+            <div class="gallery-item" data-category="videos">
+                <div class="video-wrapper">
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        src="${embedUrl}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="lazy">
+                    </iframe>
+                </div>
             </div>
         `;
     }
