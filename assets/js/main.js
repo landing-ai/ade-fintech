@@ -550,7 +550,6 @@
         const photoFiles = [
             'event-001.jpg',
             'event-002.jpg',
-            'event-003.jpg',
             'event-004.jpg',
             'event-005.jpg',
             'event-006.jpg',
