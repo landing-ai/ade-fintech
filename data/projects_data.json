@@ -426,8 +426,8 @@
     "team_name": "Due Diligence Copilot",
     "github": "https://github.com/manuvikash/mna-agent",
     "youtube": "https://www.youtube.com/watch?v=QfwF3Uh10PY",
-    "team_members": "",
-    "team_size": 0,
+    "team_members": "Manuvikash Saravanakumar, Satheesh Kumar GR, Ayaan Gazali",
+    "team_size": 3,
     "abstract": "M&A Due Diligence Automation",
     "summary": "Due Diligence Copilot leverages LandingAI's ADE to transform complex financial and legal filings into structured, contextual insights for M&A and IPO analysis. Operating in a $3.2 trillion annual market with over 50,000 M&A deals and 1,400 IPOs each year, this has the potential to automate red-flag detection and cross-document validation to reduce analyst error and protect millions in potential losses."
   },
@@ -435,8 +435,8 @@
     "team_name": "DeltaLearn",
     "github": "https://github.com/Hrishikesh-Athreya/delta-learn",
     "youtube": "https://www.youtube.com/watch?v=emFQqpqGlKo",
-    "team_members": "",
-    "team_size": 0,
+    "team_members": "Hrishikesh Athreya, Arnav Dewan, Thilak Shekhar Shriyan, Rohan Hareesh",
+    "team_size": 4,
     "abstract": "Global Corporate Learning Adaptation",
     "summary": "DeltaLearn, powered by ADE, transforms corporate learning by automatically adapting content across regions where the same concepts use different conventions, terms, or regulations, for example, tax filing, payroll, or insurance workflows in different countries. In the $400B global corporate learning market, DeltaLearn can enable enterprises to create tailored training modules that align with local terminology and compliance, helping employees ramp up faster and transfer knowledge across borders. By bridging semantic gaps between regions, it can deliver true global learning consistency without manual content rewriting."
   },
@@ -444,8 +444,8 @@
     "team_name": "ClaimsPilot.ai",
     "github": "https://github.com/bvsbharat/claimspilot",
     "youtube": "https://www.youtube.com/watch?v=dSaQVIqdbHw",
-    "team_members": "",
-    "team_size": 0,
+    "team_members": "Bharat BVS, Supriya Korukonda",
+    "team_size": 2,
     "abstract": "Insurance Claims Automation",
     "summary": "ClaimsPilot.ai, helps with insurance claims management by automating data extraction, fraud detection, and intelligent routing. ADE uniquely excels at understanding the diverse, inconsistent document types found in insurance like police reports, ACORD forms, and scanned correspondence where traditional OCR or LLMs often fail. In a $3.2 trillion global insurance market, ClaimsPilot.ai delivers faster triage, higher accuracy, and millions in annual savings by turning complex, unstructured claims data into actionable intelligence in seconds."
   },
