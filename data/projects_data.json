@@ -423,7 +423,7 @@
     "summary": "DocSamajh AI automates invoice-to-PO reconciliation using multi-agent architecture (Document Processor, Reconciliation Specialist, Compliance Auditor) powered by OpenAI Agents SDK Framework, LandingAI ADE, and Google Gemini. The platform achieves 96% faster processing (30 seconds vs 30 minutes manual), reducing AP costs by $45K/year for mid-size companies processing 500 invoices monthly. Features include risk-based recommendations (LOW/MEDIUM/HIGH), batch processing with CSV export, audit trail for compliance, and production-ready error handling with complex nested schemas for line items."
   },
   {
-    "team_name": "Due Diligence Copilot",
+    "team_name": "Due Diligence Copilot (HackWithBay Winner)",
     "github": "https://github.com/manuvikash/mna-agent",
     "youtube": "https://www.youtube.com/watch?v=QfwF3Uh10PY",
     "team_members": "Manuvikash Saravanakumar, Satheesh Kumar GR, Ayaan Gazali",
@@ -432,7 +432,7 @@
     "summary": "Due Diligence Copilot leverages LandingAI's ADE to transform complex financial and legal filings into structured, contextual insights for M&A and IPO analysis. Operating in a $3.2 trillion annual market with over 50,000 M&A deals and 1,400 IPOs each year, this has the potential to automate red-flag detection and cross-document validation to reduce analyst error and protect millions in potential losses."
   },
   {
-    "team_name": "DeltaLearn",
+    "team_name": "DeltaLearn (HackWithBay Second Place)",
     "github": "https://github.com/Hrishikesh-Athreya/delta-learn",
     "youtube": "https://www.youtube.com/watch?v=emFQqpqGlKo",
     "team_members": "Hrishikesh Athreya, Arnav Dewan, Thilak Shekhar Shriyan, Rohan Hareesh",
@@ -441,7 +441,7 @@
     "summary": "DeltaLearn, powered by ADE, transforms corporate learning by automatically adapting content across regions where the same concepts use different conventions, terms, or regulations, for example, tax filing, payroll, or insurance workflows in different countries. In the $400B global corporate learning market, DeltaLearn can enable enterprises to create tailored training modules that align with local terminology and compliance, helping employees ramp up faster and transfer knowledge across borders. By bridging semantic gaps between regions, it can deliver true global learning consistency without manual content rewriting."
   },
   {
-    "team_name": "ClaimsPilot.ai",
+    "team_name": "ClaimsPilot.ai (HackWithBay Third Place)",
     "github": "https://github.com/bvsbharat/claimspilot",
     "youtube": "https://www.youtube.com/watch?v=dSaQVIqdbHw",
     "team_members": "Bharat BVS, Supriya Korukonda",
