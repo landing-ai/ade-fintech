@@ -1879,7 +1879,6 @@ body.nav-open {
 .thanks-story:nth-child(9) { animation-delay: 0.9s; }
 .thanks-story:nth-child(10) { animation-delay: 1.0s; }
 .thanks-story:nth-child(11) { animation-delay: 1.1s; }
-.thanks-story:nth-child(12) { animation-delay: 1.2s; }
 
 @keyframes fadeInUp {
     from {
