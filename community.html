@@ -377,11 +377,64 @@
         </div>
     </section>
 
+    <!-- Image Lightbox Modal -->
+    <div id="image-lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
     <!-- Footer Component -->
     <div id="footer-placeholder"></div>
 
     <script src="assets/js/components.js?v=52"></script>
     <script src="assets/js/matrix-rain.js?v=52"></script>
     <script src="assets/js/main.js?v=52"></script>
+
+    <script>
+        // Image Lightbox functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('image-lightbox');
+            const modalImg = document.getElementById('lightbox-img');
+            const captionText = document.getElementById('lightbox-caption');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            // Get all images in the Special Thanks gallery
+            const galleryImages = document.querySelectorAll('.special-thanks-gallery .story-image img');
+
+            // Add click event to each image
+            galleryImages.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'block';
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    // Prevent body scroll when modal is open
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close modal when clicking the X button
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
