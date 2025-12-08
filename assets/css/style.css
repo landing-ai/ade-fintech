@@ -1862,12 +1862,13 @@ body.nav-open {
 
 .special-thanks-card {
     position: relative;
-    aspect-ratio: 4/3;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--color-gray-medium);
     border: 1px solid rgba(74, 159, 232, 0.2);
     transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
 }
 
 .special-thanks-card:hover {
@@ -1878,13 +1879,31 @@ body.nav-open {
 
 .special-thanks-card img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4/3;
     object-fit: cover;
     transition: transform var(--transition-normal);
 }
 
 .special-thanks-card:hover img {
     transform: scale(1.05);
+}
+
+.special-thanks-caption {
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+    border-top: 1px solid rgba(74, 159, 232, 0.3);
+}
+
+.special-thanks-caption p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.special-thanks-caption strong {
+    color: #4a9fe8;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
