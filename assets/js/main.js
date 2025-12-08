@@ -545,6 +545,12 @@
             'event-008.jpg',
             'event-009.jpg',
             'event-010.jpg',
+            'event-011.jpg',
+            'event-012.jpg',
+            'event-013.jpg',
+            'event-014.jpg',
+            'event-015.jpg',
+            'event-016.jpg',
         ];
 
         return photoFiles;
