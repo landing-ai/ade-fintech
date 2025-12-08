@@ -110,7 +110,7 @@
   {
     "team_name": "Viva",
     "github": "https://github.com/suboss87/Invoice3",
-    "youtube": "Will be share shortly",
+    "youtube": "No",
     "team_members": "Solo",
     "team_size": 0,
     "abstract": "3-Way Invoice Matching Automation",
@@ -252,15 +252,6 @@
     "summary": "TMC-v1 transforms traditional accounts payable by automating every step from email intake to payment, processing invoices from email attachments, extracting structured data with Landing AI OCR, and matching against purchase orders. The system monitors email accounts for invoice attachments from configured vendors, extracts all relevant data using Landing AI's DPT-2 model handling multiple formats/currencies/languages, automatically matches invoices to open POs with configurable tolerance thresholds, flags exceptions for manual review, and processes payments through Stripe integration. Reduces processing time from 15 minutes to 2 minutes per invoice, achieves near-zero error rate vs 1-3% manual errors, and enables scale without proportional headcount growth."
   },
   {
-    "team_name": "Ken.(Duplication)",
-    "github": "https://github.com/Prasanna721/ken-analyst",
-    "youtube": "https://www.loom.com/share/86e94bd4f0fc4753ad648d4b17cb28f9",
-    "team_members": "Prasanna A P, Anti Particle, Founding Engineer",
-    "team_size": 0,
-    "abstract": "Repository Not Available",
-    "summary": "Repository not found or access restricted. The GitHub URL (https://github.com/Prasanna721/ken-analyst) does not point to a valid accessible repository. Unable to extract project details."
-  },
-  {
     "team_name": "Ken. [this one]",
     "github": "https://github.com/Prasanna721/ken-analyst",
     "youtube": "https://www.loom.com/share/a97a6c456a6b49dead87cf9ee0a9a360",
@@ -369,7 +360,7 @@
     "summary": "The provided GitHub URL (https://www.githun.com/hamzabfx) is invalid and does not point to a valid GitHub repository. The domain 'githun.com' is not the correct GitHub domain. Unable to access or extract project details."
   },
   {
-    "team_name": "Hack-Ed ( I think)",
+    "team_name": "Hack-Ed",
     "github": "https://github.com/edilma/coderisk-sf",
     "youtube": "https://youtu.be/ARuEhwtL-gg",
     "team_members": "Edilma Riano -",
