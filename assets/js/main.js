@@ -149,6 +149,7 @@
                 const abstract = project.abstract || 'AI-powered solution for financial services';
                 const summary = project.summary || 'This innovative project leverages cutting-edge AI technology to solve real-world challenges in financial services, demonstrating practical applications of document extraction and analysis.';
                 const hasVideo = project.youtube && project.youtube !== 'No' && project.youtube !== 'Will be share shortly';
+                const hasContent = hasVideo || project.github; // Show button if there's video OR GitHub link
                 const teamMembers = formatTeamMembers(project.team_members || '');
 
                 return `
@@ -156,7 +157,7 @@
                     <td><strong>${project.team_name}</strong></td>
                     <td class="abstract-cell">${abstract}</td>
                     <td class="links-cell">
-                        ${hasVideo ? `<button class="demo-btn view-details-btn" data-index="${globalIndex}">View Details</button>` : ''}
+                        ${hasContent ? `<button class="demo-btn view-details-btn" data-index="${globalIndex}">View Details</button>` : ''}
                     </td>
                 </tr>
                 <tr class="project-details" id="details-${globalIndex}" style="display: none;">
@@ -394,6 +395,7 @@
                 const abstract = project.abstract || 'AI-powered solution for financial services';
                 const summary = project.summary || 'This innovative project leverages cutting-edge AI technology to solve real-world challenges in financial services, demonstrating practical applications of document extraction and analysis.';
                 const hasVideo = videoInfo || (project.youtube && project.youtube !== 'No' && project.youtube !== 'Will be share shortly');
+                const hasContent = hasVideo || project.github; // Show button if there's video OR GitHub link
                 const globalIndex = allProjects.indexOf(project);
                 const teamMembers = formatTeamMembers(project.team_members || '');
 
@@ -402,7 +404,7 @@
                     <td><strong>${project.team_name}</strong></td>
                     <td class="abstract-cell">${abstract}</td>
                     <td class="links-cell">
-                        ${hasVideo ? `<button class="demo-btn view-details-btn" data-index="${globalIndex}">View Details</button>` : ''}
+                        ${hasContent ? `<button class="demo-btn view-details-btn" data-index="${globalIndex}">View Details</button>` : ''}
                     </td>
                 </tr>
                 <tr class="project-details" id="details-${globalIndex}" style="display: none;">
