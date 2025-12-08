@@ -1,0 +1,68 @@
+name: Security Check
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  check-sensitive-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Get full history
+
+      - name: Check for plain CSV file
+        run: |
+          echo "🔍 Checking for sensitive files..."
+
+          # Check if plain certificate CSV is committed
+          if git ls-files | grep -q "data/certificate_list.csv"; then
+            echo "❌ ERROR: Plain certificate CSV file found in repository!"
+            echo "This file contains sensitive data and should NEVER be committed."
+            echo ""
+            echo "To fix:"
+            echo "1. Remove from Git: git rm --cached data/certificate_list.csv"
+            echo "2. Verify .gitignore includes: data/certificate_list.csv"
+            echo "3. Commit the removal: git commit -m 'Remove sensitive file'"
+            exit 1
+          fi
+
+          echo "✅ No plain CSV file found in repository"
+
+      - name: Verify encrypted file exists
+        run: |
+          echo "🔍 Checking for encrypted certificate file..."
+
+          if [ ! -f "data/certificate_list.enc" ]; then
+            echo "⚠️  WARNING: Encrypted certificate file not found!"
+            echo "Expected: data/certificate_list.enc"
+            exit 1
+          fi
+
+          echo "✅ Encrypted certificate file found"
+
+      - name: Check .gitignore
+        run: |
+          echo "🔍 Verifying .gitignore configuration..."
+
+          if ! grep -q "data/certificate_list.csv" .gitignore; then
+            echo "⚠️  WARNING: .gitignore does not protect certificate_list.csv"
+            echo "Add this line to .gitignore:"
+            echo "data/certificate_list.csv"
+            exit 1
+          fi
+
+          echo "✅ .gitignore is properly configured"
+
+      - name: Security check passed
+        run: |
+          echo "✅ All security checks passed!"
+          echo "📋 Summary:"
+          echo "   - No plain CSV file in repository"
+          echo "   - Encrypted file present"
+          echo "   - .gitignore configured correctly"
