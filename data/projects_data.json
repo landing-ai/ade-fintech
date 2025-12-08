@@ -1,6 +1,6 @@
 [
   {
-    "team_name": "Loanlens AI (1st)",
+    "team_name": "Loanlens AI (Champion)",
     "github": "https://github.com/rrahul1011/loanlens_ai/tree/ds_integration_v2",
     "youtube": "https://www.youtube.com/watch?v=iKqOY-Nobv8",
     "team_members": "Abhisek Banerjee,Sigmoid Analytics,Senior Lead Data Scientist Tanika Gupta,Sigmoid Analytics,Director Data Science Anand Kumar,Sigmoid Analytics,Lead Data Scientist Mohd Zain,Sigmoid Analytics,Data Science Trainee Ritesh Kumar,Sigmoid Analytics,Principal Data Scientist Rahul kushwaha,Sigmoid Analytics,Senior Data Scientist Abhishek Thombre,Sigmoid Analytics,Lead Data Scientist Nilanjan Sahu,Sigmoid Analytics,Lead Data Scientist",
@@ -9,7 +9,7 @@
     "summary": "LoanLens AI addresses critical challenges where 52% of loan processing time is spent manually collecting documents and 1 in 4 applications contain discrepancies. The platform combines Landing AI ADE for document extraction with AWS Bedrock for fraud detection and credit evaluation using a multi-agent architecture. Key metrics show 30% of creditworthy applicants are rejected due to poor data interpretation in traditional systems. LoanLens delivers faster, more accurate, and auditable underwriting decisions by automating document extraction, identifying first-party fraud patterns (salary inflation, risky revenue practices), and providing transparent AI-powered credit recommendations with full traceability."
   },
   {
-    "team_name": "Skywalkers77 (2nd)",
+    "team_name": "Skywalkers77 (Honorable Mention)",
     "github": "https://github.com/orgs/aws-financial-ai-hack-skywalkers77/repositories",
     "youtube": "https://youtu.be/VeF_WH0lBcg",
     "team_members": "Yatharth Mogra - , NYU, Student Hemanth Marupudi - , NYU, Student Krish Jani - , NYU, Student Riddhi Raina Prasad - , NYU, Student",
@@ -18,7 +18,7 @@
     "summary": "DocuFlow is a production-ready platform featuring hybrid compliance automation that combines RAG with deterministic rule engines. The system processes invoices and contracts through complete ADE SDK integration, performs vendor-aware matching, extracts bounding boxes for PDF highlighting, and includes scheduled bulk processing for compliance monitoring. Built with FastAPI backend (3,408 LOC) and React frontend (4,591 LOC), it achieves perfect implementation scores with multi-model AI failover, PostgreSQL with pgvector storage, and role-based dashboards for auditors, compliance officers, and finance teams."
   },
   {
-    "team_name": "Beemnet Haile",
+    "team_name": "Beemnet Haile (Best Online App)",
     "github": "https://github.com/bhaile-code/Counterparty-Margin-Collateral-Agent-v2",
     "youtube": "https://youtu.be/82M2igQHz0M",
     "team_members": "Beemnet Haile, Deloitte, Product Manager",
@@ -27,7 +27,7 @@
     "summary": "Automates margin calculations for OTC derivatives by reading CSA contracts, extracting terms, normalizing collateral data, and calculating margin requirements with AI explainability. The system integrates LandingAI ADE for contract parsing, Claude Haiku for collateral normalization, and Claude Sonnet 4.5 for explanations. Features complete audit trails, deterministic calculation engine with 24 passing tests, and 21 API endpoints for document management, normalization, CSA terms mapping, and margin calculations with AI-generated explanations for compliance."
   },
   {
-    "team_name": "Serimag (top 4)",
+    "team_name": "Serimag",
     "github": "https://github.com/serimag/landinghack-fakepay/tree/main",
     "youtube": "https://www.youtube.com/watch?v=-vNP2rP7Kvs",
     "team_members": "Sergio Santamaria - Senior AI Dev at Serimag () Hugo Cortada - New Business Director at Serimag ()",
@@ -45,7 +45,7 @@
     "summary": "ArthaNethra (Sanskrit: wealth + eye) is the first knowledge graph-native financial investigation platform. Unlike traditional tools that extract data in isolation, it automatically maps entities and relationships across multiple documents into an interactive Neo4j graph database. The multi-agent architecture combines LandingAI ADE for document extraction with AWS Bedrock for analysis, revealing connections that analysts miss in manual review. Saves 200+ hours per M&A deal by providing unified cross-document views, identifying hidden risks in covenants and conflicts, and explaining AI insights through traceable graph relationships. Built with Angular 19 frontend featuring Sigma.js graph visualization and ECharts data visualization."
   },
   {
-    "team_name": "ExemptFlow (renamed to Luma) (Top 4)",
+    "team_name": "ExemptFlow(Luma)",
     "github": "https://github.com/ajac-zero/luma",
     "youtube": "https://youtu.be/212R-EbyTjY",
     "team_members": "Anibal Angulo, Banorte, Senior AI Engineer Sebastian Garza, Banorte, AI Engineer",
