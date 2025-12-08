@@ -421,5 +421,50 @@
     "team_size": 0,
     "abstract": "Invoice-PO Reconciliation Platform",
     "summary": "DocSamajh AI automates invoice-to-PO reconciliation using multi-agent architecture (Document Processor, Reconciliation Specialist, Compliance Auditor) powered by OpenAI Agents SDK Framework, LandingAI ADE, and Google Gemini. The platform achieves 96% faster processing (30 seconds vs 30 minutes manual), reducing AP costs by $45K/year for mid-size companies processing 500 invoices monthly. Features include risk-based recommendations (LOW/MEDIUM/HIGH), batch processing with CSV export, audit trail for compliance, and production-ready error handling with complex nested schemas for line items."
+  },
+  {
+    "team_name": "Due Diligence Copilot",
+    "github": "https://github.com/manuvikash/mna-agent",
+    "youtube": "https://www.youtube.com/watch?v=QfwF3Uh10PY",
+    "team_members": "",
+    "team_size": 0,
+    "abstract": "M&A Due Diligence Automation",
+    "summary": "Due Diligence Copilot leverages LandingAI's ADE to transform complex financial and legal filings into structured, contextual insights for M&A and IPO analysis. Operating in a $3.2 trillion annual market with over 50,000 M&A deals and 1,400 IPOs each year, this has the potential to automate red-flag detection and cross-document validation to reduce analyst error and protect millions in potential losses."
+  },
+  {
+    "team_name": "DeltaLearn",
+    "github": "https://github.com/Hrishikesh-Athreya/delta-learn",
+    "youtube": "https://www.youtube.com/watch?v=emFQqpqGlKo",
+    "team_members": "",
+    "team_size": 0,
+    "abstract": "Global Corporate Learning Adaptation",
+    "summary": "DeltaLearn, powered by ADE, transforms corporate learning by automatically adapting content across regions where the same concepts use different conventions, terms, or regulations, for example, tax filing, payroll, or insurance workflows in different countries. In the $400B global corporate learning market, DeltaLearn can enable enterprises to create tailored training modules that align with local terminology and compliance, helping employees ramp up faster and transfer knowledge across borders. By bridging semantic gaps between regions, it can deliver true global learning consistency without manual content rewriting."
+  },
+  {
+    "team_name": "ClaimsPilot.ai",
+    "github": "https://github.com/bvsbharat/claimspilot",
+    "youtube": "https://www.youtube.com/watch?v=dSaQVIqdbHw",
+    "team_members": "",
+    "team_size": 0,
+    "abstract": "Insurance Claims Automation",
+    "summary": "ClaimsPilot.ai, helps with insurance claims management by automating data extraction, fraud detection, and intelligent routing. ADE uniquely excels at understanding the diverse, inconsistent document types found in insurance like police reports, ACORD forms, and scanned correspondence where traditional OCR or LLMs often fail. In a $3.2 trillion global insurance market, ClaimsPilot.ai delivers faster triage, higher accuracy, and millions in annual savings by turning complex, unstructured claims data into actionable intelligence in seconds."
+  },
+  {
+    "team_name": "FinVerc",
+    "github": "https://github.com/AryanBagade/fin-verc",
+    "youtube": "No",
+    "team_members": "",
+    "team_size": 0,
+    "abstract": "Financial Document Verification",
+    "summary": "FinVerc provides financial document verification and validation capabilities using advanced AI-powered document processing. The system aims to streamline verification workflows in financial services by automating document analysis and compliance checking."
+  },
+  {
+    "team_name": "Procurement Translator",
+    "github": "https://github.com/Sanjana-Shankar/procurement-documents-concepts-translator",
+    "youtube": "No",
+    "team_members": "",
+    "team_size": 0,
+    "abstract": "Procurement Document Translation",
+    "summary": "Procurement Documents Concepts Translator addresses the challenge of translating procurement terminology and concepts across different business contexts and regions. The system helps organizations standardize procurement language and improve cross-functional understanding of procurement documents."
   }
 ]
