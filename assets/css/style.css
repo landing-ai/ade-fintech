@@ -2061,68 +2061,6 @@ body.nav-open {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-/* Video Thumbnails Grid */
-.video-thumbnails-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
-}
-
-.video-thumbnail {
-    cursor: pointer;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 3px solid transparent;
-    background: var(--color-white);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.video-thumbnail:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    border-color: rgba(102, 126, 234, 0.3);
-}
-
-.video-thumbnail.active {
-    border-color: #667eea;
-    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
-}
-
-.video-thumbnail img {
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
-
-.thumbnail-title {
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-black);
-    text-align: center;
-    background: var(--color-white);
-}
-
-.video-thumbnail.active .thumbnail-title {
-    color: #667eea;
-}
-
-@media (max-width: 768px) {
-    .video-thumbnails-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: var(--spacing-sm);
-    }
-
-    .thumbnail-title {
-        font-size: 0.8rem;
-        padding: var(--spacing-xs) var(--spacing-sm);
-    }
-}
-
 /* ================================
    Community Section
    ================================ */

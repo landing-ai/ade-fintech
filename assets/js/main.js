@@ -453,18 +453,6 @@
     const MAIN_VIDEO_ID = '5WTxmkld9Lg'; // Main event highlights video
     const YOUTUBE_PLAYLIST_ID = 'PLrKGAzovU85fQ9XGETV2b-qL6P92RlrhX';
 
-    // Playlist videos with titles
-    const PLAYLIST_VIDEOS = [
-        { id: '5WTxmkld9Lg', title: 'Event Highlights' },
-        { id: 'oZXQUr4lUWk', title: 'Team Presentation 1' },
-        { id: 'BMxZ8XpFeqA', title: 'Team Presentation 2' },
-        { id: 'Y9DrpxDBFfo', title: 'Team Presentation 3' },
-        { id: 'h3lRv-6S6fw', title: 'Team Presentation 4' },
-        { id: 'GQyXt1qhAaI', title: 'Team Presentation 5' },
-        { id: 'z9pMsxeBHkw', title: 'Team Presentation 6' }
-    ];
-    let currentVideoIndex = 0;
-
     function setupGallery() {
         const galleryGrid = document.getElementById('gallery-grid');
         if (!galleryGrid) return;
@@ -477,9 +465,6 @@
 
         // Setup image zoom functionality
         setTimeout(() => setupImageZoom(), 500);
-
-        // Setup video thumbnail navigation after content loads
-        setTimeout(() => setupVideoThumbnails(), 500);
     }
 
     async function loadGalleryItems() {
@@ -542,29 +527,21 @@
     }
 
     function createYouTubeSection() {
-        const thumbnailsHTML = PLAYLIST_VIDEOS.map((video, index) => `
-            <div class="video-thumbnail ${index === 0 ? 'active' : ''}" data-video-index="${index}">
-                <img src="https://img.youtube.com/vi/${video.id}/mqdefault.jpg" alt="${video.title}">
-                <div class="thumbnail-title">${video.title}</div>
-            </div>
-        `).join('');
-
         return `
             <div class="youtube-section" data-category="videos">
                 <div class="youtube-embed">
                     <h3>Glimpses from the Event</h3>
                     <iframe
-                        id="main-playlist-video"
                         width="100%"
                         height="200"
-                        src="https://www.youtube.com/embed/${PLAYLIST_VIDEOS[0].id}"
+                        src="https://www.youtube.com/embed/videoseries?list=${YOUTUBE_PLAYLIST_ID}"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
-                    <div class="video-thumbnails-grid">
-                        ${thumbnailsHTML}
-                    </div>
+                    <p class="youtube-link">
+                        <span>Full Playlist</span>
+                    </p>
                 </div>
             </div>
         `;
@@ -664,33 +641,6 @@
                 modal.style.display = 'none';
                 document.body.style.overflow = '';
             }
-        });
-    }
-
-    function setupVideoThumbnails() {
-        const thumbnails = document.querySelectorAll('.video-thumbnail');
-        const mainVideo = document.getElementById('main-playlist-video');
-
-        if (!thumbnails.length || !mainVideo) return;
-
-        thumbnails.forEach((thumbnail, index) => {
-            thumbnail.addEventListener('click', () => {
-                // Update video source
-                const videoId = PLAYLIST_VIDEOS[index].id;
-                mainVideo.src = `https://www.youtube.com/embed/${videoId}`;
-
-                // Update active state
-                thumbnails.forEach(t => t.classList.remove('active'));
-                thumbnail.classList.add('active');
-
-                // Update current index
-                currentVideoIndex = index;
-
-                // Scroll to video player on mobile
-                if (window.innerWidth < 768) {
-                    mainVideo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            });
         });
     }
 
