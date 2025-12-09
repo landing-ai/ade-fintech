@@ -453,6 +453,20 @@
     const MAIN_VIDEO_ID = '5WTxmkld9Lg'; // Main event highlights video
     const YOUTUBE_PLAYLIST_ID = 'PLrKGAzovU85fQ9XGETV2b-qL6P92RlrhX';
 
+    // Playlist videos with titles for dynamic display
+    const PLAYLIST_VIDEO_TITLES = {
+        '5WTxmkld9Lg': 'NYC Financial AI Championship - Event Highlights',
+        'oZXQUr4lUWk': 'FinDoc AI - Team Presentation',
+        'BMxZ8XpFeqA': 'SmartExtract - Team Presentation',
+        'Y9DrpxDBFfo': 'DocuVision - Team Presentation',
+        'h3lRv-6S6fw': 'AI Finance Pro - Team Presentation',
+        'GQyXt1qhAaI': 'IntelliDoc - Team Presentation',
+        'z9pMsxeBHkw': 'DataMind - Team Presentation'
+    };
+
+    let youtubePlayer = null;
+    let currentPlayingTitle = 'NYC Financial AI Championship - Event Highlights';
+
     function setupGallery() {
         const galleryGrid = document.getElementById('gallery-grid');
         if (!galleryGrid) return;
@@ -465,6 +479,74 @@
 
         // Setup image zoom functionality
         setTimeout(() => setupImageZoom(), 500);
+
+        // Setup YouTube player after content loads
+        setTimeout(() => initYouTubePlayer(), 1000);
+    }
+
+    // Load YouTube IFrame API
+    function loadYouTubeAPI() {
+        if (window.YT && window.YT.Player) {
+            onYouTubeIframeAPIReady();
+            return;
+        }
+
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    function initYouTubePlayer() {
+        const playerElement = document.getElementById('youtube-playlist-player');
+        if (!playerElement) return;
+
+        loadYouTubeAPI();
+    }
+
+    // YouTube API will call this function when ready
+    window.onYouTubeIframeAPIReady = function() {
+        const playerElement = document.getElementById('youtube-playlist-player');
+        if (!playerElement) return;
+
+        youtubePlayer = new YT.Player('youtube-playlist-player', {
+            height: '400',
+            width: '100%',
+            playerVars: {
+                listType: 'playlist',
+                list: YOUTUBE_PLAYLIST_ID,
+                rel: 0
+            },
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    };
+
+    function onPlayerStateChange(event) {
+        // When video starts playing or changes
+        if (event.data === YT.PlayerState.PLAYING || event.data === YT.PlayerState.BUFFERING) {
+            updateCurrentVideoTitle();
+        }
+    }
+
+    function updateCurrentVideoTitle() {
+        if (!youtubePlayer || !youtubePlayer.getVideoUrl) return;
+
+        try {
+            const videoUrl = youtubePlayer.getVideoUrl();
+            const videoId = extractYouTubeId(videoUrl);
+
+            if (videoId && PLAYLIST_VIDEO_TITLES[videoId]) {
+                currentPlayingTitle = PLAYLIST_VIDEO_TITLES[videoId];
+                const titleElement = document.getElementById('current-video-title');
+                if (titleElement) {
+                    titleElement.textContent = currentPlayingTitle;
+                }
+            }
+        } catch (error) {
+            console.log('Could not update video title:', error);
+        }
     }
 
     async function loadGalleryItems() {
@@ -531,17 +613,11 @@
             <div class="youtube-section" data-category="videos">
                 <div class="youtube-embed">
                     <h3>Glimpses from the Event</h3>
-                    <iframe
-                        width="100%"
-                        height="200"
-                        src="https://www.youtube.com/embed/videoseries?list=${YOUTUBE_PLAYLIST_ID}"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                    <p class="youtube-description">
-                        Short Reels from the Event
-                    </p>
+                    <div id="youtube-playlist-player"></div>
+                    <div class="now-playing">
+                        <span class="playing-icon">▶</span>
+                        <span id="current-video-title">${currentPlayingTitle}</span>
+                    </div>
                 </div>
             </div>
         `;
