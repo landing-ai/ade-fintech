@@ -153,6 +153,10 @@ a:hover {
     padding: var(--spacing-3xl) 0;
 }
 
+.gallery.section {
+    padding-top: calc(80px + var(--spacing-3xl));
+}
+
 .section-dark {
     background-color: var(--color-black);
     color: var(--color-white);
