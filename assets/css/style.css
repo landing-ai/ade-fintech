@@ -2022,6 +2022,7 @@ body.nav-open {
 /* YouTube Section */
 .youtube-section {
     grid-column: 1 / -1;
+    margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-xl);
 }
 
