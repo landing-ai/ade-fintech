@@ -2065,7 +2065,7 @@ body.nav-open {
     text-align: center;
     margin-top: var(--spacing-md);
     font-size: 1.1rem;
-    color: var(--color-black);
+    color: #ffffff;
     font-weight: 600;
 }
 
