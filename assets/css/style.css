@@ -2061,6 +2061,14 @@ body.nav-open {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+.youtube-description {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-size: 1rem;
+    color: var(--color-gray-dark);
+    font-weight: 500;
+}
+
 /* ================================
    Community Section
    ================================ */

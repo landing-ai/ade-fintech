@@ -539,8 +539,8 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
-                    <p class="youtube-link">
-                        <span>Short Video Highlights</span>
+                    <p class="youtube-description">
+                        Short Reels from the Event
                     </p>
                 </div>
             </div>
