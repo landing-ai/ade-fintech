@@ -1746,6 +1746,7 @@ body.nav-open {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-lg);
+    padding-top: var(--spacing-xl);
 }
 
 .gallery-item {
