@@ -518,10 +518,17 @@
                 rel: 0
             },
             events: {
+                'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
             }
         });
     };
+
+    function onPlayerReady(event) {
+        console.log('YouTube player ready');
+        // Update title when player is ready
+        setTimeout(() => updateCurrentVideoTitle(), 1000);
+    }
 
     function onPlayerStateChange(event) {
         // When video starts playing or changes
@@ -531,17 +538,27 @@
     }
 
     function updateCurrentVideoTitle() {
-        if (!youtubePlayer || !youtubePlayer.getVideoUrl) return;
+        if (!youtubePlayer) return;
 
         try {
-            const videoUrl = youtubePlayer.getVideoUrl();
-            const videoId = extractYouTubeId(videoUrl);
+            // Use getVideoData() which is more reliable
+            const videoData = youtubePlayer.getVideoData();
+            console.log('Video data:', videoData);
 
-            if (videoId && PLAYLIST_VIDEO_TITLES[videoId]) {
-                currentPlayingTitle = PLAYLIST_VIDEO_TITLES[videoId];
+            if (videoData && videoData.video_id) {
+                const videoId = videoData.video_id;
+
+                // Use custom title if available, otherwise use YouTube's title
+                if (PLAYLIST_VIDEO_TITLES[videoId]) {
+                    currentPlayingTitle = PLAYLIST_VIDEO_TITLES[videoId];
+                } else {
+                    currentPlayingTitle = videoData.title || 'Event Video';
+                }
+
                 const titleElement = document.getElementById('current-video-title');
                 if (titleElement) {
                     titleElement.textContent = currentPlayingTitle;
+                    console.log('Updated title to:', currentPlayingTitle);
                 }
             }
         } catch (error) {
