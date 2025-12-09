@@ -540,7 +540,7 @@
                         allowfullscreen>
                     </iframe>
                     <p class="youtube-link">
-                        <span>Full Playlist</span>
+                        <span>Short Video Highlights</span>
                     </p>
                 </div>
             </div>
