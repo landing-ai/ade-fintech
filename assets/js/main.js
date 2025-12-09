@@ -453,6 +453,18 @@
     const MAIN_VIDEO_ID = '5WTxmkld9Lg'; // Main event highlights video
     const YOUTUBE_PLAYLIST_ID = 'PLrKGAzovU85fQ9XGETV2b-qL6P92RlrhX';
 
+    // Playlist video IDs for navigation
+    const PLAYLIST_VIDEOS = [
+        '5WTxmkld9Lg',
+        'oZXQUr4lUWk',
+        'BMxZ8XpFeqA',
+        'Y9DrpxDBFfo',
+        'h3lRv-6S6fw',
+        'GQyXt1qhAaI',
+        'z9pMsxeBHkw'
+    ];
+    let currentVideoIndex = 0;
+
     function setupGallery() {
         const galleryGrid = document.getElementById('gallery-grid');
         if (!galleryGrid) return;
@@ -465,6 +477,44 @@
 
         // Setup image zoom functionality
         setTimeout(() => setupImageZoom(), 500);
+
+        // Setup video navigation after content loads
+        setTimeout(() => setupVideoNavigation(), 500);
+    }
+
+    function setupVideoNavigation() {
+        const prevBtn = document.getElementById('prev-video-btn');
+        const nextBtn = document.getElementById('next-video-btn');
+        const iframe = document.getElementById('playlist-video-iframe');
+        const counter = document.getElementById('video-counter');
+
+        if (!prevBtn || !nextBtn || !iframe) return;
+
+        function updateVideo() {
+            iframe.src = `https://www.youtube.com/embed/${PLAYLIST_VIDEOS[currentVideoIndex]}`;
+            counter.textContent = `${currentVideoIndex + 1} / ${PLAYLIST_VIDEOS.length}`;
+
+            // Disable buttons at boundaries
+            prevBtn.disabled = currentVideoIndex === 0;
+            nextBtn.disabled = currentVideoIndex === PLAYLIST_VIDEOS.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentVideoIndex > 0) {
+                currentVideoIndex--;
+                updateVideo();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentVideoIndex < PLAYLIST_VIDEOS.length - 1) {
+                currentVideoIndex++;
+                updateVideo();
+            }
+        });
+
+        // Initial button states
+        updateVideo();
     }
 
     async function loadGalleryItems() {
@@ -532,16 +582,29 @@
                 <div class="youtube-embed">
                     <h3>Glimpses from the Event</h3>
                     <iframe
+                        id="playlist-video-iframe"
                         width="100%"
                         height="200"
-                        src="https://www.youtube.com/embed/videoseries?list=${YOUTUBE_PLAYLIST_ID}"
+                        src="https://www.youtube.com/embed/${PLAYLIST_VIDEOS[currentVideoIndex]}"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
-                    <p class="youtube-link">
-                        <span>Full Playlist</span>
-                    </p>
+                    <div class="video-navigation">
+                        <button class="video-nav-btn" id="prev-video-btn" aria-label="Previous video">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                            </svg>
+                            Previous
+                        </button>
+                        <span class="video-counter" id="video-counter">1 / ${PLAYLIST_VIDEOS.length}</span>
+                        <button class="video-nav-btn" id="next-video-btn" aria-label="Next video">
+                            Next
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
