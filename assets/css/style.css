@@ -2064,9 +2064,9 @@ body.nav-open {
 .youtube-description {
     text-align: center;
     margin-top: var(--spacing-md);
-    font-size: 1rem;
-    color: var(--color-gray-dark);
-    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--color-black);
+    font-weight: 600;
 }
 
 /* ================================
