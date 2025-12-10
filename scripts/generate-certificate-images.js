@@ -70,7 +70,7 @@ async function generateCertificateImage(browser, certificate) {
         await page.waitForSelector('.certificate-card', { timeout: 10000 });
 
         // Wait a bit more for fonts and images to load
-        await page.waitForTimeout(2000);
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
         // Get the certificate card element
         const element = await page.$('.certificate-card');
