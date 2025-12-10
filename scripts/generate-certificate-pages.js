@@ -68,8 +68,8 @@ function generateCertificatePage(certificate) {
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${description}">
     <meta property="og:image" content="${imageUrl}">
-    <meta property="og:image:width" content="2441">
-    <meta property="og:image:height" content="1768">
+    <meta property="og:image:width" content="990">
+    <meta property="og:image:height" content="717">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
