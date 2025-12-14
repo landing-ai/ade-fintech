@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificate Admin Panel - LandingAI</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
@@ -18,328 +13,65 @@
             min-height: 100vh;
             padding: 20px;
         }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid rgba(74, 159, 232, 0.3);
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #4a9fe8;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #a0a0a0;
-            font-size: 1.1rem;
-        }
-
+        .container { max-width: 1400px; margin: 0 auto; }
+        header { text-align: center; padding: 40px 0; border-bottom: 2px solid rgba(74, 159, 232, 0.3); margin-bottom: 40px; }
+        h1 { font-size: 2.5rem; color: #4a9fe8; margin-bottom: 10px; }
+        .subtitle { color: #a0a0a0; font-size: 1.1rem; }
+        
         /* Login Screen */
-        .login-screen {
-            max-width: 500px;
-            margin: 100px auto;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(74, 159, 232, 0.3);
-            border-radius: 12px;
-            padding: 40px;
-        }
-
-        .login-screen h2 {
-            color: #4a9fe8;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #d0d0d0;
-            font-weight: 500;
-        }
-
-        input[type="password"],
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(74, 159, 232, 0.5);
-            border-radius: 6px;
-            color: #ffffff;
-            font-size: 1rem;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #4a9fe8;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            background: #4a9fe8;
-            border: none;
-            border-radius: 6px;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background: #3a8fd8;
-        }
-
-        button:disabled {
-            background: #666;
-            cursor: not-allowed;
-        }
-
-        .error {
-            background: rgba(231, 76, 60, 0.2);
-            border: 1px solid rgba(231, 76, 60, 0.5);
-            color: #e74c3c;
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .success {
-            background: rgba(46, 204, 113, 0.2);
-            border: 1px solid rgba(46, 204, 113, 0.5);
-            color: #2ecc71;
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+        .login-screen { max-width: 400px; margin: 100px auto; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(74, 159, 232, 0.3); border-radius: 12px; padding: 40px; }
+        .login-screen h2 { color: #4a9fe8; margin-bottom: 30px; text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; color: #d0d0d0; font-weight: 500; }
+        input { width: 100%; padding: 12px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(74, 159, 232, 0.5); border-radius: 6px; color: #ffffff; font-size: 1rem; }
+        button { width: 100%; padding: 12px; background: #4a9fe8; border: none; border-radius: 6px; color: white; font-weight: 600; cursor: pointer; }
+        button:hover { background: #3a8fd8; }
+        .error { color: #e74c3c; margin-bottom: 15px; text-align: center; display: none; }
 
         /* Admin Panel */
-        .admin-panel {
-            display: none;
-        }
+        .admin-panel { display: none; }
+        .admin-panel.active { display: block; }
 
-        .admin-panel.active {
-            display: block;
-        }
-
-        .toolbar {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .toolbar button {
-            width: auto;
-            padding: 12px 24px;
-        }
-
-        .btn-primary {
-            background: #4a9fe8;
-        }
-
-        .btn-success {
-            background: #2ecc71;
-        }
-
-        .btn-danger {
-            background: #e74c3c;
-        }
-
-        .btn-secondary {
-            background: #95a5a6;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
-            background: rgba(74, 159, 232, 0.1);
-            border: 1px solid rgba(74, 159, 232, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #4a9fe8;
-        }
-
-        .stat-label {
-            color: #a0a0a0;
-            margin-top: 5px;
-        }
+        /* Toolbar */
+        .toolbar { display: flex; gap: 15px; margin-bottom: 30px; align-items: center; }
+        .btn-primary { background: #4a9fe8; padding: 10px 20px; width: auto; }
+        .btn-secondary { background: #95a5a6; padding: 10px 20px; width: auto; }
+        .btn-danger { background: #e74c3c; padding: 10px 20px; width: auto; }
+        .search-box { flex: 1; }
 
         /* Table */
-        .table-container {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(74, 159, 232, 0.2);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        thead {
-            background: rgba(74, 159, 232, 0.2);
-        }
-
-        th {
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            color: #4a9fe8;
-            border-bottom: 2px solid rgba(74, 159, 232, 0.3);
-        }
-
-        td {
-            padding: 12px 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        tbody tr:hover {
-            background: rgba(74, 159, 232, 0.05);
-        }
-
-        .cert-id {
-            font-family: 'Courier New', monospace;
-            color: #4a9fe8;
-            font-weight: 600;
-        }
-
-        .action-btns {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-small {
-            padding: 6px 12px;
-            font-size: 0.85rem;
-            width: auto;
-        }
+        .table-container { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(74, 159, 232, 0.2); border-radius: 12px; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; }
+        th { padding: 15px; text-align: left; background: rgba(74, 159, 232, 0.2); color: #4a9fe8; }
+        td { padding: 12px 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .cert-id { font-family: monospace; color: #4a9fe8; }
 
         /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center; }
+        .modal.active { display: flex; }
+        .modal-content { background: #1a1a1a; border: 1px solid rgba(74, 159, 232, 0.3); border-radius: 12px; padding: 30px; width: 90%; max-width: 500px; }
+        .modal-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
+        .close-btn { background: none; border: none; font-size: 2rem; color: #a0a0a0; padding: 0; width: auto; }
 
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: #1a1a1a;
-            border: 1px solid rgba(74, 159, 232, 0.3);
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .modal-header h2 {
-            color: #4a9fe8;
-            font-size: 1.5rem;
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            color: #a0a0a0;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0;
-            width: auto;
-            line-height: 1;
-        }
-
-        .close-btn:hover {
-            color: #ffffff;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #a0a0a0;
-        }
-
-        .spinner {
-            border: 3px solid rgba(74, 159, 232, 0.3);
-            border-top: 3px solid #4a9fe8;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .search-box {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .logout-btn {
-            margin-left: auto;
-        }
+        /* Projects Section */
+        .projects-info { background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.3); padding: 20px; border-radius: 8px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+        .projects-info a { color: #2ecc71; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Login Screen -->
         <div class="login-screen" id="loginScreen">
-            <h2>🔐 Admin Authentication</h2>
-            <div id="loginError" class="error" style="display: none;"></div>
+            <h2>🔐 Admin Login</h2>
+            <div id="loginError" class="error"></div>
             <form id="loginForm">
                 <div class="form-group">
-                    <label for="adminKey">Admin Key</label>
-                    <input type="password" id="adminKey" placeholder="Enter your admin key" required>
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" required>
                 </div>
                 <button type="submit">Login</button>
             </form>
@@ -349,172 +81,146 @@
         <div class="admin-panel" id="adminPanel">
             <header>
                 <h1>📋 Certificate Admin Panel</h1>
-                <p class="subtitle">Manage Financial AI Championship Certificates</p>
+                <p class="subtitle">Managed by Secure Backend API</p>
             </header>
 
-            <div id="successMessage" class="success" style="display: none;"></div>
-            <div id="errorMessage" class="error" style="display: none;"></div>
-
-            <!-- Stats -->
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-value" id="totalCerts">0</div>
-                    <div class="stat-label">Total Certificates</div>
+            <div class="projects-info">
+                <div>
+                    <strong>📁 Projects Management:</strong><br>
+                    Project data is managed via the GitHub repository to support decentralized updates.
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="lastUpdated">Never</div>
-                    <div class="stat-label">Last Updated</div>
-                </div>
+                <a href="https://github.com/landing-ai/ade-fintech/blob/master/data/projects_data.json" target="_blank">Edit Projects on GitHub →</a>
             </div>
 
-            <!-- Toolbar -->
             <div class="toolbar">
                 <button class="btn-primary" id="addCertBtn">➕ Add Certificate</button>
-                <button class="btn-success" id="saveBtn">💾 Save & Encrypt</button>
-                <button class="btn-secondary" id="refreshBtn">🔄 Refresh</button>
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search by name, email, or ID...">
+                    <input type="text" id="searchInput" placeholder="Search certificates...">
                 </div>
-                <button class="btn-danger logout-btn" id="logoutBtn">🚪 Logout</button>
+                <button class="btn-secondary" id="refreshBtn">🔄 Refresh</button>
+                <button class="btn-danger" id="logoutBtn">🚪 Logout</button>
             </div>
 
-            <!-- Certificates Table -->
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>Certificate ID</th>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody id="certsTableBody">
-                        <tr>
-                            <td colspan="5">
-                                <div class="loading">
-                                    <div class="spinner"></div>
-                                    Loading certificates...
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="certsTableBody"></tbody>
                 </table>
             </div>
         </div>
 
-        <!-- Add/Edit Modal -->
+        <!-- Add Certificate Modal -->
         <div class="modal" id="certModal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 id="modalTitle">Add Certificate</h2>
+                    <h2>Add Certificate</h2>
                     <button class="close-btn" id="closeModal">&times;</button>
                 </div>
                 <form id="certForm">
                     <div class="form-group">
-                        <label for="certName">Full Name *</label>
+                        <label>Full Name</label>
                         <input type="text" id="certName" required>
                     </div>
                     <div class="form-group">
-                        <label for="certEmail">Email *</label>
+                        <label>Email</label>
                         <input type="email" id="certEmail" required>
                     </div>
                     <div class="form-group">
-                        <label for="certRole">Role/Designation</label>
+                        <label>Role</label>
                         <input type="text" id="certRole" value="Participant">
                     </div>
                     <div class="form-group">
-                        <label>Generated Certificate ID:</label>
-                        <input type="text" id="generatedId" readonly style="background: rgba(0,0,0,0.5); cursor: not-allowed;">
+                        <label>ID (Auto-generated)</label>
+                        <input type="text" id="certId" readonly style="opacity: 0.7;">
                     </div>
-                    <button type="submit">Save Certificate</button>
+                    <button type="submit">Create</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <script src="assets/js/crypto-utils.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="assets/js/api.js?v=1"></script>
     <script>
-        // Admin configuration
-        const ADMIN_KEY_HASH = 'admin123'; // You should change this!
+        // Check Auth on Load
+        const token = localStorage.getItem('authToken');
+        if (token) {
+            showAdminPanel();
+        }
 
-        let certificates = [];
-        let currentEditIndex = -1;
-
-        // Login handling
-        document.getElementById('loginForm').addEventListener('submit', (e) => {
+        // Login
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const key = document.getElementById('adminKey').value;
-
-            if (key === ADMIN_KEY_HASH) {
-                document.getElementById('loginScreen').style.display = 'none';
-                document.getElementById('adminPanel').classList.add('active');
-                loadCertificates();
-            } else {
-                showLoginError('Invalid admin key. Please try again.');
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            try {
+                await ApiService.login(email, password);
+                showAdminPanel();
+            } catch (err) {
+                const errEl = document.getElementById('loginError');
+                errEl.textContent = err.message;
+                errEl.style.display = 'block';
             }
         });
-
-        function showLoginError(message) {
-            const errorEl = document.getElementById('loginError');
-            errorEl.textContent = message;
-            errorEl.style.display = 'block';
-        }
 
         // Logout
         document.getElementById('logoutBtn').addEventListener('click', () => {
-            document.getElementById('loginScreen').style.display = 'block';
-            document.getElementById('adminPanel').classList.remove('active');
-            document.getElementById('adminKey').value = '';
+            ApiService.logout();
+            location.reload();
         });
 
-        // Load certificates
-        async function loadCertificates() {
+        function showAdminPanel() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('adminPanel').classList.add('active');
+            loadCertificates();
+        }
+
+        async function loadCertificates(search = '') {
+            const tbody = document.getElementById('certsTableBody');
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 20px;">Loading...</td></tr>';
+            
             try {
-                const text = await window.CertCrypto.fetchAndDecrypt(`data/certificate_list.enc?v=${Date.now()}`);
-                certificates = parseCsv(text);
-                renderTable();
-                updateStats();
+                const res = await ApiService.getAllCertificates(1, 100, search);
+                const certs = res.data;
+                
+                if (certs.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding: 20px;">No certificates found.</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = certs.map(c => `
+                    <tr>
+                        <td class="cert-id">${c.id}</td>
+                        <td>${c.recipient_name}</td>
+                        <td>${c.email}</td>
+                        <td>${c.role}</td>
+                    </tr>
+                `).join('');
+
             } catch (err) {
-                console.error('Failed to load certificates', err);
-                showError('Failed to load certificates. Please check the encrypted file.');
+                tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color: red;">Error: ${err.message}</td></tr>`;
             }
         }
 
-        // Parse CSV
-        function parseCsv(text) {
-            const rows = text.trim().split(/\r?\n/);
-            const headers = rows.shift().split(/,(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/).map(h => h.trim());
-            return rows
-                .map(row => row.split(/,(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)/))
-                .map(cols => {
-                    const record = {};
-                    headers.forEach((h, idx) => record[h] = (cols[idx] || '').replace(/^\"|\"$/g, '').trim());
-                    const name = record['Name'] || record['Full Name'] || '';
-                    const email = record['Email'] || '';
-                    const role = record['Designation/Position'] || record['Role'] || 'Participant';
-                    return {
-                        name,
-                        email,
-                        role,
-                        id: generateCertId(name, email)
-                    };
-                })
-                .filter(entry => entry.name || entry.email);
-        }
+        // Search
+        let debounceTimer;
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                loadCertificates(e.target.value);
+            }, 300);
+        });
 
-        // Generate CSV
-        function generateCsv() {
-            const headers = ['Name', 'Email', 'Designation/Position'];
-            const rows = certificates.map(cert =>
-                `"${cert.name}","${cert.email}","${cert.role}"`
-            );
-            return [headers.join(','), ...rows].join('\n');
-        }
+        document.getElementById('refreshBtn').addEventListener('click', () => loadCertificates());
 
-        // Generate certificate ID
+        // ID Generation Logic (Client-side preview)
         function generateCertId(name, email) {
             const input = `${(name || '').trim().toLowerCase()}|${(email || '').trim().toLowerCase()}`;
             let hash = 0;
@@ -526,263 +232,44 @@
             return `ADE-${hex.slice(0, 4)}-${hex.slice(4, 8)}`;
         }
 
-        // Render table
-        function renderTable(filter = '') {
-            const tbody = document.getElementById('certsTableBody');
-            const filtered = certificates.filter(cert => {
-                const search = filter.toLowerCase();
-                return cert.name.toLowerCase().includes(search) ||
-                       cert.email.toLowerCase().includes(search) ||
-                       cert.id.toLowerCase().includes(search);
-            });
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 40px; color: #a0a0a0;">No certificates found</td></tr>';
-                return;
-            }
-
-            tbody.innerHTML = filtered.map((cert, idx) => `
-                <tr>
-                    <td><span class="cert-id">${cert.id}</span></td>
-                    <td>${cert.name}</td>
-                    <td>${cert.email}</td>
-                    <td>${cert.role}</td>
-                    <td>
-                        <div class="action-btns">
-                            <button class="btn-small btn-primary" onclick="editCert(${certificates.indexOf(cert)})">Edit</button>
-                            <button class="btn-small btn-danger" onclick="deleteCert(${certificates.indexOf(cert)})">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-            `).join('');
-        }
-
-        // Update stats
-        function updateStats() {
-            document.getElementById('totalCerts').textContent = certificates.length;
-            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
-        }
-
-        // Search
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            renderTable(e.target.value);
-        });
-
-        // Add certificate
+        // Modal Logic
+        const modal = document.getElementById('certModal');
         document.getElementById('addCertBtn').addEventListener('click', () => {
-            currentEditIndex = -1;
-            document.getElementById('modalTitle').textContent = 'Add Certificate';
             document.getElementById('certForm').reset();
-            document.getElementById('generatedId').value = '';
-            document.getElementById('certModal').classList.add('active');
+            document.getElementById('certId').value = '';
+            modal.classList.add('active');
         });
+        document.getElementById('closeModal').addEventListener('click', () => modal.classList.remove('active'));
 
-        // Edit certificate
-        window.editCert = function(index) {
-            currentEditIndex = index;
-            const cert = certificates[index];
-            document.getElementById('modalTitle').textContent = 'Edit Certificate';
-            document.getElementById('certName').value = cert.name;
-            document.getElementById('certEmail').value = cert.email;
-            document.getElementById('certRole').value = cert.role;
-            document.getElementById('generatedId').value = cert.id;
-            document.getElementById('certModal').classList.add('active');
-        };
-
-        // Delete certificate
-        window.deleteCert = function(index) {
-            if (confirm(`Are you sure you want to delete the certificate for ${certificates[index].name}?`)) {
-                certificates.splice(index, 1);
-                renderTable();
-                updateStats();
-                showSuccess('Certificate deleted. Remember to save!');
-            }
-        };
-
-        // Update generated ID preview
-        document.getElementById('certName').addEventListener('input', updateIdPreview);
-        document.getElementById('certEmail').addEventListener('input', updateIdPreview);
-
-        function updateIdPreview() {
+        // ID Preview
+        const updateId = () => {
             const name = document.getElementById('certName').value;
             const email = document.getElementById('certEmail').value;
-            if (name || email) {
-                document.getElementById('generatedId').value = generateCertId(name, email);
-            }
-        }
+            if (name || email) document.getElementById('certId').value = generateCertId(name, email);
+        };
+        document.getElementById('certName').addEventListener('input', updateId);
+        document.getElementById('certEmail').addEventListener('input', updateId);
 
-        // Close modal
-        document.getElementById('closeModal').addEventListener('click', () => {
-            document.getElementById('certModal').classList.remove('active');
-        });
-
-        // Save certificate form
-        document.getElementById('certForm').addEventListener('submit', (e) => {
+        // Create Certificate
+        document.getElementById('certForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const cert = {
-                name: document.getElementById('certName').value,
+            const data = {
+                recipient_name: document.getElementById('certName').value,
                 email: document.getElementById('certEmail').value,
-                role: document.getElementById('certRole').value || 'Participant',
-                id: generateCertId(
-                    document.getElementById('certName').value,
-                    document.getElementById('certEmail').value
-                )
+                role: document.getElementById('certRole').value,
+                id: document.getElementById('certId').value,
+                issue_date: new Date().toISOString()
             };
 
-            if (currentEditIndex >= 0) {
-                certificates[currentEditIndex] = cert;
-                showSuccess('Certificate updated. Remember to save!');
-            } else {
-                certificates.push(cert);
-                showSuccess('Certificate added. Remember to save!');
-            }
-
-            renderTable();
-            updateStats();
-            document.getElementById('certModal').classList.remove('active');
-        });
-
-        // Generate individual certificate HTML page
-        function generateCertificateHtml(cert) {
-            const certUrl = `https://landing-ai.github.io/ade-fintech/cert/${cert.id}.html`;
-            const imageUrl = `https://landing-ai.github.io/ade-fintech/assets/images/certificates/generated/${cert.id}.png`;
-            const title = cert.name ? `${cert.name} - Financial AI Championship Certificate` : 'Financial AI Championship Certificate';
-            const description = cert.name
-                ? `Certificate of Participation for ${cert.name} in the AI Financial Hackathon Championship, organized by LandingAI in collaboration with AWS.`
-                : 'Certificate of Participation for the AI Financial Hackathon Championship, organized by LandingAI in collaboration with AWS.';
-
-            return `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title}</title>
-    <meta name="description" content="${description}">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="${certUrl}">
-    <meta property="og:title" content="${title}">
-    <meta property="og:description" content="${description}">
-    <meta property="og:image" content="${imageUrl}">
-    <meta property="og:image:width" content="2441">
-    <meta property="og:image:height" content="1768">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="${certUrl}">
-    <meta property="twitter:title" content="${title}">
-    <meta property="twitter:description" content="${description}">
-    <meta property="twitter:image" content="${imageUrl}">
-
-    <!-- Redirect to main certificate page with ID -->
-    <script>
-        // Redirect to the main certificate verification page with the ID parameter
-        window.location.href = '../certificates.html?id=${cert.id}';
-    <\/script>
-
-    <link rel="stylesheet" href="../assets/css/style.css?v=52">
-    <link rel="stylesheet" href="../assets/css/matrix-theme.css?v=52">
-</head>
-<body>
-    <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: 'Inter', sans-serif; background: #000; color: #00ff41;">
-        <div style="text-align: center; padding: 2rem;">
-            <h1 style="font-size: 2rem; margin-bottom: 1rem;">Redirecting to certificate...</h1>
-            <p style="margin-bottom: 2rem;">If you're not redirected automatically, <a href="../certificates.html?id=${cert.id}" style="color: #00ff41; text-decoration: underline;">click here</a>.</p>
-            <div style="display: inline-block; width: 50px; height: 50px; border: 3px solid rgba(0,255,65,0.3); border-top-color: #00ff41; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-        </div>
-    </div>
-    <style>
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
-</body>
-</html>`;
-        }
-
-        // Generate ZIP file with all certificate HTML pages
-        async function generateCertificatePages() {
-            const JSZip = window.JSZip;
-            if (!JSZip) {
-                showError('JSZip library not loaded. Please refresh and try again.');
-                return null;
-            }
-
-            const zip = new JSZip();
-            const certFolder = zip.folder('cert');
-
-            certificates.forEach(cert => {
-                const html = generateCertificateHtml(cert);
-                certFolder.file(`${cert.id}.html`, html);
-            });
-
-            return await zip.generateAsync({ type: 'blob' });
-        }
-
-        // Save & Encrypt
-        document.getElementById('saveBtn').addEventListener('click', async () => {
-            if (!confirm('This will encrypt the certificates and generate HTML pages. Continue?')) return;
-
             try {
-                // Generate encrypted CSV
-                const csv = generateCsv();
-                const encrypted = await window.CertCrypto.encryptData(csv);
-
-                // Download encrypted file
-                const encBlob = new Blob([encrypted], { type: 'text/plain' });
-                const encUrl = URL.createObjectURL(encBlob);
-                const encLink = document.createElement('a');
-                encLink.download = 'certificate_list.enc';
-                encLink.href = encUrl;
-                encLink.click();
-                URL.revokeObjectURL(encUrl);
-
-                // Generate certificate HTML pages
-                showSuccess('Generating certificate HTML pages...');
-                const zipBlob = await generateCertificatePages();
-
-                if (zipBlob) {
-                    // Download ZIP file with all certificate pages
-                    const zipUrl = URL.createObjectURL(zipBlob);
-                    const zipLink = document.createElement('a');
-                    zipLink.download = 'certificate-pages.zip';
-                    zipLink.href = zipUrl;
-                    zipLink.click();
-                    URL.revokeObjectURL(zipUrl);
-
-                    showSuccess('✅ Success! Downloaded encrypted data and certificate pages ZIP. Extract the ZIP and replace the /cert/ folder, then commit to GitHub.');
-                } else {
-                    showSuccess('✅ Encrypted file downloaded! Remember to also run the certificate page generator script.');
-                }
-            } catch (err) {
-                console.error('Save failed', err);
-                showError('Failed to save certificates. Please try again.');
-            }
-        });
-
-        // Refresh
-        document.getElementById('refreshBtn').addEventListener('click', () => {
-            if (confirm('Reload certificates from server? Unsaved changes will be lost.')) {
+                await ApiService.createCertificate(data);
+                modal.classList.remove('active');
                 loadCertificates();
-                showSuccess('Certificates reloaded from server.');
+                alert('Certificate created successfully!');
+            } catch (err) {
+                alert('Failed to create: ' + err.message);
             }
         });
-
-        // Show messages
-        function showSuccess(message) {
-            const el = document.getElementById('successMessage');
-            el.textContent = message;
-            el.style.display = 'block';
-            setTimeout(() => el.style.display = 'none', 5000);
-        }
-
-        function showError(message) {
-            const el = document.getElementById('errorMessage');
-            el.textContent = message;
-            el.style.display = 'block';
-            setTimeout(() => el.style.display = 'none', 5000);
-        }
     </script>
 </body>
 </html>

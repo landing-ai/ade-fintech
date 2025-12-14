@@ -86,14 +86,13 @@
 
     async function loadProjects() {
         try {
-            const response = await fetch('data/projects_data.json?v=36');
-            allProjects = await response.json();
+            // Use API Service to fetch projects (tries GitHub first, then local fallback)
+            allProjects = await window.ApiService.getProjects();
+            
             console.log('Loaded projects:', allProjects.length);
-            console.log('First project:', allProjects[0].team_name, {
-                hasAbstract: !!allProjects[0].abstract,
-                hasSummary: !!allProjects[0].summary,
-                hasYouTube: !!allProjects[0].youtube
-            });
+            if (allProjects.length > 0) {
+                console.log('First project:', allProjects[0].team_name);
+            }
 
             // Projects are already ordered: Champion → Honorable Mentions → Best Online Apps → Others
             // No sorting needed - preserve JSON order
