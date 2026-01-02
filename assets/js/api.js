@@ -1,8 +1,7 @@
 // api.js - Centralized API Service
 
-const API_CONFIG = {
     // Backend API for Certificates & Auth
-    BACKEND_URL: 'http://localhost:3000/api',
+    BACKEND_URL: '/api',
     
     // GitHub Raw URL for Projects Data (Public)
     PROJECTS_DATA_URL: 'https://raw.githubusercontent.com/landing-ai/ade-fintech/master/data/projects_data.json'
