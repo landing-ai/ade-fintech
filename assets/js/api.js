@@ -1,8 +1,9 @@
 // api.js - Centralized API Service
 
+const API_CONFIG = {
     // Backend API for Certificates & Auth
     BACKEND_URL: '/api',
-    
+
     // GitHub Raw URL for Projects Data (Public)
     PROJECTS_DATA_URL: 'https://raw.githubusercontent.com/landing-ai/ade-fintech/master/data/projects_data.json'
 };
@@ -46,12 +47,12 @@ const ApiService = {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
         });
-        
+
         if (!response.ok) {
             const err = await response.json();
             throw new Error(err.error || 'Login failed');
         }
-        
+
         const data = await response.json();
         localStorage.setItem('authToken', data.token);
         localStorage.setItem('adminUser', JSON.stringify(data.user));
@@ -99,7 +100,7 @@ const ApiService = {
         };
 
         const response = await fetch(url, { ...options, headers });
-        
+
         if (response.status === 401 || response.status === 403) {
             this.logout();
             throw new Error('Session expired');
